@@ -12,6 +12,34 @@
 */
 
 Route::get('/', function () {
+    return view('index');
+});
+
+Route::get('/newsList/{nowPage}', function ($nowPage) {
+    return view('newsList');
+});
+
+Route::get('/news/{newsId}', function ($newsId) {
+    return view('news');
+});
+
+Route::get('/page/{pageId}', function ($pageId) {
+    return view('page');
+});
+
+Route::get('/memberLogin', function () {
+    return view('memberLogin');
+});
+
+Route::get('/forget', function () {
+    return view('memberForget');
+});
+
+Route::get('/register', function () {
+    return view('memberRegister');
+});
+
+Route::get('/welcome', function () {
     return view('welcome');
 });
 
