@@ -96,3 +96,12 @@ Route::post("/postFirst/upload", 'PostOne@store');
 Route::get("/putForm", function() {
     return view("test.putForm");
 });
+
+Route::get("/dbuse", 'PostOne@dbuse');
+Route::get('/dbuse2/{username}', 'PostOne@dbuse2');
+Route::get('/dbuse3', 'PostOne@dbuse3');
+Route::get('/dbuse4', 'PostOne@dbuse4');
+Route::get('/dbuse5', function() {
+    $rmbs = App\Rmb::where('money', '>', 300)->get();
+    return json_encode($rmbs);
+});

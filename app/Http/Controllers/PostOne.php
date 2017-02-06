@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PostOne extends Controller
 {
@@ -92,5 +93,33 @@ class PostOne extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function dbuse() 
+    {
+        $users = DB::table('user')->get();
+        return json_encode($users);
+    }
+
+    public function dbuse2($username) 
+    {
+        $u = DB::table('user')->where('user', $username)->first();
+        return json_encode($u);
+    }
+
+    public function dbuse3() 
+    {
+        $users = DB::table('user')->pluck('pass');
+        return json_encode($users);
+    }
+
+    public function dbuse4() 
+    {
+        $pages = DB::table('user')->paginate(2);
+        return json_encode($pages);
+    }
+
+    public function dbuse5() 
+    {
     }
 }
