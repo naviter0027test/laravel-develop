@@ -105,3 +105,12 @@ Route::get('/dbuse5', function() {
     $rmbs = App\Rmb::where('money', '>', 300)->get();
     return json_encode($rmbs);
 });
+
+Route::resource('rmb', 'RmbControl');
+Route::put('/rmb/update', 'RmbControl@update');
+Route::get('/rmbform', function() {
+    return view("rmb.store");
+});
+Route::get('/rmbupdate', function() {
+    return view("rmb.update");
+});
