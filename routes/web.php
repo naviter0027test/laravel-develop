@@ -19,7 +19,7 @@ Route::get('/newsList/{nowPage}', function ($nowPage) {
     return view('newsList');
 });
 
-Route::get('/news/{newsId}', function ($newsId) {
+Route::get('/newsother/{newsId}', function ($newsId) {
     return view('news');
 });
 
@@ -118,3 +118,6 @@ Route::get('/rmbupdate', function() {
 Route::get('/rmbMutiUpdate', function() {
     return view("rmb.mutiUpdate");
 });
+
+Route::resource('onepage', 'pageControl');
+Route::resource('news', 'NewsControl');

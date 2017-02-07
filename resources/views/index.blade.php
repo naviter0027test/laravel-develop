@@ -3,12 +3,12 @@
         <title> example test laravel </title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href='lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
-        <link href='lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
-        <link href='lib/jquery.bxslider.css' rel='stylesheet' />
-        <link href='css/header.css' rel='stylesheet' />
-        <link href='css/adSlide.css' rel='stylesheet' />
-        <link href='css/index.css' rel='stylesheet' />
+        <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
+        <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
+        <link href='/lib/jquery.bxslider.css' rel='stylesheet' />
+        <link href='/css/header.css' rel='stylesheet' />
+        <link href='/css/adSlide.css' rel='stylesheet' />
+        <link href='/css/index.css' rel='stylesheet' />
     </head>
     <body>
         <nav class="navbar header col-xs-12 col-sm-12 col-md-12">
@@ -22,10 +22,10 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav topmenu">
-                    <li><a href="index.php/onePage/">關於我們</a></li>
-                    <li><a href="index.php/newsList/0">最新消息</a></li>
-                    <li><a href="index.php/memberLogin">會員專區</a></li>
-                    <li><a href="index.php/contact">聯絡我們</a></li>
+                    <li><a href="/index.php/onepage/1">關於我們</a></li>
+                    <li><a href="/index.php/news">最新消息</a></li>
+                    <li><a href="/index.php/memberLogin">會員專區</a></li>
+                    <li><a href="/index.php/contact">聯絡我們</a></li>
                 </ul>
             </div>
         </nav>
@@ -66,11 +66,11 @@
         <div class="googlemap col-xs-12 col-sm-12 col-md-12">
         </div>
     </body>
-    <script src="lib/jquery-2.1.4.min.js"></script>
-    <script src='lib/bootstrap/dist/js/bootstrap.min.js'></script>
-    <script src="lib/underscore.js"></script>
-    <script src="lib/backbone.js"></script>
-    <script src="lib/jquery.bxslider.min.js"></script>
+    <script src="/lib/jquery-2.1.4.min.js"></script>
+    <script src='/lib/bootstrap/dist/js/bootstrap.min.js'></script>
+    <script src="/lib/underscore.js"></script>
+    <script src="/lib/backbone.js"></script>
+    <script src="/lib/jquery.bxslider.min.js"></script>
     <script>
         $(document).ready(function() {
             $(".bgSlider").bxSlider({
