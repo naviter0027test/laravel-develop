@@ -19,7 +19,7 @@ Route::get('/newsList/{nowPage}', function ($nowPage) {
     return view('newsList');
 });
 
-Route::get('/news/{newsId}', function ($newsId) {
+Route::get('/newsother/{newsId}', function ($newsId) {
     return view('news');
 });
 
@@ -96,3 +96,6 @@ Route::post("/postFirst/upload", 'PostOne@store');
 Route::get("/putForm", function() {
     return view("test.putForm");
 });
+
+Route::resource('onepage', 'pageControl');
+Route::resource('news', 'NewsControl');
