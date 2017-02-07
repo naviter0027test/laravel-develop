@@ -89,6 +89,16 @@ class RmbControl extends Controller
         return "update success";
     }
 
+    public function mutiUpdate(Request $request)
+    {
+        Rmb::where('money', '<', $request->money)
+            ->update([
+                        'no' => 'destroy',
+                        'updated_at' => date("Y-m-d H:i:s")
+                    ]);
+        return "mass update success";
+    }
+
     /**
      * Remove the specified resource from storage.
      *

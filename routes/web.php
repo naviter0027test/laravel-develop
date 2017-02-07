@@ -107,10 +107,14 @@ Route::get('/dbuse5', function() {
 });
 
 Route::resource('rmb', 'RmbControl');
+Route::post('/rmb/mutiupdate', 'RmbControl@mutiUpdate');
 Route::put('/rmb/update', 'RmbControl@update');
 Route::get('/rmbform', function() {
     return view("rmb.store");
 });
 Route::get('/rmbupdate', function() {
     return view("rmb.update");
+});
+Route::get('/rmbMutiUpdate', function() {
+    return view("rmb.mutiUpdate");
 });
