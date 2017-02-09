@@ -6,6 +6,7 @@
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
         <link href='/css/header.css' rel='stylesheet' />
+        <link href='/css/newsList.css' rel='stylesheet' />
     </head>
     <body>
         <nav class="navbar header col-xs-12 col-sm-12 col-md-12">
@@ -28,14 +29,16 @@
         </nav>
         <div class="newsNav col-xs-12 col-sm-12 col-md-12">
             <h4 class="col-xs-12">最新消息</h4>
-            <a href="/index.php/news/2" class="col-xs-12"> 新聞標題 </a>
-            <a href="/index.php/news/5" class="col-xs-12"> 新聞標題 </a>
-            <a href="/index.php/news/8" class="col-xs-12"> 新聞標題 </a>
-            <a href="/index.php/news/9" class="col-xs-12"> 新聞標題 </a>
-            <a href="/index.php/news/9" class="col-xs-12"> 新聞標題 </a>
-            <a href="/index.php/news/9" class="col-xs-12"> 新聞標題 </a>
-            <a href="/index.php/news/9" class="col-xs-12"> 新聞標題 </a>
-            <a href="/index.php/news/9" class="col-xs-12"> 新聞標題 </a>
+            @foreach ($data as $news) 
+            <a href="/index.php/news/{{ $news->id }}" class="col-xs-12">{{ $news->title }} <span>{{ $news->updated_at }}</span></a>
+            @endforeach
+            @if ($prev_page_url != null)
+                <a href="{{$prev_page_url}}"> << </a>
+            @endif
+            第{{$current_page}}頁
+            @if ($next_page_url != null)
+                <a href="{{$next_page_url}}"> >> </a>
+            @endif
         </div>
         <div class="pager col-xs-12 col-sm-12 col-md-12">
         </div>

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class NewsControl extends Controller
@@ -13,7 +15,9 @@ class NewsControl extends Controller
      */
     public function index()
     {
-        return view('news.list');
+        $newses = DB::table('news')->orderBy('updated_at', 'desc')->paginate(15);
+        //return $newses;
+        return view('news.list', $newses);
     }
 
     /**
@@ -45,7 +49,11 @@ class NewsControl extends Controller
      */
     public function show($id)
     {
-        return view('news.content');
+        $news = News::where('id', $id)->get();
+        $data = DB::table('news')->orderBy('updated_at', 'desc')->paginate(7);
+        //return $news;
+        //return json_encode($data->toArray());
+        return view('news.content', ['data' => $data, 'news' => $news[0]]);
     }
 
     /**

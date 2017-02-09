@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
 use Illuminate\Http\Request;
 
 class pageControl extends Controller
@@ -46,7 +47,8 @@ class pageControl extends Controller
     public function show($id)
     {
         //
-        return view('page.one');
+        $page = Page::where('id', $id)->get();
+        return view('page.one', $page[0]);
     }
 
     /**
