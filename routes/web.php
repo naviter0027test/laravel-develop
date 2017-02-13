@@ -121,3 +121,9 @@ Route::get('/rmbMutiUpdate', function() {
 
 Route::resource('onepage', 'pageControl');
 Route::resource('news', 'NewsControl');
+
+Route::group(['prefix' => 'admin'], function() {
+    Route::get('loginPage', function() {
+        return view("adm.login");
+    });
+});
