@@ -126,4 +126,12 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('loginPage', function() {
         return view("adm.login");
     });
+
+    Route::get('dashboard', function() {
+        return view("adm.dashboard");
+    });
+
+    Route::resource('news', 'AdmNewsControl');
+    Route::resource('page', 'AdmPageControl');
+    Route::resource('member', 'AdmMemberControl');
 });

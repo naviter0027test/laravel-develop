@@ -1,0 +1,40 @@
+body {
+    background : #99cc00;
+}
+
+form[name=loginPage] {
+    margin : 10% 0 0 20%;
+    padding : 20px;
+
+    background : white;
+    box-shadow : 0px 0px 8px black;
+}
+
+form[name=loginPage] h3 {
+    font-weight : bold;
+    text-align : center;
+}
+
+form[name=loginPage] input {
+    margin-top : 5px;
+    padding : 3px;
+
+    background : #e6e6e6;
+    border : 1px solid #b3b3b3;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+}
+
+form[name=loginPage] button {
+    margin-top : 5px;
+    padding : 1px;
+
+    color : white;
+    background : #999900;
+    border : 1px solid #e6e6e6;
+}
+
+form[name=loginPage] button:hover {
+    background : #b3b300;
+}
