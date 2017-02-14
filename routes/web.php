@@ -135,3 +135,10 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('page', 'AdmPageControl');
     Route::resource('member', 'AdmMemberControl');
 });
+
+//雖然沒有顯示錯誤，但不知道是否有去ChechAge.php檢查
+Route::group(['before' => 'checkage'], function() {
+    Route::get('/beforeUse/{age}', function($age) {
+        return "use before". $age;
+    });
+});
