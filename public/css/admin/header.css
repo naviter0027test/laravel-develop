@@ -1,0 +1,17 @@
+.header {
+    padding : 0;
+    background : black;
+}
+
+.header .logo {
+    padding : 0;
+
+    color : white;
+    font-size : 24px;
+    text-align : center;
+}
+
+.header input[name=search] {
+    padding : 5px 3px 5px 3px;
+    border : 1px solid transparent;
+}

@@ -1,4 +1,4 @@
-<ul class="nav nav-pills nav-stacked col-xs-3">
+<ul class="nav nav-pills nav-stacked col-xs-3 dashboard-left ">
     <li role="presentation"><a href="news">新聞列表</a></li>
     <li role="presentation"><a href="member">會員列表</a></li>
     <li role="presentation"><a href="page">頁面列表</a></li>
