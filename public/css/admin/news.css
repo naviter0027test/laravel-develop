@@ -1,0 +1,18 @@
+.newsCreate > div {
+    float : left;
+}
+
+.newsCreate > span {
+    margin : 5px 0px 5px;
+    padding : 5px;
+}
+
+.newsCreate > input {
+    margin-top : 5px;
+    padding : 3px;
+}
+
+.newsCreate > button {
+    margin-top : 15px;
+    padding : 5px;
+}
