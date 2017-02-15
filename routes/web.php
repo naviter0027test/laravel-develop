@@ -142,3 +142,18 @@ Route::group(['before' => 'checkage'], function() {
         return "use before". $age;
     });
 });
+
+Route::get('/sessionFirst', function() {
+    session()->push('aaa', 'abc1234');
+    return "session save aaa";
+});
+
+Route::get('/sessionGet', function() {
+    return session()->all();
+});
+
+Route::get('/sessionForget', function() {
+    session()->forget('aaa');
+    session()->flush();
+    return "";
+});
