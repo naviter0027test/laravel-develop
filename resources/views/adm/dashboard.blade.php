@@ -5,14 +5,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
+        <link href='/css/admin/header.css' rel='stylesheet' />
+        <link href='/css/admin/dashboard-left.css' rel='stylesheet' />
+        <link href='/css/admin/dashboard.css' rel='stylesheet' />
     </head>
     <body>
-        <span class="col-xs-12">
-            <img src="/imgs/absLogo.png" class=""/>
-        </span>
+        @include('adm.header')
         @include('adm.dashboard-left')
+        <span class="breadcrumbs col-xs-9">Dashboard</span>
         <div class="col-xs-9">
-            welcome
         </div>
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
