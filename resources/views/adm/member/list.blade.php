@@ -32,7 +32,7 @@
                         <td>test8@test.com.tw</td>
                         <td>2016-12-03 12:14:28</td>
                         <td>
-                            <a href="#" class="glyphicon glyphicon-pencil"></a>
+                            <a href="/index.php/admin/member/3/edit" class="glyphicon glyphicon-pencil"></a>
                             <a href="#" class="glyphicon glyphicon-trash"></a>
                         </td>
                     </tr>
@@ -41,7 +41,7 @@
                         <td>test9@test.com.tw</td>
                         <td>2016-12-02 12:14:28</td>
                         <td>
-                            <a href="#" class="glyphicon glyphicon-pencil"></a>
+                            <a href="/index.php/admin/member/3/edit" class="glyphicon glyphicon-pencil"></a>
                             <a href="#" class="glyphicon glyphicon-trash"></a>
                         </td>
                     </tr>
@@ -50,7 +50,7 @@
                         <td>test5@test.com.tw</td>
                         <td>2016-12-03 12:14:28</td>
                         <td>
-                            <a href="#" class="glyphicon glyphicon-pencil"></a>
+                            <a href="/index.php/admin/member/3/edit" class="glyphicon glyphicon-pencil"></a>
                             <a href="#" class="glyphicon glyphicon-trash"></a>
                         </td>
                     </tr>
@@ -59,7 +59,7 @@
                         <td>test19@test.com.tw</td>
                         <td>2016-12-03 14:22:41</td>
                         <td>
-                            <a href="#" class="glyphicon glyphicon-pencil"></a>
+                            <a href="/index.php/admin/member/3/edit" class="glyphicon glyphicon-pencil"></a>
                             <a href="#" class="glyphicon glyphicon-trash"></a>
                         </td>
                     </tr>
@@ -68,7 +68,7 @@
                         <td>test23@test.com.tw</td>
                         <td>2016-12-03 18:30:11</td>
                         <td>
-                            <a href="#" class="glyphicon glyphicon-pencil"></a>
+                            <a href="/index.php/admin/member/3/edit" class="glyphicon glyphicon-pencil"></a>
                             <a href="#" class="glyphicon glyphicon-trash"></a>
                         </td>
                     </tr>
