@@ -71,9 +71,11 @@ Route::get('/adm.login', function() {
     return view("adm.login");
 });
 
-Route::get('/age/{age}', function($age) {
-    return "age show:$age";
-})->middleware('checkage');
+Route::group(['middleware' => ['checkage']], function() {
+    Route::get('/age/{age}', function($age) {
+        return "age show:$age";
+    });//->middleware('checkage');
+});
 
 Route::get('/overAge', function() {
     return 'over age';
@@ -123,17 +125,19 @@ Route::resource('onepage', 'pageControl');
 Route::resource('news', 'NewsControl');
 
 Route::group(['prefix' => 'admin'], function() {
-    Route::get('loginPage', function() {
-        return view("adm.login");
-    });
+    Route::post('login', "AdminControl@login");
+    Route::get('logout', "AdminControl@logout");
+    Route::get('loginPage', "AdminControl@loginPage");
 
-    Route::get('dashboard', function() {
-        return view("adm.dashboard");
-    });
+    Route::group(['middleware' => ['adminlogin']], function() {
+        Route::get('dashboard', function() {
+            return view("adm.dashboard");
+        });
 
-    Route::resource('news', 'AdmNewsControl');
-    Route::resource('page', 'AdmPageControl');
-    Route::resource('member', 'AdmMemberControl');
+        Route::resource('news', 'AdmNewsControl');
+        Route::resource('page', 'AdmPageControl');
+        Route::resource('member', 'AdmMemberControl');
+    });
 });
 
 //雖然沒有顯示錯誤，但不知道是否有去ChechAge.php檢查
