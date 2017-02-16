@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AdmNewsControl extends Controller
@@ -13,7 +15,10 @@ class AdmNewsControl extends Controller
      */
     public function index()
     {
-        return view('adm.news.list');
+        $news = News::orderBy('updated_at', 'desc')->paginate(15);
+        $newsRender = $news->render();
+        //return $news;
+        return view('adm.news.list', $news->toArray(), ['render' => $newsRender]);
     }
 
     /**
@@ -35,6 +40,7 @@ class AdmNewsControl extends Controller
     public function store(Request $request)
     {
         //
+        return "news store";
     }
 
     /**
@@ -80,5 +86,6 @@ class AdmNewsControl extends Controller
     public function destroy($id)
     {
         //
+        return "destroy news hi";
     }
 }

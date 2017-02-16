@@ -17,7 +17,8 @@
             新聞建立
         </span>
         <div class="col-xs-9">
-            <form action="news" method="post" class="newsCreate col-xs-12">
+            <form action="/index.php/admin/news" method="post" class="newsCreate col-xs-12">
+                {{ csrf_field() }}
                 <span class="col-xs-12 col-sm-3">新聞標題</span>
                 <input type="text" name="title" class="col-xs-12 col-sm-9" />
                 <span class="col-xs-12 col-sm-12">新聞內容</span>
@@ -31,5 +32,6 @@
     <script src="/lib/underscore.js"></script>
     <script src="/lib/backbone.js"></script>
     <script src="/lib/ckeditor_full/ckeditor.js"></script>
+    <script src="/js/admin/news/create.js"></script>
 </html>
 

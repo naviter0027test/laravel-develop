@@ -15,7 +15,7 @@
         @include('adm.dashboard-left')
         <span class="breadcrumbs col-xs-9">
             新聞列表
-            <a href="#">+</a>
+            <a href="/index.php/admin/news/create">+</a>
         </span>
         <div class="col-xs-9 newsList">
             <table class="col-xs-12 table">
@@ -28,15 +28,18 @@
                     </tr>
                 </thead>
                 <tbody>
+                    @foreach ($data as $item)
                     <tr>
-                        <td>新聞標題1</td>
-                        <td>2016-11-21 17:34:49</td>
-                        <td>2016-12-03 12:14:28</td>
+                        <td>{{$item['title']}}</td>
+                        <td>{{$item['created_at']}}</td>
+                        <td>{{$item['updated_at']}}</td>
                         <td>
-                            <a href="/index.php/admin/news/3/edit" class="glyphicon glyphicon-pencil"></a>
-                            <a href="#" class="glyphicon glyphicon-trash"></a>
+                            <a href="/index.php/admin/news/{{$item['id']}}/edit" class="glyphicon glyphicon-pencil"></a>
+                            <a href="/index.php/admin/news/{{$item['id']}}" value="{{$item['id']}}" class="glyphicon glyphicon-trash del"></a>
                         </td>
                     </tr>
+                    @endforeach
+<!--
                     <tr>
                         <td>新聞標題2</td>
                         <td>2016-10-14 09:42:28</td>
@@ -73,12 +76,19 @@
                             <a href="#" class="glyphicon glyphicon-trash"></a>
                         </td>
                     </tr>
+-->
                 </tbody>
             </table>
+            {!! $render !!}
+            <form id="deleteNews" action="" method="post" />
+                <input type="hidden" name="_method" value="DELETE" />
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+            </form>
         </div>
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
     <script src='/lib/bootstrap/dist/js/bootstrap.min.js'></script>
     <script src="/lib/underscore.js"></script>
     <script src="/lib/backbone.js"></script>
+    <script src="/js/admin/news/newsadm.js"></script>
 </html>
