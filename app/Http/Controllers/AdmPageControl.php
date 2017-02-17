@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Page;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AdmPageControl extends Controller
@@ -13,6 +15,10 @@ class AdmPageControl extends Controller
      */
     public function index()
     {
+        $pages = Page::orderBy('updated_at', 'desc')->paginate(15);
+        $newsRender = $pages->render();
+        //return $news;
+        return view('adm.page.list', $pages->toArray(), ['render' => $newsRender]);
         return view('adm.page.list');
     }
 
@@ -56,7 +62,8 @@ class AdmPageControl extends Controller
      */
     public function edit($id)
     {
-        return view('adm.page.edit');
+        $news = Page::where('id', $id)->first();
+        return view('adm.page.edit', $news);
     }
 
     /**
@@ -69,6 +76,12 @@ class AdmPageControl extends Controller
     public function update(Request $request, $id)
     {
         //
+        $page = Page::where('id', $id)->first();
+        $page->title = $request->title;
+        $page->content = $request->content;
+        $page->updated_at = date("Y-m-d H:i:s");
+        $page->save();
+        return redirect("/admin/page");
     }
 
     /**

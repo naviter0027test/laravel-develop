@@ -1,0 +1,19 @@
+.pageEdit > div {
+    float : left;
+}
+
+.pageEdit > span {
+    margin : 5px 0px 5px;
+    padding : 5px;
+}
+
+.pageEdit > input {
+    margin-top : 5px;
+    padding : 3px;
+}
+
+.pageEdit > button {
+    margin-top : 15px;
+    padding : 5px;
+}
+
