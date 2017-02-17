@@ -40,7 +40,13 @@ class AdmNewsControl extends Controller
     public function store(Request $request)
     {
         //
-        return "news store";
+        DB::table('news')->insert([
+            'title' => $request->title,
+            'content' => $request->content,
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
+        ]);
+        return redirect("/admin/news");
     }
 
     /**
@@ -61,8 +67,9 @@ class AdmNewsControl extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
-        return view('adm.news.edit');
+    {   
+        $news = News::where('id', $id)->first();
+        return view('adm.news.edit', $news);
     }
 
     /**
@@ -75,6 +82,12 @@ class AdmNewsControl extends Controller
     public function update(Request $request, $id)
     {
         //
+        $news = News::where('id', $id)->first();
+        $news->title = $request->title;
+        $news->content = $request->content;
+        $news->updated_at = date("Y-m-d H:i:s");
+        $news->save();
+        return redirect("/admin/news");
     }
 
     /**

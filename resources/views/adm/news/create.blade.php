@@ -17,7 +17,7 @@
             新聞建立
         </span>
         <div class="col-xs-9">
-            <form action="/index.php/admin/news" method="post" class="newsCreate col-xs-12">
+            <form action="/index.php/admin/news" method="post" class="newsEdit col-xs-12">
                 {{ csrf_field() }}
                 <span class="col-xs-12 col-sm-3">新聞標題</span>
                 <input type="text" name="title" class="col-xs-12 col-sm-9" />
