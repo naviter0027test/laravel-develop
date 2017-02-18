@@ -106,5 +106,7 @@ class AdmMemberControl extends Controller
     public function destroy($id)
     {
         //
+        $mem = Member::where('id', $id)->delete();
+        return redirect("/admin/member");
     }
 }

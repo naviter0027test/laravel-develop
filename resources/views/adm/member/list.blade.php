@@ -36,7 +36,7 @@
                         <td>{{ $item['created_at'] }}</td>
                         <td>
                             <a href="/index.php/admin/member/{{ $item['id'] }}/edit" class="glyphicon glyphicon-pencil"></a>
-                            <a href="/index.php/admin/member/{{ $item['id'] }}/" class="glyphicon glyphicon-trash"></a>
+                            <a href="/index.php/admin/member/{{ $item['id'] }}" value="{{ $item['id'] }}" class="del glyphicon glyphicon-trash"></a>
                         </td>
                     </tr>
                     @endforeach
