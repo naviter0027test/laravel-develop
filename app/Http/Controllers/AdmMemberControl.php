@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Member;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class AdmMemberControl extends Controller
@@ -13,7 +15,9 @@ class AdmMemberControl extends Controller
      */
     public function index()
     {
-        return view('adm.member.list');
+        $mems = Member::orderBy('updated_at', 'desc')->paginate(15);
+        //return $mems;
+        return view('adm.member.list', $mems);
     }
 
     /**
@@ -35,6 +39,18 @@ class AdmMemberControl extends Controller
     public function store(Request $request)
     {
         //
+        $mem = new Member;
+        $mem->email = $request->email;
+        $mem->pass = $request->pass;
+        $mem->name = $request->name;
+        $mem->phone = $request->phone;
+        $mem->tel = $request->tel;
+        $mem->address = $request->address;
+        $mem->active = "N";
+        $mem->created_at = date("Y-m-d H:i:s");
+        $mem->updated_at = date("Y-m-d H:i:s");
+        $mem->save();
+        return redirect("/admin/member");
     }
 
     /**
@@ -56,7 +72,8 @@ class AdmMemberControl extends Controller
      */
     public function edit($id)
     {
-        return view('adm.member.edit');
+        $mem = Member::where('id', $id)->first();
+        return view('adm.member.edit', $mem);
     }
 
     /**
@@ -69,6 +86,15 @@ class AdmMemberControl extends Controller
     public function update(Request $request, $id)
     {
         //
+        $mem = Member::where('id', $id)->first();
+        $mem->email = $request->email;
+        $mem->name = $request->name;
+        $mem->phone = $request->phone;
+        $mem->tel = $request->tel;
+        $mem->address = $request->address;
+        $mem->updated_at = date("Y-m-d H:i:s");
+        $mem->save();
+        return redirect("/admin/member");
     }
 
     /**

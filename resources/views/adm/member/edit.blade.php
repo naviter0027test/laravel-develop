@@ -16,15 +16,21 @@
             會員修改
         </span>
         <div class="col-xs-9">
-            <form action="member" method="post" class="memCreate col-xs-12">
-                <span class="col-xs-12 col-sm-3">帳號</span>
-                <input type="text" name="email" class="col-xs-12 col-sm-9"/>
+            <form action="/index.php/admin/member/{{ $id }}" method="post" class="memEdit col-xs-12">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <input type="hidden" name="_method" value="PUT" />
+                <span class="col-xs-12 col-sm-3">E-mail</span>
+                <input type="text" name="email" value="{{ $email }}" class="col-xs-12 col-sm-9"/>
                 <span class="col-xs-12 col-sm-3">密碼</span>
                 <input type="password" name="pass" class="col-xs-12 col-sm-9" />
+                <span class="col-xs-12 col-sm-3">姓名</span>
+                <input type="text" name="name" value="{{ $name }}" class="col-xs-12 col-sm-9" />
                 <span class="col-xs-12 col-sm-3">手機</span>
-                <input type="text" name="phone" class="col-xs-12 col-sm-9"/>
+                <input type="text" name="phone" value="{{ $phone }}" class="col-xs-12 col-sm-9"/>
+                <span class="col-xs-12 col-sm-3">電話</span>
+                <input type="text" name="tel" value="{{ $tel }}" class="col-xs-12 col-sm-9" />
                 <span class="col-xs-12 col-sm-3">地址</span>
-                <input type="text" name="address" class="col-xs-12 col-sm-9" />
+                <input type="text" name="address" value="{{ $address }}" class="col-xs-12 col-sm-9" />
                 <button class="col-xs-2">確定</button>
             </form>
         </div>

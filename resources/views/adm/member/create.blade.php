@@ -16,13 +16,18 @@
             會員建立
         </span>
         <div class="col-xs-9">
-            <form action="member" method="post" class="memCreate col-xs-12">
-                <span class="col-xs-12 col-sm-3">帳號</span>
+            <form action="/index.php/admin/member" method="post" class="memEdit col-xs-12">
+                <input type="hidden" name="_token" value="{{ csrf_token() }}" />
+                <span class="col-xs-12 col-sm-3">E-mail</span>
                 <input type="text" name="email" class="col-xs-12 col-sm-9"/>
                 <span class="col-xs-12 col-sm-3">密碼</span>
                 <input type="password" name="pass" class="col-xs-12 col-sm-9" />
+                <span class="col-xs-12 col-sm-3">姓名</span>
+                <input type="text" name="name" class="col-xs-12 col-sm-9" />
                 <span class="col-xs-12 col-sm-3">手機</span>
                 <input type="text" name="phone" class="col-xs-12 col-sm-9"/>
+                <span class="col-xs-12 col-sm-3">電話</span>
+                <input type="text" name="tel" class="col-xs-12 col-sm-9" />
                 <span class="col-xs-12 col-sm-3">地址</span>
                 <input type="text" name="address" class="col-xs-12 col-sm-9" />
                 <button class="col-xs-2">確定</button>
