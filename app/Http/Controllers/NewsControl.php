@@ -15,9 +15,9 @@ class NewsControl extends Controller
      */
     public function index()
     {
-        $newses = DB::table('news')->orderBy('updated_at', 'desc')->paginate(15);
-        //return $newses;
-        return view('news.list', $newses);
+        $newses = News::orderBy('updated_at', 'desc')->paginate(15);
+        //dd($newses);
+        return view('news.list', $newses, ['render' => $newses->render()]);
     }
 
     /**
