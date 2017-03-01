@@ -20,28 +20,36 @@
             </ul>
         </div>
         <div class="indexNews col-xs-12 col-sm-12 col-md-6">
-            <h2 class="col-xs-12">最新消息</h2>
+            <h2 class="col-xs-12"><label class="glyphicon glyphicon-book"></label>最新消息</h2>
             <a href="#" class="col-xs-12">
+                <label class="glyphicon glyphicon-bookmark"></label>
                 新聞標題 
                 <span>2017-02-07</span>
             </a>
             <a href="#" class="col-xs-12">
+                <label class="glyphicon glyphicon-bookmark"></label>
                 新聞標題 
                 <span>2017-02-07</span>
             </a>
             <a href="#" class="col-xs-12">
+                <label class="glyphicon glyphicon-bookmark"></label>
                 新聞標題 
                 <span>2017-02-07</span>
             </a>
             <a href="#" class="col-xs-12">
+                <label class="glyphicon glyphicon-bookmark"></label>
                 新聞標題 
                 <span>2017-02-07</span>
             </a>
             <a href="#" class="col-xs-12">
+                <label class="glyphicon glyphicon-bookmark"></label>
                 新聞標題 
                 <span>2017-02-07</span>
             </a>
-            <a class="more" href="index.php/newsList/0">更多消息...</a>
+            <a class="more" href="index.php/news">
+                <label class="glyphicon glyphicon-play"></label>
+                <label class="glyphicon glyphicon-play"></label>
+                更多消息...</a>
         </div>
         <div class="googlemap col-xs-12 col-sm-12 col-md-6">
             <iframe class="col-xs-12" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src=http://maps.google.com.tw/maps?f=q&hl=zh-TW&geocode=&q=台北市新生南路三段90號&z=16&output=embed&t=></iframe>
