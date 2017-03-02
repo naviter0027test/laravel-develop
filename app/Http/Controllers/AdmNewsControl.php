@@ -40,12 +40,17 @@ class AdmNewsControl extends Controller
     public function store(Request $request)
     {
         //
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
         DB::table('news')->insert([
             'title' => $request->title,
             'content' => $request->content,
             'created_at' => date("Y-m-d H:i:s"),
             'updated_at' => date("Y-m-d H:i:s"),
         ]);
+        $request->session()->flash('alert-success', '建立成功');
         return redirect("/admin/news");
     }
 
@@ -82,11 +87,16 @@ class AdmNewsControl extends Controller
     public function update(Request $request, $id)
     {
         //
+        $this->validate($request, [
+            'title' => 'required',
+            'content' => 'required'
+        ]);
         $news = News::where('id', $id)->first();
         $news->title = $request->title;
         $news->content = $request->content;
         $news->updated_at = date("Y-m-d H:i:s");
         $news->save();
+        $request->session()->flash('alert-success', '修改成功');
         return redirect("/admin/news");
     }
 
@@ -96,9 +106,13 @@ class AdmNewsControl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($id, Request $request)
     {
         //
-        return "destroy news hi";
+        $news = News::where('id', $id);
+        $news->delete();
+
+        $request->session()->flash('alert-success', '刪除成功');
+        return redirect("/admin/news");
     }
 }

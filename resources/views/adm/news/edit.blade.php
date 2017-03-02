@@ -17,6 +17,14 @@
             新聞修改
         </span>
         <div class="col-xs-9">
+            @if (count($errors) > 0)
+            <br />
+            <div class="alert alert-danger"> 
+                @foreach ($errors->all() as $err)
+                <p> {{ $err }} </p>
+                @endforeach
+            </div>
+            @endif
             <form action="/index.php/admin/news/{{ $id }}" method="post" class="newsEdit col-xs-12">
                 {{ csrf_field() }}
                 {{ method_field("PUT") }}

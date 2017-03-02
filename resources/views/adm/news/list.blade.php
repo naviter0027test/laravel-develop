@@ -18,6 +18,14 @@
             <a href="/index.php/admin/news/create">+</a>
         </span>
         <div class="col-xs-9 newsList">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if (Session::has('alert-'. $msg))
+            <br />
+            <div class="alert alert-{{ $msg }}"> 
+                <p> {{ Session::get('alert-'. $msg) }} </p>
+            </div>
+            @endif
+        @endforeach
             <table class="col-xs-12 table">
                 <thead>
                     <tr>
