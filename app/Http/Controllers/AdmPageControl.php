@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Page;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use App\Http\Requests\PageRule;
 
 class AdmPageControl extends Controller
 {
@@ -76,11 +77,16 @@ class AdmPageControl extends Controller
     public function update(Request $request, $id)
     {
         //
+        $rule = new PageRule;
+        $this->validate($request, $rule->rules());
+
         $page = Page::where('id', $id)->first();
         $page->title = $request->title;
         $page->content = $request->content;
         $page->updated_at = date("Y-m-d H:i:s");
         $page->save();
+
+        $request->session()->flash('alert-success', '修改成功');
         return redirect("/admin/page");
     }
 
