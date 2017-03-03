@@ -1,0 +1,24 @@
+.newsList h4 {
+    padding : 5px;
+    border-bottom : 1px solid #b35900;
+}
+
+.newsList a {
+    padding : 10px 5px 10px 5px;
+
+    color : #4d3300;
+    text-decoration : none;
+}
+
+.newsList a:hover {
+    color : #ffdd99;
+    background : #4d3300;
+}
+
+.newsList a label {
+    padding : 0px 8px 0px 8px;
+}
+
+.newsList span {
+    float : right;
+}

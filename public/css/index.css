@@ -3,7 +3,6 @@
     padding-bottom : 20px;
     margin-bottom : 40px;
 
-    background : #ffebcc;
     -webkit-transition : background 1s;
     transition : background 1s;
 }
@@ -16,8 +15,11 @@
     margin-right : 20%;
     padding-bottom : 5px;
 
-    border-left : 4px solid #804d00;
-    border-bottom : 1px solid #804d00;
+    color : #663d00;
+}
+
+.indexNews h2 label {
+    padding : 0px 5px 0px 5px;
 }
 
 .indexNews a {
@@ -30,7 +32,6 @@
 
 .indexNews a:hover {
     color : #663d00;
-    border-left : 10px solid #b36b00;
 }
 
 .indexNews span {

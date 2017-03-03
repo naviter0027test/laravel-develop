@@ -1,21 +1,72 @@
-.header .navbar-brand {
-    padding : 0px;
+.header .container-fluid {
+    background : url(../imgs/background-nav-test.jpg) no-repeat;
+    background-size : 100% 100%;
 }
 
-.header .navbar-brand > img {
-    width : 100%;
-    height : 90%;
+.header .navbar-brand {
+    float : left;
+    padding : 5px;
+
+    font-size : 24px;
+    color : #4d3300;
+    font-family : serif;
+    font-weight : bold;
+    font-style: italic;
+}
+
+.header .navbar-brand label:hover {
+    cursor : pointer;
+}
+
+.header .navbar-brand .logoAbs {
+    float : left;
+    padding : 5px 0px 0px 8px;
+
+    text-decoration : underline;
+}
+
+.header .navbar-brand .logoTech {
+    padding : 10px 0px 0px 0px;
+
+    font-size : 30px;
+}
+
+.header .topmenu label {
+    display : inline-block;
+    color : white;
 }
 
 .header .topmenu a {
+    display : inline-block;
+    padding : 8px 14px 8px 6px;
+
     color : white;
     text-align : center;
 }
 
-.header .topmenu a:hover {
-    color : #663d00;
+.header .topmenu label {
+    padding : 8px 0px 0px 4px;
+}
+
+.header .topmenu li {
+    -webkit-transition : background 1s;
+    transition : background 1s;
+}
+
+.header .topmenu li a {
+    -webkit-transition : color 1s;
+    transition : color 1s;
+}
+
+.header .topmenu li:hover {
+    background : #ffffff;
+}
+
+.header .topmenu li:hover a, .header .topmenu li:hover label {
+    color : #4d3300;
 }
 
 .header .collapse {
-    background : #b38f00;
+    background : #4d3300;
+    border-bottom : 2px solid #b35900;
 }

@@ -1,0 +1,40 @@
+.oneContent h2 {
+    padding : 5px 15px 5px 15px;
+    
+    text-shadow : 1px 1px #e6e6e6;
+    border-left : 3px solid #b35900;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffbf80+0,ffffff+82 */
+    background: #ffbf80; /* Old browsers */
+    background: -moz-linear-gradient(left, #ffbf80 0%, #ffffff 82%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #ffbf80 0%,#ffffff 82%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #ffbf80 0%,#ffffff 82%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffbf80', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.oneNav h4 {
+    padding : 5px 20px 5px 8px;
+    border-bottom : 1px solid #b35900;
+}
+
+.oneNav label:hover {
+    cursor : pointer;
+}
+
+.oneNav a {
+    padding : 5px 0px 5px 8px;
+    margin-left : 3px;
+
+    color : black;
+    background : #cccccc;
+    text-decoration : none;
+}
+
+.oneNav a:hover {
+    background : #e6e6e6;
+}
+
+.oneNav label {
+    padding : 5px 20px 5px 10px;
+    text-align : left;
+    background : #ffcc99;
+}
