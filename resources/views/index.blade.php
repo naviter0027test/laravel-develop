@@ -21,31 +21,13 @@
         </div>
         <div class="indexNews col-xs-12 col-sm-12 col-md-6">
             <h2 class="col-xs-12"><label class="glyphicon glyphicon-book"></label>最新消息</h2>
-            <a href="#" class="col-xs-12">
+            @foreach ($newses as $news)
+            <a href="/index.php/news/{{$news->id}}" class="col-xs-12">
                 <label class="glyphicon glyphicon-bookmark"></label>
-                新聞標題 
-                <span>2017-02-07</span>
+                {{ $news->title }}
+                <span>{{ $news->updated_at }}</span>
             </a>
-            <a href="#" class="col-xs-12">
-                <label class="glyphicon glyphicon-bookmark"></label>
-                新聞標題 
-                <span>2017-02-07</span>
-            </a>
-            <a href="#" class="col-xs-12">
-                <label class="glyphicon glyphicon-bookmark"></label>
-                新聞標題 
-                <span>2017-02-07</span>
-            </a>
-            <a href="#" class="col-xs-12">
-                <label class="glyphicon glyphicon-bookmark"></label>
-                新聞標題 
-                <span>2017-02-07</span>
-            </a>
-            <a href="#" class="col-xs-12">
-                <label class="glyphicon glyphicon-bookmark"></label>
-                新聞標題 
-                <span>2017-02-07</span>
-            </a>
+            @endforeach
             <a class="more" href="index.php/news">
                 <label class="glyphicon glyphicon-play"></label>
                 <label class="glyphicon glyphicon-play"></label>

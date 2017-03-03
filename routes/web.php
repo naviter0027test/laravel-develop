@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('index');
+    $newses = App\News::orderBy('updated_at', 'desc')->take(5)->get();
+    return view('index', ['newses' => $newses]);
 });
 
 Route::get('/newsList/{nowPage}', function ($nowPage) {

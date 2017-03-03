@@ -47,8 +47,9 @@ class pageControl extends Controller
     public function show($id)
     {
         //
+        $allPage = Page::get();
         $page = Page::where('id', $id)->get();
-        return view('page.one', $page[0]);
+        return view('page.one', $page[0], ['allPage' => $allPage]);
     }
 
     /**
