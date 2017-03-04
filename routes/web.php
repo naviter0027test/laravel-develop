@@ -123,6 +123,10 @@ Route::get('/contact', function() {
     return view("contact");
 });
 
+Route::get('/chooseLan', function() {
+    return view("language");
+});
+
 Route::resource('onepage', 'pageControl');
 Route::resource('news', 'NewsControl');
 
@@ -139,3 +143,4 @@ Route::group(['prefix' => 'admin'], function() {
     Route::resource('page', 'AdmPageControl');
     Route::resource('member', 'AdmMemberControl');
 });
+
