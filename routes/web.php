@@ -119,6 +119,10 @@ Route::get('/rmbMutiUpdate', function() {
     return view("rmb.mutiUpdate");
 });
 
+Route::get('/contact', function() {
+    return view("contact");
+});
+
 Route::resource('onepage', 'pageControl');
 Route::resource('news', 'NewsControl');
 
