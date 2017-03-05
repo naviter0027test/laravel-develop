@@ -13,8 +13,12 @@
     <body>
         @include('header')
         <div class="breadCrumbs col-xs-12">
-            <a href="/index.php" class="glyphicon glyphicon-home"></a> 
-            <span>選擇語系</span>
+            <a href="/index.php" class="glyphicon glyphicon-home">
+                <div class="right nonActive"></div>
+            </a> 
+            <span>
+                <div class="left active"></div><label>選擇語系</label>
+            </span>
         </div>
         <div class="col-xs-12">
             <h3 class="title col-xs-12">

@@ -1,0 +1,86 @@
+.breadCrumbs a {
+    display : inline-block;
+    padding : 5px 0px 5px 15px;
+    margin-left : 15px;
+
+    color : #cc7a00;
+    background : #d9d9d9;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-decoration : none;
+    line-height : 20px;
+}
+
+.breadCrumbs a:hover {
+    color : white;
+    background : #4d3300;
+}
+
+.breadCrumbs a label {
+    position : relative;
+    top : -3px;
+    left : -10px;
+    margin : 0px;
+}
+
+.breadCrumbs span {
+    display : inline-block;
+    vertical-align : top;
+}
+
+.breadCrumbs span {
+    display : inline-block;
+    padding : 6px 10px 3px 0px;
+    margin-left : 8px;
+
+    color : #4d3300;
+    background : #ffb84d;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.breadCrumbs div.right {
+    display : inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+}
+
+.breadCrumbs div.left {
+    display : inline-block;
+    position : relative;
+    left : -10px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    vertical-align : middle;
+}
+
+.breadCrumbs div.nonActive {
+    border-color: transparent #ffffff transparent transparent;
+}
+
+.breadCrumbs div.active {
+    border-color: transparent #ffb84d transparent transparent;
+}
+
+.breadCrumbs div.gray {
+    display : inline-block;
+    position : relative;
+    top : -5px;
+    left : -25px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    vertical-align : middle;
+    border-color: transparent #d9d9d9 transparent transparent;
+}
+
+.breadCrumbs a:hover div.gray {
+    border-color: transparent #4d3300 transparent transparent;
+}

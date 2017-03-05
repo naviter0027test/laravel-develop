@@ -6,10 +6,19 @@
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
         <link href='/css/header.css' rel='stylesheet' />
+        <link href='/css/breadCrumbs.css' rel='stylesheet' />
         <link href='/css/one.css' rel='stylesheet' />
     </head>
     <body>
         @include('header')
+        <div class="breadCrumbs col-xs-12">
+            <a href="/index.php" class="glyphicon glyphicon-home">
+                <div class="right nonActive"></div>
+            </a> 
+            <span>
+                <div class="left active"></div><label>{{$title}}</label>
+            </span>
+        </div>
         <div class="oneContent col-xs-12 col-sm-9 col-md-9">
             <h2 class="col-xs-12">{{$title}}</h2>
             <div class="col-xs-12">

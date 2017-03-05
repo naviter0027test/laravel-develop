@@ -7,12 +7,21 @@
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
         <link href='/lib/jquery.bxslider.css' rel='stylesheet' />
         <link href='/css/header.css' rel='stylesheet' />
+        <link href='/css/breadCrumbs.css' rel='stylesheet' />
         <link href='/css/adSlide.css' rel='stylesheet' />
         <link href='/css/one.css' rel='stylesheet' />
         <link href='/css/contact.css' rel='stylesheet' />
     </head>
     <body>
         @include('header')
+        <div class="breadCrumbs col-xs-12">
+            <a href="/index.php" class="glyphicon glyphicon-home">
+                <div class="right nonActive"></div>
+            </a> 
+            <span>
+                <div class="left active"></div><label>聯絡我們</label>
+            </span>
+        </div>
         <div class="contactForm col-xs-12 col-sm-9 col-md-9">
             <form action="" method="post">
                 <h3>聯絡我們</h3>

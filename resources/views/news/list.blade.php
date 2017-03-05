@@ -6,10 +6,19 @@
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
         <link href='/css/header.css' rel='stylesheet' />
+        <link href='/css/breadCrumbs.css' rel='stylesheet' />
         <link href='/css/newsList.css' rel='stylesheet' />
     </head>
     <body>
         @include('header')
+        <div class="breadCrumbs col-xs-12">
+            <a href="/index.php" class="glyphicon glyphicon-home">
+                <div class="right nonActive"></div>
+            </a> 
+            <span>
+                <div class="left active"></div><label>最新消息</label>
+            </span>
+        </div>
         <div class="newsList col-xs-12 col-sm-12 col-md-12">
             <h4 class="col-xs-12">最新消息</h4>
             @foreach ($data as $news) 
