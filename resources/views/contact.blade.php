@@ -23,7 +23,24 @@
             </span>
         </div>
         <div class="contactForm col-xs-12 col-sm-9 col-md-9">
-            <form action="" method="post">
+        @if (count($errors) > 0)
+            <br />
+            <div class="alert alert-danger"> 
+                @foreach ($errors->all() as $err)
+                <p> {{ $err }} </p>
+                @endforeach
+            </div>
+        @endif
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if (Session::has('alert-'. $msg))
+            <br />
+            <div class="alert alert-{{ $msg }}"> 
+                <p> {{ Session::get('alert-'. $msg) }} </p>
+            </div>
+            @endif
+        @endforeach
+            <form action="/index.php/contactAdd" method="post">
+                {{ csrf_field() }}
                 <h3>聯絡我們</h3>
                 <p class="col-xs-12">
                     <span class="col-xs-3">
@@ -37,7 +54,7 @@
                         <label class="glyphicon glyphicon-phone"></label>
                         手機 
                     </span>
-                    <input type="text" name="name" class="col-xs-8" />
+                    <input type="text" name="phone" class="col-xs-8" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3">
@@ -65,18 +82,12 @@
         </div>
         <div class="oneNav col-xs-12 col-sm-3 col-md-3">
             <h4 class="col-xs-12">其他介紹</h4>
+            @foreach ($allPage as $num => $page)
             <p class="col-xs-12">
-                <label class="col-xs-1">1</label>
-                <a href="2" class="col-xs-9"> 公司歷史 </a>
+                <label class="col-xs-1">{{ $num+1 }}</label>
+                <a href="/index.php/onepage/{{$page->id}}" class="col-xs-9">{{ $page->title }}</a>
             </p>
-            <p class="col-xs-12">
-                <label class="col-xs-1">2</label>
-                <a href="3" class="col-xs-9"> 公司文化 </a>
-            </p>
-            <p class="col-xs-12">
-                <label class="col-xs-1">3</label>
-                <a href="4" class="col-xs-9"> 人才招募 </a>
-            </p>
+            @endforeach
         </div>
     </body>
 </html>

@@ -122,9 +122,8 @@ Route::get('/rmbMutiUpdate', function() {
     return view("rmb.mutiUpdate");
 });
 
-Route::get('/contact', function() {
-    return view("contact");
-});
+Route::get('/contact', 'ContactControl@show');
+Route::post('/contactAdd', 'ContactControl@store');
 
 Route::get('/chooseLan', function() {
     return view("language");

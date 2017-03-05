@@ -30,7 +30,7 @@
             @foreach ($allPage as $num => $page)
             <p class="col-xs-12">
                 <label class="col-xs-1">{{ $num+1 }}</label>
-                <a href="{{$page->id}}" class="col-xs-9">{{ $page->title }}</a>
+                <a href="/index.php/onepage/{{$page->id}}" class="col-xs-9">{{ $page->title }}</a>
             </p>
             @endforeach
         </div>
