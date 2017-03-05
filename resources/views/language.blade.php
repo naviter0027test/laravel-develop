@@ -5,9 +5,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
+        <link href='/lib/jquery.bxslider.css' rel='stylesheet' />
         <link href='/css/header.css' rel='stylesheet' />
         <link href='/css/breadCrumbs.css' rel='stylesheet' />
-        <link href='/css/one.css' rel='stylesheet' />
+        <link href='/css/language.css' rel='stylesheet' />
     </head>
     <body>
         @include('header')
@@ -16,27 +17,27 @@
                 <div class="right nonActive"></div>
             </a> 
             <span>
-                <div class="left active"></div><label>{{$title}}</label>
+                <div class="left active"></div><label>選擇語系</label>
             </span>
         </div>
-        <div class="oneContent col-xs-12 col-sm-9 col-md-9">
-            <h2 class="col-xs-12">{{$title}}</h2>
-            <div class="col-xs-12">
-                {!! $content !!}
+        <div class="col-xs-12">
+            <h3 class="title col-xs-12">
+                <label class="glyphicon glyphicon-th">
+                語系選擇
+            </h3>
+            <div class="chooseContent col-xs-12">
+                <a href="/index.php/lan/zh" class="lanBtn col-xs-3">
+                    <span>繁體</span>
+                </a>
+                <a href="/index.php/lan/cn" class="lanBtn col-xs-3">
+                    <span>簡體</span>
+                </a>
+                <a href="/index.php/lan/en" class="lanBtn col-xs-3">
+                    <span>英文</span>
+                </a>
             </div>
-        </div>
-        <div class="oneNav col-xs-12 col-sm-3 col-md-3">
-            <h4 class="col-xs-12">其他介紹</h4>
-            @foreach ($allPage as $num => $page)
-            <p class="col-xs-12">
-                <label class="col-xs-1">{{ $num+1 }}</label>
-                <a href="{{$page->id}}" class="col-xs-9">{{ $page->title }}</a>
-            </p>
-            @endforeach
         </div>
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
     <script src='/lib/bootstrap/dist/js/bootstrap.min.js'></script>
-    <script src="/lib/underscore.js"></script>
-    <script src="/lib/backbone.js"></script>
 </html>
