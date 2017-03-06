@@ -11,27 +11,27 @@
         <ul class="nav navbar-nav topmenu">
             <li>
                 <label class="glyphicon glyphicon-heart"></label>
-                <a href="/index.php/onepage/1">關於我們</a>
+                <a href="/index.php/onepage/1">{{ trans('header.about_us') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-bookmark"></label>
-                <a href="/index.php/news">最新消息</a>
+                <a href="/index.php/news">{{ trans('header.news') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-user"></label>
-                <a href="/index.php/memberLogin">會員登入</a>
+                <a href="/index.php/memberLogin">{{ trans('header.mem_login') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-plus"></label>
-                <a href="/index.php/memberRegister">會員加入</a>
+                <a href="/index.php/memberRegister">{{ trans('header.mem_add') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-envelope"></label>
-                <a href="/index.php/contact">聯絡我們</a>
+                <a href="/index.php/contact">{{ trans('header.contact') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-globe"></label>
-                <a href="/index.php/chooseLan">選擇語系</a>
+                <a href="/index.php/chooseLan">{{ trans('header.choose_lan') }}</a>
             </li>
         </ul>
     </div>

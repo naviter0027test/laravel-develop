@@ -12,6 +12,8 @@
 */
 
 Route::get('/', function () {
+    $lang = session()->get('lang')[0];
+    App::setLocale($lang);
     $newses = App\News::orderBy('updated_at', 'desc')->take(5)->get();
     return view('index', ['newses' => $newses]);
 });
@@ -127,6 +129,11 @@ Route::post('/contactAdd', 'ContactControl@store');
 
 Route::get('/chooseLan', function() {
     return view("language");
+});
+Route::get('/lan/{lang}', function($lang) {
+    App::setLocale($lang);
+    session()->push('lang', $lang);
+    return "set ". App::getLocale(). " ". trans('header.about_us');
 });
 
 Route::resource('onepage', 'pageControl');
