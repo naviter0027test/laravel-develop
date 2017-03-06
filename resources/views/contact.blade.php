@@ -19,7 +19,7 @@
                 <div class="right nonActive"></div>
             </a> 
             <span>
-                <div class="left active"></div><label>聯絡我們</label>
+                <div class="left active"></div><label>{{ trans('contact.contact_us') }}</label>
             </span>
         </div>
         <div class="contactForm col-xs-12 col-sm-9 col-md-9">
@@ -45,39 +45,39 @@
                 <p class="col-xs-12">
                     <span class="col-xs-3">
                         <label class="glyphicon glyphicon-pencil"></label>
-                        姓名
+                        {{ trans('contact.name') }}
                     </span>
                     <input type="text" name="name" class="col-xs-8" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3">
                         <label class="glyphicon glyphicon-phone"></label>
-                        手機 
+                        {{ trans('contact.phone') }} 
                     </span>
                     <input type="text" name="phone" class="col-xs-8" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3">
                         <label class="glyphicon glyphicon-envelope"></label>
-                        信箱
+                        {{ trans('contact.email') }}
                     </span>
                     <input type="text" name="email" class="col-xs-8" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3">
                         <label class="glyphicon glyphicon-calendar"></label>
-                        公司名稱
+                        {{ trans('contact.company') }}
                     </span>
                     <input type="text" name="company" class="col-xs-8" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3">
                         <label class="glyphicon glyphicon-comment"></label>
-                        內容
+                        {{ trans('contact.content') }}
                     </span>
                     <textarea name="memo" class="col-xs-8"></textarea>
                 </p>
-                <button class="col-xs-2">提交</button>
+                <button class="col-xs-2">{{ trans('contact.submit') }}</button>
             </form>
         </div>
         <div class="oneNav col-xs-12 col-sm-3 col-md-3">

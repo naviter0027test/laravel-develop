@@ -12,6 +12,8 @@ class ContactControl extends Controller
     //
     public function show()
     {
+        $lang = session()->get('lang');
+        \App::setLocale($lang);
         $allPage = Page::get();
         return view("contact", ['allPage' => $allPage]);
     }

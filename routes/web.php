@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    $lang = session()->get('lang')[0];
+    $lang = session()->get('lang');
     App::setLocale($lang);
     $newses = App\News::orderBy('updated_at', 'desc')->take(5)->get();
     return view('index', ['newses' => $newses]);
@@ -128,12 +128,14 @@ Route::get('/contact', 'ContactControl@show');
 Route::post('/contactAdd', 'ContactControl@store');
 
 Route::get('/chooseLan', function() {
+    $lang = session()->get('lang');
+    App::setLocale($lang);
     return view("language");
 });
 Route::get('/lan/{lang}', function($lang) {
-    App::setLocale($lang);
-    session()->push('lang', $lang);
-    return "set ". App::getLocale(). " ". trans('header.about_us');
+    session()->put('lang', $lang);
+    session()->flash('alert-success', '設定成功');
+    return redirect("/chooseLan");
 });
 
 Route::resource('onepage', 'pageControl');

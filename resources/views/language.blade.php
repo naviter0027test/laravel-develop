@@ -21,6 +21,14 @@
             </span>
         </div>
         <div class="col-xs-12">
+        @foreach (['danger', 'warning', 'success', 'info'] as $msg)
+            @if (Session::has('alert-'. $msg))
+            <br />
+            <div class="alert alert-{{ $msg }}"> 
+                <p> {{ Session::get('alert-'. $msg) }} </p>
+            </div>
+            @endif
+        @endforeach
             <h3 class="title col-xs-12">
                 <label class="glyphicon glyphicon-th">
                 語系選擇
