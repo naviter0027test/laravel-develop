@@ -47,6 +47,8 @@ class pageControl extends Controller
     public function show($id)
     {
         //
+        $lang = session()->get('lang');
+        \App::setLocale($lang);
         $allPage = Page::get();
         $page = Page::where('id', $id)->get();
         return view('page.one', $page[0], ['allPage' => $allPage]);

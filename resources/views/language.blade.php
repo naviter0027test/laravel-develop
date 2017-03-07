@@ -17,7 +17,7 @@
                 <div class="right nonActive"></div>
             </a> 
             <span>
-                <div class="left active"></div><label>選擇語系</label>
+                <div class="left active"></div><label>{{ trans('language.language') }}</label>
             </span>
         </div>
         <div class="col-xs-12">
@@ -31,17 +31,17 @@
         @endforeach
             <h3 class="title col-xs-12">
                 <label class="glyphicon glyphicon-th">
-                語系選擇
+                {{ trans('language.chooseLanguage') }}
             </h3>
             <div class="chooseContent col-xs-12">
                 <a href="/index.php/lan/zh" class="lanBtn col-xs-3">
-                    <span>繁體</span>
+                    <span>{{ trans('language.zh') }}</span>
                 </a>
                 <a href="/index.php/lan/cn" class="lanBtn col-xs-3">
-                    <span>簡體</span>
+                    <span>{{ trans('language.cn') }}</span>
                 </a>
                 <a href="/index.php/lan/en" class="lanBtn col-xs-3">
-                    <span>英文</span>
+                    <span>{{ trans('language.en') }}</span>
                 </a>
             </div>
         </div>
