@@ -16,11 +16,11 @@
                 <div class="right nonActive"></div>
             </a> 
             <span>
-                <div class="left active"></div><label>最新消息</label>
+                <div class="left active"></div><label>{{ trans('news.list.title') }}</label>
             </span>
         </div>
         <div class="newsList col-xs-12 col-sm-12 col-md-12">
-            <h4 class="col-xs-12">最新消息</h4>
+            <h4 class="col-xs-12">{{ trans('news.list.title') }}</h4>
             @foreach ($data as $news) 
             <a href="/index.php/news/{{ $news['id'] }}" class="col-xs-12"><label class="glyphicon glyphicon-bookmark"></label>{{ $news['title'] }} <span>{{ $news['updated_at'] }}</span></a>
             @endforeach

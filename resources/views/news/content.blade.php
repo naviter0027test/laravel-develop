@@ -17,7 +17,7 @@
             </a> 
             <a href="/index.php/news" class="">
                 <div class="gray"></div>
-                <label>新聞列表</label>
+                <label>{{ trans('news.list.title') }}</label>
                 <div class="right nonActive"></div>
             </a> 
             <span>
@@ -36,7 +36,8 @@
         <div class="newsNav col-xs-12 col-sm-3 col-md-3">
             <h4 class="col-xs-12">
                 <label class="glyphicon glyphicon-th-large"></label>
-                最新消息</h4>
+                {{ trans('news.content.rightTitle') }}
+            </h4>
             @foreach ($data as $d)
             <a href="/index.php/news/{{$d->id}}" class="col-xs-12">
                 <label class="glyphicon glyphicon-asterisk"></label>

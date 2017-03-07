@@ -15,6 +15,8 @@ class NewsControl extends Controller
      */
     public function index()
     {
+        $lang = session()->get('lang');
+        \App::setLocale($lang);
         $newses = News::orderBy('updated_at', 'desc')->paginate(15);
         //dd($newses);
         return view('news.list', $newses, ['render' => $newses->render()]);
@@ -49,6 +51,8 @@ class NewsControl extends Controller
      */
     public function show($id)
     {
+        $lang = session()->get('lang');
+        \App::setLocale($lang);
         $news = News::where('id', $id)->get();
         $data = DB::table('news')->orderBy('updated_at', 'desc')->paginate(7);
         //return $news;

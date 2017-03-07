@@ -41,7 +41,7 @@
         @endforeach
             <form action="/index.php/contactAdd" method="post">
                 {{ csrf_field() }}
-                <h3>聯絡我們</h3>
+                <h3>{{ trans('contact.contact_us') }}</h3>
                 <p class="col-xs-12">
                     <span class="col-xs-3">
                         <label class="glyphicon glyphicon-pencil"></label>
