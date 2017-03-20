@@ -179,3 +179,9 @@ Route::get('/sessionForget', function() {
     return "";
 });
 
+Route::get("/mailTest", function() {
+    Mail::send('emailTest', [], function($message) {
+        $message->from('sender@test0051.axcell28.idv.tw', "System");
+        $message->to("naviter0027test@gmail.com", "啟平")->subject("Hello");
+    });
+});
