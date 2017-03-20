@@ -10,4 +10,8 @@ return [
     'tel' => '電話',
     'address' => '地址',
     'check' => '確認',
+    'main' => '會員主頁',
+    'profile' => '個人檔案',
+    'verify' => '帳號驗證',
+    'logout' => '登出',
 ];
