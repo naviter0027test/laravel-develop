@@ -30,17 +30,11 @@ Route::get('/page/{pageId}', function ($pageId) {
     return view('page');
 });
 
-Route::get('/memberLogin', function () {
-    return view('memberLogin');
-});
-
 Route::get('/forget', function () {
     return view('memberForget');
 });
 
-Route::get('/register', function () {
-    return view('memberRegister');
-});
+Route::resource('member', 'MemberControl');
 
 Route::get('/welcome', function () {
     return view('welcome');

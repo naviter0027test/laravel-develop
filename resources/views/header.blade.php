@@ -11,27 +11,27 @@
         <ul class="nav navbar-nav topmenu">
             <li>
                 <label class="glyphicon glyphicon-heart"></label>
-                <a href="/index.php/onepage/1">{{ trans('header.about_us') }}</a>
+                <a href="/onepage/1">{{ trans('header.about_us') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-bookmark"></label>
-                <a href="/index.php/news">{{ trans('header.news') }}</a>
+                <a href="/news">{{ trans('header.news') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-user"></label>
-                <a href="/index.php/memberLogin">{{ trans('header.mem_login') }}</a>
+                <a href="/member/index">{{ trans('header.mem_login') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-plus"></label>
-                <a href="/index.php/memberRegister">{{ trans('header.mem_add') }}</a>
+                <a href="/member/create">{{ trans('header.mem_add') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-envelope"></label>
-                <a href="/index.php/contact">{{ trans('header.contact') }}</a>
+                <a href="/contact">{{ trans('header.contact') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-globe"></label>
-                <a href="/index.php/chooseLan">{{ trans('header.choose_lan') }}</a>
+                <a href="/chooseLan">{{ trans('header.choose_lan') }}</a>
             </li>
         </ul>
     </div>
