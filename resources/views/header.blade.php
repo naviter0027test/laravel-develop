@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <button type="button" class="navbar-toggle glyphicon glyphicon-option-horizontal" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
         </button>
-        <a class="navbar-brand" href="/index.php">
+        <a class="navbar-brand" href="/">
             <label class="logoAbs">abs</label><label class="logoTech">Tech</label>
         </a>
     </div>
@@ -19,7 +19,7 @@
             </li>
             <li>
                 <label class="glyphicon glyphicon-user"></label>
-                <a href="/member/index">{{ trans('header.mem_login') }}</a>
+                <a href="/member/">{{ trans('header.mem_login') }}</a>
             </li>
             <li>
                 <label class="glyphicon glyphicon-plus"></label>

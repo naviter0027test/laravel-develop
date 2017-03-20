@@ -15,7 +15,7 @@
     <body>
         @include('header')
         <div class="breadCrumbs col-xs-12">
-            <a href="/index.php" class="glyphicon glyphicon-home">
+            <a href="/" class="glyphicon glyphicon-home">
                 <div class="right nonActive"></div>
             </a> 
             <span>
@@ -39,7 +39,7 @@
             </div>
             @endif
         @endforeach
-            <form action="/index.php/contactAdd" method="post">
+            <form action="/contactAdd" method="post">
                 {{ csrf_field() }}
                 <h3>{{ trans('contact.contact_us') }}</h3>
                 <p class="col-xs-12">
@@ -85,7 +85,7 @@
             @foreach ($allPage as $num => $page)
             <p class="col-xs-12">
                 <label class="col-xs-1">{{ $num+1 }}</label>
-                <a href="/index.php/onepage/{{$page->id}}" class="col-xs-9">{{ $page->title }}</a>
+                <a href="/onepage/{{$page->id}}" class="col-xs-9">{{ $page->title }}</a>
             </p>
             @endforeach
         </div>

@@ -1,0 +1,15 @@
+.memberDiv .title {
+    padding : 10px 0px 10px 15px;
+    margin : 10px 40% 10px 15px;
+    color : #4d3300;
+    background : #ffcc80;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.memberDiv .inputTitle {
+    padding : 3px 3px 3px 10px;
+    color : white;
+    background : #804d00;
+}
