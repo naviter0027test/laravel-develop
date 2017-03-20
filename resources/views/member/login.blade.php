@@ -44,16 +44,16 @@
                         <label class="glyphicon glyphicon-user"></label>
                         {{ trans('member.account') }}
                     </span>
-                    <input type="text" name="email" class="col-xs-8" />
+                    <input type="text" name="email" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
                         <label class="glyphicon glyphicon-console"></label>
                         {{ trans('member.password') }}
                     </span>
-                    <input type="password" name="password" class="col-xs-8" />
+                    <input type="password" name="password" class="col-xs-8 inputField" />
                 </p>
-                <button class="col-xs-3">{{ trans('member.check') }}</button>
+                <button class="col-xs-3 check">{{ trans('member.check') }}</button>
             </form>
         </div>
     </body>

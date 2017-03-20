@@ -13,3 +13,34 @@
     color : white;
     background : #804d00;
 }
+
+.memberDiv .inputField {
+    padding : 3px;
+    border : 1px solid transparent;
+    box-shadow : 3px 1px 4px #d9d9d9;
+    -webkit-border-top-right-radius: 3px;
+    -webkit-border-bottom-right-radius: 3px;
+    -moz-border-radius-topright: 3px;
+    -moz-border-radius-bottomright: 3px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.memberDiv .inputField:focus {
+    box-shadow : 3px 1px 4px #b3b3b3;
+}
+
+.memberDiv .check {
+    padding : 5px 0px 5px 0px;
+    margin-left : 15px;
+
+    font-size : 16px;
+    border : 0px solid transparent;
+    color : #4d3300;
+    background : #ffb84d;
+}
+
+.memberDiv .check:hover {
+    color : #ffb84d;
+    background : #4d3300;
+}
