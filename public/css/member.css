@@ -54,6 +54,24 @@
     border : 5px dashed #ffd9b3;
 }
 
+.memberDiv .verifyDiv {
+    margin-left : 15px;
+    border : 5px dashed #ffd9b3;
+}
+
+.memberDiv .verifyDiv h4 {
+    text-align : center;
+}
+
+.memberDiv .verifyDiv span {
+    text-align : center;
+}
+
+.memberDiv .or {
+    display : inline-block;
+    text-align : center;
+}
+
 .memberSidebar p {
     margin : 10px 0px 0px 0px;
     padding : 5px 10px 5px 5px;

@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset='utf-8' />
-        <title>member profile</title>
+        <title>member verify</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
@@ -24,8 +24,33 @@
                 <div class="left active"></div><label>{{ trans('member.verify') }}</label>
             </span>
         </div>
-        <div class="memberDiv col-xs-9 col-sm-9 col-md-9">
+        <div class="memberDiv col-xs-12 col-sm-12 col-md-12">
             <h3 class="title col-xs-12">{{ trans('member.verify') }}</h3>
+            <div class="verifyDiv col-xs-5">
+                <h4>郵件啟用</h4>
+                <label class="col-xs-4">您的郵件</label>
+                <span class="col-xs-8">test@test.com.tw</span>
+                <form action="/sendVerifyMail" method="post">
+                    {{ csrf_field() }}
+                    <button class="col-xs-12">寄出驗證信</button>
+                </form>
+            </div>
+            <span class="or col-xs-1">或</span>
+            <div class="verifyDiv col-xs-5">
+                <h4>手機啟用</h4>
+                <label class="col-xs-4">您的手機</label>
+                <span class="col-xs-8">0912341234</span>
+                <form action="/getSMS" method="post">
+                    {{ csrf_field() }}
+                    <button class="col-xs-12">取得驗證碼</button>
+                </form>
+                <form action="/verifySMS" method="post">
+                    {{ csrf_field() }}
+                    <input type="hidden" name="id" />
+                    <input name="smscode" placeholder="輸入驗證碼" class="col-xs-12 inputsms"/>
+                    <button class="col-xs-12">驗證</button>
+                </form>
+            </div>
         </div>
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
