@@ -8,6 +8,7 @@
         <link href='/css/header.css' rel='stylesheet' />
         <link href='/css/breadCrumbs.css' rel='stylesheet' />
         <link href='/css/member.css' rel='stylesheet' />
+        <link href='/css/one.css' rel='stylesheet' />
     </head>
     <body>
         @include('header')
@@ -19,7 +20,7 @@
                 <div class="left active"></div><label>{{ trans('member.login') }}</label>
             </span>
         </div>
-        <div class="memberDiv col-xs-12 col-sm-12 col-md-12">
+        <div class="memberDiv col-xs-12 col-sm-9 col-md-9">
         @if (count($errors) > 0)
             <br />
             <div class="alert alert-danger"> 
@@ -55,6 +56,15 @@
                 </p>
                 <button class="col-xs-3 check">{{ trans('member.check') }}</button>
             </form>
+        </div>
+        <div class="oneNav col-xs-12 col-sm-3 col-md-3">
+            <h4 class="col-xs-12">其他介紹</h4>
+            @foreach ($allPage as $num => $page)
+            <p class="col-xs-12">
+                <label class="col-xs-1">{{ $num+1 }}</label>
+                <a href="/onepage/{{$page->id}}" class="col-xs-9">{{ $page->title }}</a>
+            </p>
+            @endforeach
         </div>
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>

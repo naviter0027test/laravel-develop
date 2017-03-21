@@ -4,6 +4,7 @@ return [
     'registerTitle' => '會員註冊',
     'account' => '帳號',
     'password' => '密碼',
+    'newPassword' => '新密碼',
     'passwordRepeat' => '再輸入一次',
     'name' => '姓名',
     'phone' => '手機',

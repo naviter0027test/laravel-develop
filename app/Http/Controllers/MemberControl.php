@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Page;
 
 class MemberControl extends Controller
 {
@@ -13,7 +14,8 @@ class MemberControl extends Controller
      */
     public function index()
     {
-        return view('member.login');
+        $allPage = Page::get();
+        return view('member.login', ['allPage' => $allPage]);
     }
 
     /**
@@ -80,5 +82,20 @@ class MemberControl extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function login() 
+    {
+        return 'login test';
+    }
+
+    public function profile() 
+    {
+        return view('member.profile');
+    }
+
+    public function verifyPage() 
+    {
+        return view('member.verify');
     }
 }

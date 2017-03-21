@@ -44,3 +44,32 @@
     color : #ffb84d;
     background : #4d3300;
 }
+
+.memberDiv .main {
+    margin-top : 15px;
+    padding : 15px;
+
+    color : #cc3300;
+    font-size : 18px;
+    border : 5px dashed #ffd9b3;
+}
+
+.memberSidebar p {
+    margin : 10px 0px 0px 0px;
+    padding : 5px 10px 5px 5px;
+
+    color : white;
+    background : #b36b00;
+    border-left : 5px solid #ff9900;
+    -webkit-transition: background 1s; /* Safari */
+    transition: background 1s;
+}
+
+.memberSidebar p:hover {
+    background : #663d00;
+}
+
+.memberSidebar p a {
+    color : white;
+    text-decoration : none;
+}

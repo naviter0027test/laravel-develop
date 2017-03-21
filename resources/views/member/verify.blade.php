@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta charset='utf-8' />
-        <title>member login</title>
+        <title>member profile</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
@@ -15,13 +15,17 @@
             <a href="/" class="glyphicon glyphicon-home">
                 <div class="right nonActive"></div>
             </a> 
+            <a href="/member/show" class="">
+                <div class="gray"></div>
+                <label>{{ trans('member.main') }}</label>
+                <div class="right nonActive"></div>
+            </a> 
             <span>
-                <div class="left active"></div><label>{{ trans('member.main') }}</label>
+                <div class="left active"></div><label>{{ trans('member.verify') }}</label>
             </span>
         </div>
-        @include ('member.memberSidebar')
         <div class="memberDiv col-xs-9 col-sm-9 col-md-9">
-            <div class="main col-xs-12">歡迎登入</div>
+            <h3 class="title col-xs-12">{{ trans('member.verify') }}</h3>
         </div>
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
