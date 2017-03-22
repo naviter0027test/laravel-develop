@@ -34,6 +34,7 @@ Route::get('/forget', function () {
     return view('memberForget');
 });
 
+Route::get('/member/verifyResult', 'MemberControl@verifyResult');
 Route::get('/member/verifyPage', 'MemberControl@verifyPage');
 Route::get('/member/profile', 'MemberControl@profile');
 Route::post('/member/login', 'MemberControl@login');

@@ -98,4 +98,9 @@ class MemberControl extends Controller
     {
         return view('member.verify');
     }
+
+    public function verifyResult()
+    {
+        return view('member.verifyResult');
+    }
 }

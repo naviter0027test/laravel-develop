@@ -72,6 +72,23 @@
     text-align : center;
 }
 
+.memberDiv .verifySuccess {
+    margin : 15px 0px 0px 15px;
+    padding : 15px;
+
+    font-size : 18px;
+    border : 5px dashed #d9ffb3;
+}
+
+.memberDiv .verifyFailure {
+    margin : 15px 0px 0px 15px;
+    padding : 15px;
+
+    color : #cc3300;
+    font-size : 18px;
+    border : 5px dashed #ff9999;
+}
+
 .memberSidebar p {
     margin : 10px 0px 0px 0px;
     padding : 5px 10px 5px 5px;

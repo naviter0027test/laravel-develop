@@ -14,5 +14,8 @@ return [
     'main' => '會員主頁',
     'profile' => '個人檔案',
     'verify' => '帳號驗證',
+    'verifyResult' => '驗證結果',
+    'verifySuccess' => '驗證成功',
+    'verifyFailure' => '驗證失敗',
     'logout' => '登出',
 ];
