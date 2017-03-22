@@ -38,6 +38,7 @@ Route::get('/member/verifyResult', 'MemberControl@verifyResult');
 Route::get('/member/verifyPage', 'MemberControl@verifyPage');
 Route::get('/member/profile', 'MemberControl@profile');
 Route::post('/member/login', 'MemberControl@login');
+Route::get('/member/verifyEmail/{id}/{md5Verify}', 'MemberControl@verifyEmail');
 Route::resource('member', 'MemberControl');
 
 Route::get('/welcome', function () {
@@ -180,6 +181,6 @@ Route::get('/sessionForget', function() {
 Route::get("/mailTest", function() {
     Mail::send('emailTest', [], function($message) {
         $message->from('sender@test0051.axcell28.idv.tw', "System");
-        $message->to("naviter0027test@gmail.com", "啟平")->subject("Hello");
+        $message->to("zlw78733@rcasd.com", "啟平")->subject("Hello");
     });
 });

@@ -36,7 +36,7 @@
             </div>
             @endif
         @endforeach
-            <form action="/member/store" method="post">
+            <form action="/member" method="post">
                 {{ csrf_field() }}
                 <h3 class="title">{{ trans('member.registerTitle') }}</h3>
                 <p class="col-xs-12">
@@ -79,14 +79,14 @@
                         <label class="glyphicon glyphicon-earphone"></label>
                         {{ trans('member.tel') }}
                     </span>
-                    <input type="text" name="phone" class="col-xs-8 inputField" />
+                    <input type="text" name="tel" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
                         <label class="glyphicon glyphicon-road"></label>
                         {{ trans('member.address') }}
                     </span>
-                    <input type="text" name="phone" class="col-xs-8 inputField" />
+                    <input type="text" name="address" class="col-xs-8 inputField" />
                 </p>
                 <button class="col-xs-3 check">{{ trans('member.check') }}</button>
             </form>
