@@ -22,3 +22,30 @@
 .newsList span {
     float : right;
 }
+
+.pager .pagination li a {
+    color : #4d3300;
+    background : #ffdd99;
+    border : 1px solid #ffdd99;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    transition : background 1s;
+}
+
+.pager .pagination li a:hover {
+    color : #ffdd99;
+    background : #4d3300;
+}
+
+.pager .pagination .active span {
+    color : #ffdd99;
+    background : #4d3300;
+    border : 0px solid #4d3300;
+}
+
+.pager .pagination span {
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
