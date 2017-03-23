@@ -17,5 +17,7 @@ return [
     'verifyResult' => '驗證結果',
     'verifySuccess' => '驗證成功',
     'verifyFailure' => '驗證失敗',
+    'modifySuccess' => '修改成功',
+    'addMessage' => '加入成功，請至信箱啟用您的帳號',
     'logout' => '登出',
 ];

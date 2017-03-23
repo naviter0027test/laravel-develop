@@ -17,6 +17,12 @@
                 <label class="glyphicon glyphicon-bookmark"></label>
                 <a href="/news">{{ trans('header.news') }}</a>
             </li>
+            @if (session()->has('mid'))
+            <li>
+                <label class="glyphicon glyphicon-cog"></label>
+                <a href="/member/0">{{ trans('member.main') }}</a>
+            </li>
+            @else
             <li>
                 <label class="glyphicon glyphicon-user"></label>
                 <a href="/member/">{{ trans('header.mem_login') }}</a>
@@ -25,6 +31,7 @@
                 <label class="glyphicon glyphicon-plus"></label>
                 <a href="/member/create">{{ trans('header.mem_add') }}</a>
             </li>
+            @endif
             <li>
                 <label class="glyphicon glyphicon-envelope"></label>
                 <a href="/contact">{{ trans('header.contact') }}</a>

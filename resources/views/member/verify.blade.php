@@ -29,9 +29,10 @@
             <div class="verifyDiv col-xs-5">
                 <h4>郵件啟用</h4>
                 <label class="col-xs-4">您的郵件</label>
-                <span class="col-xs-8">test@test.com.tw</span>
+                <span class="col-xs-8">{{ $mem['email'] }}</span>
                 <form action="/sendVerifyMail" method="post">
                     {{ csrf_field() }}
+                    <input type="hidden" name="email" value="{{ $mem['email'] }}" />
                     <button class="col-xs-12">寄出驗證信</button>
                 </form>
             </div>
@@ -39,9 +40,10 @@
             <div class="verifyDiv col-xs-5">
                 <h4>手機啟用</h4>
                 <label class="col-xs-4">您的手機</label>
-                <span class="col-xs-8">0912341234</span>
+                <span class="col-xs-8">{{ $mem['phone'] }}</span>
                 <form action="/getSMS" method="post">
                     {{ csrf_field() }}
+                    <input type="hidden" name="phone" value="{{ $mem['phone'] }}" />
                     <button class="col-xs-12">取得驗證碼</button>
                 </form>
                 <form action="/verifySMS" method="post">
