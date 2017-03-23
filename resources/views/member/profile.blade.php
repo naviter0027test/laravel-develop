@@ -45,12 +45,14 @@
         @endforeach
             <form action="/member/update" method="post">
                 {{ csrf_field() }}
+                <input type="hidden" name="_method" value="PUT" />
+                <input type="hidden" name="id" value="{{ $mem['id'] }}" />
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
                         <label class="glyphicon glyphicon-envelope"></label>
                         {{ trans('member.account') }}
                     </span>
-                    <input type="text" name="email" class="col-xs-8 inputField" />
+                    <input type="text" name="email" value="{{ $mem['email'] }}" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
@@ -71,28 +73,28 @@
                         <label class="glyphicon glyphicon-pencil"></label>
                         {{ trans('member.name') }}
                     </span>
-                    <input type="text" name="name" class="col-xs-8 inputField" />
+                    <input type="text" name="name" value="{{ $mem['name'] }}" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
                         <label class="glyphicon glyphicon-phone"></label>
                         {{ trans('member.phone') }}
                     </span>
-                    <input type="text" name="phone" class="col-xs-8 inputField" />
+                    <input type="text" name="phone" value="{{ $mem['phone'] }}" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
                         <label class="glyphicon glyphicon-earphone"></label>
                         {{ trans('member.tel') }}
                     </span>
-                    <input type="text" name="phone" class="col-xs-8 inputField" />
+                    <input type="text" name="phone" value="{{ $mem['tel'] }}" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
                         <label class="glyphicon glyphicon-road"></label>
                         {{ trans('member.address') }}
                     </span>
-                    <input type="text" name="phone" class="col-xs-8 inputField" />
+                    <input type="text" name="address" value="{{ $mem['address'] }}" class="col-xs-8 inputField" />
                 </p>
                 <button class="col-xs-3 check">{{ trans('member.check') }}</button>
             </form>

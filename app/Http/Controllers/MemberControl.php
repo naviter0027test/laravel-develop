@@ -46,8 +46,8 @@ class MemberControl extends Controller
             'address' => 'required',
         ]);
         $mem = new Member;
-        $mem->email = $request->email;
-        $mem->pass = $request->password;
+        $mem->email = trim($request->email);
+        $mem->pass = trim($request->password);
         $mem->name = $request->name;
         $mem->phone = $request->phone;
         $mem->tel = $request->tel;
@@ -80,9 +80,10 @@ class MemberControl extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id = 0)
     {
-        //
+        $mem = Member::where('id', session()->get('mid'))->first();
+        return view('member.profile', ['mem' => $mem->toArray()]);
     }
 
     /**
@@ -94,7 +95,14 @@ class MemberControl extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $mem = Member::where('id', session()->get('mid'))->first();
+        $mem->pass = $request->password;
+        $mem->name = $request->name;
+        $mem->phone = $request->phone;
+        $mem->address = $request->address;
+        $mem->save();
+        session()->flash('alert-success', trans('member.modifySuccess'));
+        return redirect('/member/0/edit');
     }
 
     /**
@@ -108,19 +116,32 @@ class MemberControl extends Controller
         //
     }
 
-    public function login() 
-    {
-        return 'login test';
+    public function logout() {
+        session()->forget('mid');
+        session()->forget('email');
+        return redirect('/');
     }
 
-    public function profile() 
+    public function login(Request $request) 
     {
-        return view('member.profile');
+        $this->validate($request, [
+            'email' => 'required',
+            'password' => 'required',
+        ]);
+        $mem = Member::where('email', trim($request->email))
+            ->where('pass', trim($request->password))
+            ->first();
+        session()->put('mid', $mem->id);
+        session()->put('email', $mem->email);
+        session()->put('active', $mem->active);
+        print_r($request->all());
+        return redirect('/member/0');
     }
 
     public function verifyPage() 
     {
-        return view('member.verify');
+        $mem = Member::where('id', session()->get('mid'))->first();
+        return view('member.verify', ['mem' => $mem->toArray()]);
     }
 
     public function verifyResult()

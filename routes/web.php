@@ -37,8 +37,8 @@ Route::get('/forget', function () {
 Route::get('/member/verifyResult', 'MemberControl@verifyResult');
 Route::get('/member/verifyPage', 'MemberControl@verifyPage');
 Route::get('/member/addSuccess', 'MemberControl@addSuccess');
-Route::get('/member/profile', 'MemberControl@profile');
 Route::post('/member/login', 'MemberControl@login');
+Route::get('/member/logout', 'MemberControl@logout');
 Route::get('/member/verifyEmail/{id}/{md5Verify}', 'MemberControl@verifyEmail');
 Route::resource('member', 'MemberControl');
 
