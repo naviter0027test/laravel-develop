@@ -17,21 +17,14 @@
                 <div class="right nonActive"></div>
             </a> 
             <span>
-                <div class="left active"></div><label>{{ trans('member.verifyResult') }}</label>
+                <div class="left active"></div><label>{{ trans('member.registerTitle') }}</label>
             </span>
         </div>
         <div class="memberDiv col-xs-12 col-sm-9 col-md-9">
-            <h3 class="title">{{ trans('member.verifyResult') }}</h3>
-            @if (Session::has('alert-success'))
-            <div class="verifySuccess">
-                {{ Session::get('alert-success') }}
+            <h3 class="title">{{ trans('member.registerTitle') }}</h3>
+            <div class="addMessage">
+                {{ trans('member.addMessage') }}
             </div>
-            @endif
-            @if (Session::has('alert-danger'))
-            <div class="verifyFailure">
-                {{ Session::get('alert-danger') }}
-            </div>
-            @endif
         </div>
     </body>
     <script src="/lib/jquery-2.1.4.min.js"></script>
@@ -39,3 +32,4 @@
     <script src="/lib/underscore.js"></script>
     <script src="/lib/backbone.js"></script>
 </html>
+

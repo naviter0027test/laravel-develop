@@ -45,7 +45,6 @@ class MemberControl extends Controller
             'tel' => 'required',
             'address' => 'required',
         ]);
-        print_r($request->all());
         $mem = new Member;
         $mem->email = $request->email;
         $mem->pass = $request->password;
@@ -58,9 +57,10 @@ class MemberControl extends Controller
         $mem->updated_at = date("Y-m-d H:i:s");
         $mem->save();
         \Mail::send('member.verifyEmail', ['member'=>$mem->toArray(), 'root' => $request->root()], function($message) use ($mem) {
-            $message->from('sender@test0051.axcell28.idv.tw', "System");
+            $message->from('sender@test0043.axcell28.idv.tw', "System");
             $message->to($mem->email, $mem->name)->subject("[laravel-範例] 啟用信件 (系統發信，請勿回覆)");
         });
+        return redirect("/member/addSuccess");
     }
 
     /**
@@ -135,8 +135,14 @@ class MemberControl extends Controller
         if(md5($mem->email. $mem->id) == $md5Verify) {
             $mem->active = "Y";
             $mem->save();
-            return "verify success";
+            session()->flash('alert-success', trans('member.verifySuccess'));
         }
-        return 'verify error';
+        else 
+            session()->flash('alert-danger', trans('member.verifyFailure'));
+        return redirect("/member/verifyResult");
+    }
+
+    public function addSuccess() {
+        return view('member.addSuccess');
     }
 }
