@@ -20,4 +20,5 @@ return [
     'modifySuccess' => '修改成功',
     'addMessage' => '加入成功，請至信箱啟用您的帳號',
     'logout' => '登出',
+    'loginError' => '登入失敗',
 ];

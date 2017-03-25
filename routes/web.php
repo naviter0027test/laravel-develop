@@ -34,12 +34,14 @@ Route::get('/forget', function () {
     return view('memberForget');
 });
 
-Route::get('/member/verifyResult', 'MemberControl@verifyResult');
-Route::get('/member/verifyPage', 'MemberControl@verifyPage');
-Route::get('/member/addSuccess', 'MemberControl@addSuccess');
-Route::post('/member/login', 'MemberControl@login');
-Route::get('/member/logout', 'MemberControl@logout');
-Route::get('/member/verifyEmail/{id}/{md5Verify}', 'MemberControl@verifyEmail');
+Route::group(['prefix' => 'member'], function() {
+    Route::get('verifyResult', 'MemberControl@verifyResult');
+    Route::get('verifyPage', 'MemberControl@verifyPage');
+    Route::get('addSuccess', 'MemberControl@addSuccess');
+    Route::post('login', 'MemberControl@login');
+    Route::get('logout', 'MemberControl@logout');
+    Route::get('verifyEmail/{id}/{md5Verify}', 'MemberControl@verifyEmail');
+});
 Route::resource('member', 'MemberControl');
 
 Route::get('/welcome', function () {
@@ -147,6 +149,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('loginPage', "AdminControl@loginPage");
 
     Route::group(['middleware' => ['adminlogin']], function() {
+        Route::get('/', function() {
+            return view("adm.dashboard");
+        });
         Route::get('dashboard', function() {
             return view("adm.dashboard");
         });

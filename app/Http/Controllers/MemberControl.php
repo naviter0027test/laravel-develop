@@ -15,6 +15,8 @@ class MemberControl extends Controller
      */
     public function index()
     {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         $allPage = Page::get();
         return view('member.login', ['allPage' => $allPage]);
     }
@@ -26,6 +28,8 @@ class MemberControl extends Controller
      */
     public function create()
     {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         return view('member.register');
     }
 
@@ -71,6 +75,8 @@ class MemberControl extends Controller
      */
     public function show($id)
     {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         return view('member.main');
     }
 
@@ -82,6 +88,8 @@ class MemberControl extends Controller
      */
     public function edit($id = 0)
     {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         $mem = Member::where('id', session()->get('mid'))->first();
         return view('member.profile', ['mem' => $mem->toArray()]);
     }
@@ -95,6 +103,8 @@ class MemberControl extends Controller
      */
     public function update(Request $request, $id)
     {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         $mem = Member::where('id', session()->get('mid'))->first();
         $mem->pass = $request->password;
         $mem->name = $request->name;
@@ -131,9 +141,14 @@ class MemberControl extends Controller
         $mem = Member::where('email', trim($request->email))
             ->where('pass', trim($request->password))
             ->first();
+        if(!isset($mem)) {
+            session()->flash('alert-danger', trans('member.loginError'));
+            return redirect('/member');
+        }
         session()->put('mid', $mem->id);
         session()->put('email', $mem->email);
         session()->put('active', $mem->active);
+        session()->put('phone', $mem->phone);
         print_r($request->all());
         return redirect('/member/0');
     }
@@ -146,11 +161,15 @@ class MemberControl extends Controller
 
     public function verifyResult()
     {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         return view('member.verifyResult');
     }
 
     public function verifyEmail($id, $md5Verify)
     {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         $mem = Member::where('id', $id)->first();
         print_r($mem->toArray());
         if(md5($mem->email. $mem->id) == $md5Verify) {
@@ -164,6 +183,8 @@ class MemberControl extends Controller
     }
 
     public function addSuccess() {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
         return view('member.addSuccess');
     }
 }
