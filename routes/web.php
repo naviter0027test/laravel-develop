@@ -159,6 +159,7 @@ Route::group(['prefix' => 'admin'], function() {
         Route::resource('news', 'AdmNewsControl');
         Route::resource('page', 'AdmPageControl');
         Route::resource('member', 'AdmMemberControl');
+        Route::resource('contact', 'AdmContactControl');
     });
 });
 
