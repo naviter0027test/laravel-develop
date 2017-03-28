@@ -1,0 +1,25 @@
+<?php
+return [
+    'login' => 'Member Login',
+    'registerTitle' => 'Member Register',
+    'account' => 'Account',
+    'password' => 'Password',
+    'newPassword' => 'New Password',
+    'passwordRepeat' => 'Repeat Password',
+    'name' => 'Name',
+    'phone' => 'Phone',
+    'tel' => 'Telephone',
+    'address' => 'Address',
+    'check' => 'Check',
+    'main' => 'Member Main',
+    'profile' => 'Profile',
+    'verify' => 'Account Verify',
+    'verifyResult' => 'Verify Result',
+    'verifySuccess' => 'Verify Success',
+    'verifyFailure' => 'Verify Failure',
+    'modifySuccess' => 'Modify Success',
+    'addMessage' => 'Register success, please into your email to active your account',
+    'logout' => 'logout',
+    'loginError' => 'login failed',
+];
+
