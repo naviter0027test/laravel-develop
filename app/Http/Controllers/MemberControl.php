@@ -89,7 +89,9 @@ class MemberControl extends Controller
     {
         $lang = session()->get('lang');
         app()->setLocale($lang);
-        return view('member.main');
+        if(session()->has('mid'))
+            return view('member.main');
+        return redirect('/');
     }
 
     /**
@@ -102,6 +104,8 @@ class MemberControl extends Controller
     {
         $lang = session()->get('lang');
         app()->setLocale($lang);
+        if(!session()->has('mid'))
+            return redirect('/');
         $mem = Member::where('id', session()->get('mid'))->first();
         return view('member.profile', ['mem' => $mem->toArray()]);
     }
@@ -167,6 +171,8 @@ class MemberControl extends Controller
 
     public function verifyPage() 
     {
+        if(!session()->has('mid'))
+            return redirect('/');
         $mem = Member::where('id', session()->get('mid'))->first();
         return view('member.verify', ['mem' => $mem->toArray()]);
     }
