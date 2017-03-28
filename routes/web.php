@@ -40,6 +40,7 @@ Route::group(['prefix' => 'member'], function() {
     Route::get('addSuccess', 'MemberControl@addSuccess');
     Route::post('login', 'MemberControl@login');
     Route::get('logout', 'MemberControl@logout');
+    Route::post('sendVerifyEmail', 'MemberControl@sendVerifyEmail');
     Route::get('verifyEmail/{id}/{md5Verify}', 'MemberControl@verifyEmail');
     Route::post('getSMS/{id}', 'MemberControl@sendShortMessage');
     Route::post('verifySMS', 'MemberControl@verifyByMessage');

@@ -30,8 +30,9 @@
                 <h4>郵件啟用</h4>
                 <label class="col-xs-4">您的郵件</label>
                 <span class="col-xs-8">{{ $mem['email'] }}</span>
-                <form action="/sendVerifyMail" method="post">
+                <form id="sendMail" action="/member/sendVerifyEmail" method="post">
                     {{ csrf_field() }}
+                    <input type="hidden" name="id" value="{{ $mem['id'] }}" />
                     <input type="hidden" name="email" value="{{ $mem['email'] }}" />
                     <button class="col-xs-12">寄出驗證信</button>
                 </form>
@@ -58,4 +59,5 @@
     <script src='/lib/bootstrap/dist/js/bootstrap.min.js'></script>
     <script src="/lib/underscore.js"></script>
     <script src="/lib/backbone.js"></script>
+    <script src="/js/member/verify.js"></script>
 </html>

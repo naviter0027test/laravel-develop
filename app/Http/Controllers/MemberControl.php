@@ -67,6 +67,18 @@ class MemberControl extends Controller
         return redirect("/member/addSuccess");
     }
 
+    public function sendVerifyEmail(Request $request) {
+        $mem = Member::where('id', $request->id)->first();
+        \Mail::send('member.verifyEmail', ['member'=>$mem->toArray(), 'root' => $request->root()], function($message) use ($mem) {
+            $message->from('sender@test0043.axcell28.idv.tw', "System");
+            $message->to($mem->email, $mem->name)->subject("[laravel-範例] 啟用信件 (系統發信，請勿回覆)");
+        });
+        $reData = Array();
+        $reData['status'] = 200;
+        $reData['msg'] = "mail send success";
+        return json_encode($reData);
+    }
+
     /**
      * Display the specified resource.
      *
@@ -161,6 +173,7 @@ class MemberControl extends Controller
 
     public function verifyResult()
     {
+        session()->put('active', "Y");
         $lang = session()->get('lang');
         app()->setLocale($lang);
         return view('member.verifyResult');
