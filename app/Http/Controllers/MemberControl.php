@@ -227,8 +227,16 @@ class MemberControl extends Controller
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
         $result = curl_exec($curl);
 
-        print_r($result);
+        $resArr = explode("\r\n", $result);
+        $reData = Array();
+        foreach($resArr as $item) {
+            if(trim($item) == "")
+                continue;
+            $keyVal = explode("=", $item);
+            $reData[$keyVal[0]] = $keyVal[1];
+        }
         curl_close($curl);
+        return json_encode($reData);
     }
 
     public function verifyByMessage(Request $request) {

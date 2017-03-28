@@ -42,7 +42,7 @@
                 <h4>手機啟用</h4>
                 <label class="col-xs-4">您的手機</label>
                 <span class="col-xs-8">{{ $mem['phone'] }}</span>
-                <form action="/member/getSMS/{{$mem['id']}}" method="post">
+                <form id="getSMS" action="/member/getSMS/{{$mem['id']}}" method="post">
                     {{ csrf_field() }}
                     <button class="col-xs-12">取得驗證碼</button>
                 </form>

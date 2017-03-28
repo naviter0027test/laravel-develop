@@ -11,4 +11,17 @@ $(document).ready(function() {
         });
         return false;
     });
+    $("#getSMS").submit(function() {
+        $.post($(this).attr("action"), $(this).serialize(), function(data) {
+            data = JSON.parse(data);
+            if(data['statusstr'] == "OK") {
+                alert("寄出成功，請查看手機並輸入驗證碼啟用您的帳號");
+            }
+            else {
+                alert("出現錯誤");
+                console.log(data);
+            }
+        });
+        return false;
+    });
 });
