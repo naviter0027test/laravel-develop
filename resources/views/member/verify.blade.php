@@ -41,14 +41,13 @@
                 <h4>手機啟用</h4>
                 <label class="col-xs-4">您的手機</label>
                 <span class="col-xs-8">{{ $mem['phone'] }}</span>
-                <form action="/getSMS" method="post">
+                <form action="/member/getSMS/{{$mem['id']}}" method="post">
                     {{ csrf_field() }}
-                    <input type="hidden" name="phone" value="{{ $mem['phone'] }}" />
                     <button class="col-xs-12">取得驗證碼</button>
                 </form>
-                <form action="/verifySMS" method="post">
+                <form action="/member/verifySMS" method="post">
                     {{ csrf_field() }}
-                    <input type="hidden" name="id" />
+                    <input type="hidden" name="id" value="{{$mem['id']}}" />
                     <input name="smscode" placeholder="輸入驗證碼" class="col-xs-12 inputsms"/>
                     <button class="col-xs-12">驗證</button>
                 </form>

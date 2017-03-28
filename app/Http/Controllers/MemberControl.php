@@ -187,4 +187,44 @@ class MemberControl extends Controller
         app()->setLocale($lang);
         return view('member.addSuccess');
     }
+
+    public function sendShortMessage($id) {
+        $mem = Member::where('id', $id)->first();
+        $verifyNum = rand(1000, 9999);
+        session()->put('register-verifyNum', $verifyNum);
+        //print_r($mem->toArray());
+
+        $curl = curl_init();
+        $data = Array();
+        $data['username'] = 'naviter0027test@gmail.com';
+        $data['password'] = '5b1a159d';
+        $data['dstaddr'] = $mem->phone;
+        $data['smbody'] = "歡迎加入absTech，您的註冊驗證碼為$verifyNum";
+        $toUrl = "http://www.smsgo.com.tw/sms_gw/sendsms.aspx";
+        $getString = http_build_query($data);
+
+        curl_setopt($curl, CURLOPT_URL, "$toUrl?$getString");
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1); 
+        $result = curl_exec($curl);
+
+        print_r($result);
+        curl_close($curl);
+    }
+
+    public function verifyByMessage(Request $request) {
+        $lang = session()->get('lang');
+        app()->setLocale($lang);
+        $verifyNum = session()->get('register-verifyNum');
+        session()->forget('register-verifyNum');
+        if($verifyNum == $request->verifyNum) {
+            $mem = Member::where('id', $request->id)->first();
+            $mem->active = "Y";
+            $mem->save();
+            session()->flash('alert-success', trans('member.verifySuccess'));
+        }
+        else 
+            session()->flash('alert-danger', trans('member.verifyFailure'));
+        return redirect("/member/verifyResult");
+    }
 }

@@ -88,6 +88,7 @@ class AdmMemberControl extends Controller
         //
         $mem = Member::where('id', $id)->first();
         $mem->email = $request->email;
+        $mem->pass = $request->pass;
         $mem->name = $request->name;
         $mem->phone = $request->phone;
         $mem->tel = $request->tel;

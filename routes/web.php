@@ -41,6 +41,8 @@ Route::group(['prefix' => 'member'], function() {
     Route::post('login', 'MemberControl@login');
     Route::get('logout', 'MemberControl@logout');
     Route::get('verifyEmail/{id}/{md5Verify}', 'MemberControl@verifyEmail');
+    Route::post('getSMS/{id}', 'MemberControl@sendShortMessage');
+    Route::post('verifySMS', 'MemberControl@verifyByMessage');
 });
 Route::resource('member', 'MemberControl');
 
@@ -190,4 +192,8 @@ Route::get("/mailTest", function() {
         $message->from('sender@test0051.axcell28.idv.tw', "System");
         $message->to("zlw78733@rcasd.com", "啟平")->subject("Hello");
     });
+});
+
+Route::get("/info", function() {
+    phpinfo();
 });
