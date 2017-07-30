@@ -14,12 +14,16 @@ return [
     'main' => 'Member Main',
     'profile' => 'Profile',
     'verify' => 'Account Verify',
+    'verifyMethod' => 'Verify Method',
     'verifyResult' => 'Verify Result',
     'verifySuccess' => 'Verify Success',
     'verifyFailure' => 'Verify Failure',
+    'smsVerify' => 'sms verify',
+    'emailVerify' => 'email verify',
     'modifySuccess' => 'Modify Success',
     'addMessage' => 'Register success, please into your email to active your account',
     'logout' => 'logout',
     'loginError' => 'login failed',
+    'minAlert' => 'must input 8 character',
 ];
 

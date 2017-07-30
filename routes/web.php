@@ -44,11 +44,17 @@ Route::group(['prefix' => 'member'], function() {
     Route::get('verifyEmail/{id}/{md5Verify}', 'MemberControl@verifyEmail');
     Route::post('getSMS/{id}', 'MemberControl@sendShortMessage');
     Route::post('verifySMS', 'MemberControl@verifyByMessage');
+    Route::get('verifySmsPage/{id}', 'MemberControl@verifySmsPage');
 });
 Route::resource('member', 'MemberControl');
 
 Route::get('/welcome', function () {
     return view('welcome');
+});
+
+Route::get('/soLoad', function() {
+    dl("test.so");
+    return test_add(5, 5);
 });
 
 Route::get('/foo', function() {
@@ -197,4 +203,10 @@ Route::get("/mailTest", function() {
 
 Route::get("/info", function() {
     phpinfo();
+});
+
+//mypay test
+Route::any("/productChange", function(Request $request) {
+    \Log::info(\Input::all());
+    return "8888";
 });

@@ -60,11 +60,16 @@ class MemberControl extends Controller
         $mem->created_at = date("Y-m-d H:i:s");
         $mem->updated_at = date("Y-m-d H:i:s");
         $mem->save();
-        \Mail::send('member.verifyEmail', ['member'=>$mem->toArray(), 'root' => $request->root()], function($message) use ($mem) {
-            $message->from('sender@test0043.axcell28.idv.tw', "System");
-            $message->to($mem->email, $mem->name)->subject("[laravel-範例] 啟用信件 (系統發信，請勿回覆)");
-        });
-        return redirect("/member/addSuccess");
+        if($request->verifyMethod == "email") {
+            \Mail::send('member.verifyEmail', ['member'=>$mem->toArray(), 'root' => $request->root()], function($message) use ($mem) {
+                $message->from('sender@test0043.axcell28.idv.tw', "System");
+                $message->to($mem->email, $mem->name)->subject("[laravel-範例] 啟用信件 (系統發信，請勿回覆)");
+            });
+            return redirect("/member/addSuccess");
+        }
+        else {
+            return redirect("/member/verifySmsPage/". $mem->id);
+        }
     }
 
     public function sendVerifyEmail(Request $request) {
@@ -248,10 +253,19 @@ class MemberControl extends Controller
             $mem = Member::where('id', $request->id)->first();
             $mem->active = "Y";
             $mem->save();
+            session()->put('mid', $mem->id);
+            session()->put('email', $mem->email);
+            session()->put('active', $mem->active);
+            session()->put('phone', $mem->phone);
             session()->flash('alert-success', trans('member.verifySuccess'));
         }
         else 
             session()->flash('alert-danger', trans('member.verifyFailure'));
         return redirect("/member/verifyResult");
+    }
+
+    public function verifySmsPage($id) {
+        $mem = Member::where('id', $id)->first();
+        return view("member.verifySms", ['mem' => $mem]);
     }
 }

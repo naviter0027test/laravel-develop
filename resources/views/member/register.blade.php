@@ -44,14 +44,14 @@
                         <label class="glyphicon glyphicon-envelope"></label>
                         {{ trans('member.account') }}
                     </span>
-                    <input type="text" name="email" class="col-xs-8 inputField" />
+                    <input type="text" name="email" placeholder="ex:test@abc.com.tw" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
                         <label class="glyphicon glyphicon-console"></label>
                         {{ trans('member.password') }}
                     </span>
-                    <input type="password" name="password" class="col-xs-8 inputField" />
+                    <input type="password" name="password" placeholder="{{ trans('member.minAlert') }}" class="col-xs-8 inputField" />
                 </p>
                 <p class="col-xs-12">
                     <span class="col-xs-3 inputTitle">
@@ -87,6 +87,16 @@
                         {{ trans('member.address') }}
                     </span>
                     <input type="text" name="address" class="col-xs-8 inputField" />
+                </p>
+                <p class="col-xs-12">
+                    <span class="col-xs-3 inputTitle">
+                        <label class="glyphicon glyphicon-flash"></label>
+                        {{ trans('member.verifyMethod') }}
+                    </span>
+                    <input type="radio" name="verifyMethod" value="sms" class="" />
+                        {{ trans('member.smsVerify') }}
+                    <input type="radio" name="verifyMethod" value="email" class="" />
+                        {{ trans('member.emailVerify') }}
                 </p>
                 <button class="col-xs-3 check">{{ trans('member.check') }}</button>
             </form>

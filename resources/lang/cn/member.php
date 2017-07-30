@@ -14,12 +14,16 @@ return [
     'main' => '用户主页',
     'profile' => '个人档案',
     'verify' => '用户激活',
+    'verifyMethod' => '激活方式',
     'verifyResult' => '激活结果',
     'verifySuccess' => '激活成功',
     'verifyFailure' => '激活失败',
+    'smsVerify' => '短信激活',
+    'emailVerify' => '邮箱激活',
     'modifySuccess' => '修改成功',
     'addMessage' => '加入成功，请至信箱激活您的用户',
     'logout' => '登出',
     'loginError' => '登入失败',
+    'minAlert' => '最少8个字符',
 ];
 
