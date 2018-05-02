@@ -216,7 +216,7 @@ class MemberControl extends Controller
         $mem = Member::where('id', $id)->first();
         $verifyNum = rand(1000, 9999);
         session()->put('register-verifyNum', $verifyNum);
-        //print_r($mem->toArray());
+        \Log::info($mem->toArray());
 
         $curl = curl_init();
         $data = Array();
