@@ -210,3 +210,5 @@ Route::any("/productChange", function(Request $request) {
     \Log::info(\Input::all());
     return "8888";
 });
+
+Route::get("/testRedis", 'PostOne@testRedis');

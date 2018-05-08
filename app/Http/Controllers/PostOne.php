@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+//use Redis;
+use Illuminate\Support\Facades\Redis;
 
 class PostOne extends Controller
 {
@@ -121,5 +123,9 @@ class PostOne extends Controller
 
     public function dbuse5() 
     {
+    }
+
+    public function testRedis() {
+        return Redis::ping();
     }
 }
