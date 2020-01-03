@@ -5,6 +5,7 @@ return [
     'mem_login' => '會員登入',
     'mem_add' => '會員加入',
     'contact' => '聯絡我們',
+    'adv' => '廣告方案',
     'choose_lan' => '選擇語系',
 ];
 

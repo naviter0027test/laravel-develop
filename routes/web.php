@@ -212,3 +212,7 @@ Route::any("/productChange", function(Request $request) {
 });
 
 Route::get("/testRedis", 'PostOne@testRedis');
+
+Route::get("vir-product", function(Request $request) {
+    return view('advertising');
+});

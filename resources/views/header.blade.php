@@ -36,6 +36,10 @@
                 <label class="glyphicon glyphicon-envelope"></label>
                 <a href="/contact">{{ trans('header.contact') }}</a>
             </li>
+            <li>
+                <label class="glyphicon glyphicon-envelope"></label>
+                <a href="/vir-product">{{ trans('header.adv') }}</a>
+            </li>
 <!--
             <li>
                 <label class="glyphicon glyphicon-globe"></label>
