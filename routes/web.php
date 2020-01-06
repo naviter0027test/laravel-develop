@@ -216,3 +216,6 @@ Route::get("/testRedis", 'PostOne@testRedis');
 Route::get("vir-product", function(Request $request) {
     return view('advertising');
 });
+
+Route::post("/linepay/start", 'LinePayController@start');
+Route::post("/linepay/confirm", 'LinePayController@confirm');
