@@ -4,9 +4,17 @@ $(document).ready(function() {
         var productName = $($(advImg).find('.productName')).text();
         var buyMoney = $($(advImg).find('.buyInfo label')).text();
         var postData = {
-            productName : productName,
-            amount : buyMoney
+            products : [{
+                name : productName,
+                price : buyMoney
+            }]
         };
-        console.log(postData);
+        $.post('/linepay/start', postData, function(data) {
+            console.log(data);
+            if(data['status'] == true && data['res']['returnCode'] == '0000') {
+                if(confirm('是否前往付款?'))
+                    location.href = data['res']['info']['paymentUrl']['web'];
+            }
+        });
     });
 });
