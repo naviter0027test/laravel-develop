@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
+use App\Jobs\RedisFirst;
 
 class TestRedis extends Command
 {
@@ -18,5 +19,7 @@ class TestRedis extends Command
     public function handle()
     {
         echo "hi\n";
+        \Log::info('hi');
+        \Queue::pushOn("test", new RedisFirst());
     }
 }
