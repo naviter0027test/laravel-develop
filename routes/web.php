@@ -219,3 +219,14 @@ Route::get("vir-product", function(Request $request) {
 
 Route::post("/linepay/start", 'LinePayController@start');
 Route::post("/linepay/confirm", 'LinePayController@confirm');
+
+Route::get("/indogo/remit/create", "IndogoController@remitCreate");
+Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
+
+Route::get("/indogo/remit/update/idcard", "IndogoController@remitUpdateIdCard");
+Route::get("/indogo/remit/update/idcard-test", "IndogoController@remitUpdateIdCardTest");
+Route::get("/indogo/remit/check/token", "IndogoController@checkToken");
+Route::get("/indogo/remit/update/arc", "IndogoController@remitUpdateArc");
+Route::get("/indogo/remit/update/arc-test", "IndogoController@remitUpdateArcTest");
+Route::get("/indogo/remit/register", "IndogoController@remitRegister");
+Route::get("/indogo/remit/register-test", "IndogoController@remitRegisterTest");
