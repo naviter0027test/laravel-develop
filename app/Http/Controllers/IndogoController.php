@@ -52,7 +52,7 @@ class IndogoController extends Controller
 
     public function remitRegister(Request $request) {
         $params = $request->all();
-        $url = 'http://indogo.axcell28.idv.tw/app/remit/register.php';
+        $url = 'http://dev.indogo.link/app/remit/register.php';
         return view('indogo.remit.register', ['url' => $url]);
     }
 
@@ -61,5 +61,24 @@ class IndogoController extends Controller
         $url = 'http://prod.indogo.link/app/remit/register.php';
         return view('indogo.remit.register', ['url' => $url]);
     }
+
+    public function remitFamilyTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/mart-test/family.php';
+        return view('indogo.remit.family', ['url' => $url]);
+    }
+
+    public function remitLogin(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/login.php';
+        return view('indogo.remit.login', ['url' => $url]);
+    }
+
+    public function remitLoginTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/login.php';
+        return view('indogo.remit.login', ['url' => $url]);
+    }
+
 }
 

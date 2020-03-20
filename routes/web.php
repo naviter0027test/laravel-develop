@@ -230,3 +230,6 @@ Route::get("/indogo/remit/update/arc", "IndogoController@remitUpdateArc");
 Route::get("/indogo/remit/update/arc-test", "IndogoController@remitUpdateArcTest");
 Route::get("/indogo/remit/register", "IndogoController@remitRegister");
 Route::get("/indogo/remit/register-test", "IndogoController@remitRegisterTest");
+Route::get("/indogo/remit/family-test", "IndogoController@remitFamilyTest");
+Route::get("/indogo/remit/login", "IndogoController@remitLogin");
+Route::get("/indogo/remit/login-test", "IndogoController@remitLoginTest");
