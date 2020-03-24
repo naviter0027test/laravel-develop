@@ -220,6 +220,8 @@ Route::get("vir-product", function(Request $request) {
 Route::post("/linepay/start", 'LinePayController@start');
 Route::post("/linepay/confirm", 'LinePayController@confirm');
 
+Route::get("/kaileshop/neweb-pay/notify", "KaileshopController@newebPayNotify");
+
 Route::get("/indogo/remit/create", "IndogoController@remitCreate");
 Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
 
