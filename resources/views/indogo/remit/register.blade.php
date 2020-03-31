@@ -47,6 +47,13 @@
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
+                    share_member_id
+                </span>
+                <input type="text" name="share_member_id" class="col-xs-8" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
                     arc
                 </span>
                 <input type="file" name="arc" class="col-xs-8" />
