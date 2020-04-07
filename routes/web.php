@@ -237,3 +237,7 @@ Route::get("/indogo/remit/login", "IndogoController@remitLogin");
 Route::get("/indogo/remit/login-test", "IndogoController@remitLoginTest");
 Route::get("/indogo/remit/add-recipient-v2", "IndogoController@remitAddRecipientV2");
 Route::get("/indogo/remit/app-photos", "IndogoController@remitPhotos");
+Route::get("/indogo/remit/check-member", "IndogoController@remitCheckMemberExists");
+Route::get("/indogo/remit/forget-sms", "IndogoController@remitForgetSms");
+Route::get("/indogo/remit/password-update", "IndogoController@remitPasswordUpdate");
+Route::get("/indogo/remit/doc-get", "IndogoController@remitDocGet");

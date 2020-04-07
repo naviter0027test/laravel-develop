@@ -91,5 +91,29 @@ class IndogoController extends Controller
         $url = 'http://dev.indogo.link/app/remit/app_photos.php';
         return view('indogo.remit.app_photos', ['url' => $url]);
     }
+
+    public function remitCheckMemberExists(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/check_mem_exists.php';
+        return view('indogo.remit.check_mem_exists', ['url' => $url]);
+    }
+
+    public function remitForgetSms(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/password_forget_sms.php';
+        return view('indogo.remit.password_forget_sms', ['url' => $url]);
+    }
+
+    public function remitPasswordUpdate(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/password_update.php';
+        return view('indogo.remit.password_update', ['url' => $url]);
+    }
+
+    public function remitDocGet(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/doc_get.php';
+        return view('indogo.remit.doc_get', ['url' => $url]);
+    }
 }
 
