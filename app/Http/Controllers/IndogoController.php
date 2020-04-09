@@ -115,5 +115,17 @@ class IndogoController extends Controller
         $url = 'http://dev.indogo.link/app/remit/doc_get.php';
         return view('indogo.remit.doc_get', ['url' => $url]);
     }
+
+    public function remitPhoneTokenSet(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/phone_token_set.php';
+        return view('indogo.remit.phone_token_set', ['url' => $url]);
+    }
+
+    public function remitPhoneTokenDel(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/phone_token_del.php';
+        return view('indogo.remit.phone_token_del', ['url' => $url]);
+    }
 }
 

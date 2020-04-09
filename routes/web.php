@@ -241,3 +241,5 @@ Route::get("/indogo/remit/check-member", "IndogoController@remitCheckMemberExist
 Route::get("/indogo/remit/forget-sms", "IndogoController@remitForgetSms");
 Route::get("/indogo/remit/password-update", "IndogoController@remitPasswordUpdate");
 Route::get("/indogo/remit/doc-get", "IndogoController@remitDocGet");
+Route::get("/indogo/remit/phone-token-set", "IndogoController@remitPhoneTokenSet");
+Route::get("/indogo/remit/phone-token-del", "IndogoController@remitPhoneTokenDel");
