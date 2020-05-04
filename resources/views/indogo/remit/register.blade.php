@@ -61,6 +61,13 @@
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
+                    arc_back
+                </span>
+                <input type="file" name="arc_back" class="col-xs-8" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
                     sign
                 </span>
                 <input type="file" name="sign" class="col-xs-8" />

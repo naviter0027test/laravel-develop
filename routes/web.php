@@ -222,6 +222,9 @@ Route::post("/linepay/confirm", 'LinePayController@confirm');
 
 Route::get("/kaileshop/neweb-pay/notify", "KaileshopController@newebPayNotify");
 
+Route::get("/optoma/productModel-series", "OptomaController@productModelSeries");
+Route::get("/optoma/permission-by-models-alone", "OptomaController@permissionByModelsAlone");
+
 Route::get("/indogo/remit/create", "IndogoController@remitCreate");
 Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
 
@@ -243,3 +246,8 @@ Route::get("/indogo/remit/password-update", "IndogoController@remitPasswordUpdat
 Route::get("/indogo/remit/doc-get", "IndogoController@remitDocGet");
 Route::get("/indogo/remit/phone-token-set", "IndogoController@remitPhoneTokenSet");
 Route::get("/indogo/remit/phone-token-del", "IndogoController@remitPhoneTokenDel");
+Route::get("/indogo/remit/bank-list-test", "IndogoController@remitBankListTest");
+Route::get("/indogo/remit/member-recipients-test", "IndogoController@remitMemberRecipientsTest");
+Route::get("/indogo/remit/order-check-test", "IndogoController@remitOrderCheckTest");
+Route::get("/indogo/remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
+Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTest");

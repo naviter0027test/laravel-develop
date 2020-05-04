@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>indogo remit update_id_card</title>
+        <title>indogo remit notification record</title>
         <meta charset='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
@@ -8,7 +8,7 @@
     </head>
     <body>
         <form action="{{ $url }}" method="post" enctype="multipart/form-data" >
-            <h3>indogo remit update id_card or self</h3>
+            <h3>indogo remit notification record</h3>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
@@ -19,33 +19,18 @@
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    arc photo
+                    page
                 </span>
-                <input type="file" name="arc" class="col-xs-8" />
+                <input type="text" name="page" class="col-xs-8" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    arc_back photo
+                    limit
                 </span>
-                <input type="file" name="arc_back" class="col-xs-8" />
-            </p>
-            <p class="col-xs-12">
-                <span class="col-xs-3">
-                    <label class="glyphicon glyphicon-pencil"></label>
-                    sign photo
-                </span>
-                <input type="file" name="sign" class="col-xs-8" />
-            </p>
-            <p class="col-xs-12">
-                <span class="col-xs-3">
-                    <label class="glyphicon glyphicon-pencil"></label>
-                    address photo
-                </span>
-                <input type="file" name="address" class="col-xs-8" />
+                <input type="text" name="limit" class="col-xs-8" />
             </p>
             <button class="col-xs-2">submit</button>
         </form>
     </body>
 </html>
-

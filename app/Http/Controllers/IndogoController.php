@@ -10,43 +10,43 @@ class IndogoController extends Controller
 {
     public function remitCreate(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/create.php';
+        $url = 'http://prod.indogo.link/app/remit/create.php';
         return view('indogo.remit.create', ['url' => $url]);
     }
 
     public function remitCreateTest(Request $request) {
         $params = $request->all();
-        $url = 'http://prod.indogo.link/app/remit/create.php';
+        $url = 'http://dev.indogo.link/app/remit/create.php';
         return view('indogo.remit.create', ['url' => $url]);
     }
 
     public function remitUpdateIdCard(Request $request) {
         $params = $request->all();
-        $url = 'http://indogo.axcell28.idv.tw/app/remit/update_id_card.php';
+        $url = 'http://prod.indogo.link/app/remit/update_id_card.php';
         return view('indogo.remit.update_id_card', ['url' => $url]);
     }
 
     public function remitUpdateIdCardTest(Request $request) {
         $params = $request->all();
-        $url = 'http://prod.indogo.link/app/remit/update_id_card.php';
+        $url = 'http://dev.indogo.link/app/remit/update_id_card.php';
         return view('indogo.remit.update_id_card', ['url' => $url]);
     }
 
     public function checkToken(Request $request) {
         $params = $request->all();
-        $url = 'http://indogo.axcell28.idv.tw/app/remit/check_token.php';
+        $url = 'http://dev.indogo.link/app/remit/check_token.php';
         return view('indogo.remit.check_token', ['url' => $url]);
     }
 
     public function remitUpdateArc(Request $request) {
         $params = $request->all();
-        $url = 'http://indogo.axcell28.idv.tw/app/remit/update_arc.php';
+        $url = 'http://prod.indogo.link/app/remit/update_arc.php';
         return view('indogo.remit.update_arc', ['url' => $url]);
     }
 
     public function remitUpdateArcTest(Request $request) {
         $params = $request->all();
-        $url = 'http://prod.indogo.link/app/remit/update_arc.php';
+        $url = 'http://dev.indogo.link//app/remit/update_arc.php';
         return view('indogo.remit.update_arc', ['url' => $url]);
     }
 
@@ -70,13 +70,13 @@ class IndogoController extends Controller
 
     public function remitLogin(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/login.php';
+        $url = 'http://prod.indogo.link/app/remit/login.php';
         return view('indogo.remit.login', ['url' => $url]);
     }
 
     public function remitLoginTest(Request $request) {
         $params = $request->all();
-        $url = 'http://prod.indogo.link/app/remit/login.php';
+        $url = 'http://dev.indogo.link/app/remit/login.php';
         return view('indogo.remit.login', ['url' => $url]);
     }
 
@@ -126,6 +126,36 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/phone_token_del.php';
         return view('indogo.remit.phone_token_del', ['url' => $url]);
+    }
+
+    public function remitBankListTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/bank_list.php';
+        return view('indogo.remit.bank_list', ['url' => $url]);
+    }
+
+    public function remitMemberRecipientsTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/member_recipients.php';
+        return view('indogo.remit.member_recipients', ['url' => $url]);
+    }
+
+    public function remitOrderCheckTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/order_check.php';
+        return view('indogo.remit.order_check', ['url' => $url]);
+    }
+
+    public function remitNotifyRecordTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/notification_record.php';
+        return view('indogo.remit.notification_record', ['url' => $url]);
+    }
+
+    public function remitNotifyReadTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/notification_read.php';
+        return view('indogo.remit.notification_read', ['url' => $url]);
     }
 }
 
