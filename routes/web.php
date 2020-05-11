@@ -227,6 +227,7 @@ Route::get("/optoma/permission-by-models-alone", "OptomaController@permissionByM
 
 Route::get("/indogo/remit/create", "IndogoController@remitCreate");
 Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
+Route::get("/indogo/remit/ibon-barcode-test", "IndogoController@remitIbonBarcodeTest");
 
 Route::get("/indogo/remit/update/idcard", "IndogoController@remitUpdateIdCard");
 Route::get("/indogo/remit/update/idcard-test", "IndogoController@remitUpdateIdCardTest");
@@ -251,3 +252,7 @@ Route::get("/indogo/remit/member-recipients-test", "IndogoController@remitMember
 Route::get("/indogo/remit/order-check-test", "IndogoController@remitOrderCheckTest");
 Route::get("/indogo/remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
 Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTest");
+Route::get("/indogo/ibon/query-test", "IndogoController@ibonQueryTest");
+Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
+Route::get("/indogo/hilife/query-test", "IndogoController@hilifeQueryTest");
+Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferTest");

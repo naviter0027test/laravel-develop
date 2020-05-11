@@ -28,7 +28,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     kurs_lm_time
                 </span>
-                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2020/05/04 08:26:37" />
+                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2020/05/07 16:05:40" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
@@ -49,7 +49,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     transfer_idr
                 </span>
-                <input type="text" name="transfer_idr" class="col-xs-8" value="46800" />
+                <input type="text" name="transfer_idr" class="col-xs-8" value="46400" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
@@ -64,6 +64,20 @@
                     use_remit_point
                 </span>
                 <input type="text" name="use_remit_point" class="col-xs-8" value="1" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    use_points
+                </span>
+                <input type="text" name="use_points" class="col-xs-8" value="50" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    pin_code_mode(1:ART, 2:MRT, 3:ERT)
+                </span>
+                <input type="text" name="pin_code_mode" class="col-xs-8" value="1" />
             </p>
             <button class="col-xs-2">submit</button>
         </form>
