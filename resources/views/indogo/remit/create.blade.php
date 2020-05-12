@@ -28,7 +28,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     kurs_lm_time
                 </span>
-                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2020/05/07 16:05:40" />
+                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2020/05/12 14:26:17" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">

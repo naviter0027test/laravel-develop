@@ -19,7 +19,7 @@ class XmlSampleRepository
                     <SUB1>551</SUB1>
                     <SUB2>538</SUB2>
                     <SUB3>539</SUB3>
-                    <KEY1>ART200511QZDAW</KEY1>
+                    <KEY1>ART200512MYNGM</KEY1>
                     <KEY2/>
                     <KEY3/>
                     <KEY4/>

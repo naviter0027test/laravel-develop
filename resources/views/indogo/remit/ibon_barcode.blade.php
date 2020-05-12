@@ -23,6 +23,13 @@
                 </span>
                 <input type="text" name="payment_info" class="col-xs-8" value="" />
             </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    mode(1:output picture, 2:output string)
+                </span>
+                <input type="text" name="mode" class="col-xs-8" value="1" />
+            </p>
             <button class="col-xs-2">submit</button>
         </form>
     </body>
