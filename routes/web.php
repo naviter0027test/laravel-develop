@@ -239,7 +239,7 @@ Route::get("/indogo/remit/register-test", "IndogoController@remitRegisterTest");
 Route::get("/indogo/remit/family-test", "IndogoController@remitFamilyTest");
 Route::get("/indogo/remit/login", "IndogoController@remitLogin");
 Route::get("/indogo/remit/login-test", "IndogoController@remitLoginTest");
-Route::get("/indogo/remit/add-recipient-v2", "IndogoController@remitAddRecipientV2");
+Route::get("/indogo/remit/add-recipient-v2-test", "IndogoController@remitAddRecipientV2Test");
 Route::get("/indogo/remit/app-photos", "IndogoController@remitPhotos");
 Route::get("/indogo/remit/check-member-test", "IndogoController@remitCheckMemberExists");
 Route::get("/indogo/remit/forget-sms", "IndogoController@remitForgetSms");
@@ -257,3 +257,5 @@ Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
 Route::get("/indogo/hilife/query-test", "IndogoController@hilifeQueryTest");
 Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferTest");
 Route::get("/indogo/remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
+
+Route::get("/indogo/ibon/close-test", "IndogoController@ibonCloseTest");

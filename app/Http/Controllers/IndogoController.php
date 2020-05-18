@@ -81,7 +81,7 @@ class IndogoController extends Controller
         return view('indogo.remit.login', ['url' => $url]);
     }
 
-    public function remitAddRecipientV2(Request $request) {
+    public function remitAddRecipientV2Test(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/add_recipient_v2.php';
         return view('indogo.remit.add_recipient_v2', ['url' => $url]);
@@ -252,6 +252,31 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/money_transfer_history.php';
         return view('indogo.remit.money_transfer_history', ['url' => $url]);
+    }
+
+    public function ibonCloseTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/ibon/close.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->ibonToHereClose();
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
     }
 }
 
