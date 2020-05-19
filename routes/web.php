@@ -228,6 +228,7 @@ Route::get("/optoma/permission-by-models-alone", "OptomaController@permissionByM
 Route::get("/indogo/remit/create", "IndogoController@remitCreate");
 Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
 Route::get("/indogo/remit/ibon-barcode-test", "IndogoController@remitIbonBarcodeTest");
+Route::get("/indogo/remit/fami-barcode-test", "IndogoController@remitFamiBarcodeTest");
 
 Route::get("/indogo/remit/update/idcard", "IndogoController@remitUpdateIdCard");
 Route::get("/indogo/remit/update/idcard-test", "IndogoController@remitUpdateIdCardTest");
@@ -244,7 +245,7 @@ Route::get("/indogo/remit/app-photos", "IndogoController@remitPhotos");
 Route::get("/indogo/remit/check-member-test", "IndogoController@remitCheckMemberExists");
 Route::get("/indogo/remit/forget-sms", "IndogoController@remitForgetSms");
 Route::get("/indogo/remit/password-update", "IndogoController@remitPasswordUpdate");
-Route::get("/indogo/remit/doc-get", "IndogoController@remitDocGet");
+Route::get("/indogo/remit/doc-get-test", "IndogoController@remitDocGetTest");
 Route::get("/indogo/remit/phone-token-set", "IndogoController@remitPhoneTokenSet");
 Route::get("/indogo/remit/phone-token-del", "IndogoController@remitPhoneTokenDel");
 Route::get("/indogo/remit/bank-list-test", "IndogoController@remitBankListTest");

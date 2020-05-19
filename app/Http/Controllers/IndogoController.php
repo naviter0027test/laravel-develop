@@ -111,7 +111,7 @@ class IndogoController extends Controller
         return view('indogo.remit.password_update', ['url' => $url]);
     }
 
-    public function remitDocGet(Request $request) {
+    public function remitDocGetTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/doc_get.php';
         return view('indogo.remit.doc_get', ['url' => $url]);
@@ -246,6 +246,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/ibon_barcode.php';
         return view('indogo.remit.ibon_barcode', ['url' => $url]);
+    }
+
+    public function remitFamiBarcodeTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/fami_barcode.php';
+        return view('indogo.remit.fami_barcode', ['url' => $url]);
     }
 
     public function moneyTransferHistoryTest(Request $request) {
