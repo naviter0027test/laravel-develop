@@ -87,7 +87,7 @@ class IndogoController extends Controller
         return view('indogo.remit.add_recipient_v2', ['url' => $url]);
     }
 
-    public function remitPhotos(Request $request) {
+    public function remitPhotosTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/app_photos.php';
         return view('indogo.remit.app_photos', ['url' => $url]);
@@ -117,13 +117,13 @@ class IndogoController extends Controller
         return view('indogo.remit.doc_get', ['url' => $url]);
     }
 
-    public function remitPhoneTokenSet(Request $request) {
+    public function remitPhoneTokenSetTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/phone_token_set.php';
         return view('indogo.remit.phone_token_set', ['url' => $url]);
     }
 
-    public function remitPhoneTokenDel(Request $request) {
+    public function remitPhoneTokenDelTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/phone_token_del.php';
         return view('indogo.remit.phone_token_del', ['url' => $url]);
@@ -254,6 +254,18 @@ class IndogoController extends Controller
         return view('indogo.remit.fami_barcode', ['url' => $url]);
     }
 
+    public function remitOkBarcodeTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/ok_barcode.php';
+        return view('indogo.remit.ok_barcode', ['url' => $url]);
+    }
+
+    public function remitHilifeBarcodeTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/hilife_barcode.php';
+        return view('indogo.remit.hilife_barcode', ['url' => $url]);
+    }
+
     public function moneyTransferHistoryTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/money_transfer_history.php';
@@ -265,6 +277,31 @@ class IndogoController extends Controller
         $url = 'http://dev.indogo.link/ibon/close.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->ibonToHereClose();
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
+    public function okBarcodeQueryTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/okmart/barcode_query.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->okBarcodeQueryToHere();
         $postData = [
             'XMLData' => $xml,
         ];

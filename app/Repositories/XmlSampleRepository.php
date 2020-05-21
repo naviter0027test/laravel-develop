@@ -70,4 +70,24 @@ class XmlSampleRepository
                 </SENDDATA>
             ';
     }
+
+    public function okBarcodeQueryToHere() {
+        return '<CHECKDATA>
+            <MMK_ID>GF4</MMK_ID>
+<TEN_CODE>1234</TEN_CODE>
+<TRAN_NO>10110300001</TRAN_NO>
+<PAY_AMT>20</PAY_AMT>
+<BARCODE_1>20200521ART</BARCODE_1>
+<BARCODE_2>2020052100000900</BARCODE_2>
+<BARCODE_3>1412AX230000250</BARCODE_3>
+<DATA_1>OKmart</DATA_1> 
+<DATA_2></DATA_2>
+<DATA_3></DATA_3>
+<DATA_4></DATA_4>
+<DATA_5></DATA_5>
+<DATA_6></DATA_6>
+<DATA_7></DATA_7>
+<DATA_8></DATA_8>
+</CHECKDATA>';
+    }
 }
