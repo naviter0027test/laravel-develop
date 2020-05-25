@@ -87,25 +87,31 @@ class IndogoController extends Controller
         return view('indogo.remit.add_recipient_v2', ['url' => $url]);
     }
 
+    public function remitHideRecipientTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/hide_recipient.php';
+        return view('indogo.remit.hide_recipient', ['url' => $url]);
+    }
+
     public function remitPhotosTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/app_photos.php';
         return view('indogo.remit.app_photos', ['url' => $url]);
     }
 
-    public function remitCheckMemberExists(Request $request) {
+    public function remitCheckMemberExistsTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/check_mem_exists.php';
         return view('indogo.remit.check_mem_exists', ['url' => $url]);
     }
 
-    public function remitForgetSms(Request $request) {
+    public function remitForgetSmsTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/password_forget_sms.php';
         return view('indogo.remit.password_forget_sms', ['url' => $url]);
     }
 
-    public function remitPasswordUpdate(Request $request) {
+    public function remitPasswordUpdateTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/password_update.php';
         return view('indogo.remit.password_update', ['url' => $url]);
@@ -215,10 +221,9 @@ class IndogoController extends Controller
         $xmlSampleRepository = new XmlSampleRepository();
         //$xml = $xmlSampleRepository->hilifeToHere();
         $postData = [
-            'SHOP_ID' => 'xxx',
-            'TRANS_NO' => 'xxx',
-            'MMK_ID' => 'xxx',
-            'ORDER_NO' => 'ART200511QZDAW',
+            'SHOP_ID' => 'T095',
+            'TRANS_NO' => '05LA2231',
+            'ORDER_NO' => 'MRT200522QGJVF',
         ];
 
         $ch = curl_init();
