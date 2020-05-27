@@ -35,7 +35,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     password
                 </span>
-                <input type="password" name="password" class="col-xs-8" />
+                <input type="password" name="password" class="col-xs-8" value="8d969eef6ecad3c29a3a629280e686cf0c3f5d5a86aff3ca12020c923adc6c92" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
