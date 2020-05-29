@@ -262,6 +262,7 @@ Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
 Route::get("/indogo/okmart/barcode-query-test", "IndogoController@okBarcodeQueryTest");
 Route::get("/indogo/hilife/query-test", "IndogoController@hilifeQueryTest");
 Route::get("/indogo/hilife/close-test", "IndogoController@hilifeCloseTest");
+Route::get("/indogo/remit/point-transfer-check-test", "IndogoController@pointTransferCheckTest");
 Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferTest");
 Route::get("/indogo/remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
 
