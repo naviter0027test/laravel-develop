@@ -227,6 +227,7 @@ Route::get("/optoma/permission-by-models-alone", "OptomaController@permissionByM
 
 Route::get("/indogo/remit/create", "IndogoController@remitCreate");
 Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
+Route::get("/indogo/remit/ibon-barcode", "IndogoController@remitIbonBarcode");
 Route::get("/indogo/remit/ibon-barcode-test", "IndogoController@remitIbonBarcodeTest");
 Route::get("/indogo/remit/fami-barcode-test", "IndogoController@remitFamiBarcodeTest");
 Route::get("/indogo/remit/ok-barcode-test", "IndogoController@remitOkBarcodeTest");
@@ -249,6 +250,7 @@ Route::get("/indogo/remit/app-photos-test", "IndogoController@remitPhotosTest");
 Route::get("/indogo/remit/check-member-test", "IndogoController@remitCheckMemberExistsTest");
 Route::get("/indogo/remit/forget-sms-test", "IndogoController@remitForgetSmsTest");
 Route::get("/indogo/remit/password-update-test", "IndogoController@remitPasswordUpdateTest");
+Route::get("/indogo/remit/doc-get", "IndogoController@remitDocGet");
 Route::get("/indogo/remit/doc-get-test", "IndogoController@remitDocGetTest");
 Route::get("/indogo/remit/phone-token-set-test", "IndogoController@remitPhoneTokenSetTest");
 Route::get("/indogo/remit/phone-token-del-test", "IndogoController@remitPhoneTokenDelTest");
@@ -257,11 +259,13 @@ Route::get("/indogo/remit/member-recipients-test", "IndogoController@remitMember
 Route::get("/indogo/remit/order-check-test", "IndogoController@remitOrderCheckTest");
 Route::get("/indogo/remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
 Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTest");
+Route::get("/indogo/ibon/query", "IndogoController@ibonQuery");
 Route::get("/indogo/ibon/query-test", "IndogoController@ibonQueryTest");
 Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
 Route::get("/indogo/okmart/barcode-query-test", "IndogoController@okBarcodeQueryTest");
 Route::get("/indogo/hilife/query-test", "IndogoController@hilifeQueryTest");
 Route::get("/indogo/hilife/close-test", "IndogoController@hilifeCloseTest");
+Route::get("/indogo/remit/point-history-test", "IndogoController@pointHistoryTest");
 Route::get("/indogo/remit/point-transfer-check-test", "IndogoController@pointTransferCheckTest");
 Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferTest");
 Route::get("/indogo/remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");

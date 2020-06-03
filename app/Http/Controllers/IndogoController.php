@@ -18,7 +18,7 @@ class IndogoController extends Controller
     public function remitCreateTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/create.php';
-        return view('indogo.remit.create', ['url' => $url]);
+        return view('indogo.remit.create_test', ['url' => $url]);
     }
 
     public function remitUpdateIdCard(Request $request) {
@@ -123,6 +123,12 @@ class IndogoController extends Controller
         return view('indogo.remit.password_update', ['url' => $url]);
     }
 
+    public function remitDocGet(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/doc_get.php';
+        return view('indogo.remit.doc_get', ['url' => $url]);
+    }
+
     public function remitDocGetTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/doc_get.php';
@@ -169,6 +175,31 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/notification_read.php';
         return view('indogo.remit.notification_read', ['url' => $url]);
+    }
+
+    public function ibonQuery(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/ibon/query.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->ibonToHereProd();
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
     }
 
     public function ibonQueryTest(Request $request) {
@@ -247,6 +278,12 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function pointHistoryTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/point_history.php';
+        return view('indogo.remit.point_history', ['url' => $url]);
+    }
+
     public function pointTransferCheckTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/point_transfer_check.php';
@@ -257,6 +294,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/point_transfer.php';
         return view('indogo.remit.point_transfer', ['url' => $url]);
+    }
+
+    public function remitIbonBarcode(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/ibon_barcode.php';
+        return view('indogo.remit.ibon_barcode', ['url' => $url]);
     }
 
     public function remitIbonBarcodeTest(Request $request) {
