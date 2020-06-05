@@ -35,6 +35,12 @@ class IndogoController extends Controller
 
     public function checkToken(Request $request) {
         $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/check_token.php';
+        return view('indogo.remit.check_token', ['url' => $url]);
+    }
+
+    public function checkTokenTest(Request $request) {
+        $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/check_token.php';
         return view('indogo.remit.check_token', ['url' => $url]);
     }
@@ -91,6 +97,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/add_recipient_v2.php';
         return view('indogo.remit.add_recipient_v2', ['url' => $url]);
+    }
+
+    public function remitHideRecipient(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/hide_recipient.php';
+        return view('indogo.remit.hide_recipient', ['url' => $url]);
     }
 
     public function remitHideRecipientTest(Request $request) {
@@ -157,6 +169,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/member_recipients.php';
         return view('indogo.remit.member_recipients', ['url' => $url]);
+    }
+
+    public function remitOrderCheck(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/order_check.php';
+        return view('indogo.remit.order_check', ['url' => $url]);
     }
 
     public function remitOrderCheckTest(Request $request) {
@@ -278,6 +296,12 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function pointHistory(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/point_history.php';
+        return view('indogo.remit.point_history', ['url' => $url]);
+    }
+
     public function pointHistoryTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/point_history.php';
@@ -324,6 +348,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/hilife_barcode.php';
         return view('indogo.remit.hilife_barcode', ['url' => $url]);
+    }
+
+    public function moneyTransferHistory(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/money_transfer_history.php';
+        return view('indogo.remit.money_transfer_history', ['url' => $url]);
     }
 
     public function moneyTransferHistoryTest(Request $request) {
