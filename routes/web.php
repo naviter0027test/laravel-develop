@@ -276,3 +276,4 @@ Route::get("/indogo/remit/money-transfer-history", "IndogoController@moneyTransf
 Route::get("/indogo/remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
 
 Route::get("/indogo/ibon/close-test", "IndogoController@ibonCloseTest");
+Route::get("/indogo/remit/app-photos", "IndogoController@remitAppPhotos");

@@ -411,5 +411,11 @@ class IndogoController extends Controller
         curl_close($ch);
         return $response;
     }
+
+    public function remitAppPhotos(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/app_photos.php';
+        return view('indogo.remit.app_photos', ['url' => $url]);
+    }
 }
 
