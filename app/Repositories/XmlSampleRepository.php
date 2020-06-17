@@ -19,7 +19,7 @@ class XmlSampleRepository
                     <SUB1>551</SUB1>
                     <SUB2>538</SUB2>
                     <SUB3>539</SUB3>
-                    <KEY1>ART200603MLVCL</KEY1>
+                    <KEY1>ART200614SFSQU</KEY1>
                     <KEY2/>
                     <KEY3/>
                     <KEY4/>
@@ -47,6 +47,27 @@ class XmlSampleRepository
                     <KEY5/>
                 </SENDDATA>
             ';
+    }
+
+    public function ibonToHereCloseProd() {
+        return "<PAYMONEY>
+    <SENDTIME>0</SENDTIME>
+    <STOREID>A00015</STOREID>
+    <SHOPID>BD</SHOPID>
+    <DETAIL_NUM>000616BD443821</DETAIL_NUM>
+    <STATUS_CODE>0000</STATUS_CODE>
+    <STATUS_DESC>成功</STATUS_DESC>
+    <BARCODE1>0906165E6</BARCODE1>
+    <BARCODE2>000616BD44382101</BARCODE2>
+    <BARCODE3>671132830000201</BARCODE3>
+    <AMOUNT>201</AMOUNT>
+    <PAYDATE>20200616112349</PAYDATE>
+    <USERDATA1>0020200616000013</USERDATA1>
+    <USERDATA2/>
+    <USERDATA3/>
+    <USERDATA4/>
+    <USERDATA5/>
+</PAYMONEY>";
     }
 
     public function ibonToHereClose() {
