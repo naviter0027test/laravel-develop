@@ -270,11 +270,61 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function okmartQuery(Request $request) {
+        $params = $request->all();
+        $url = 'https://prod.indogo.link/okmart/query.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->okToHereProd();
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
     public function okmartQueryTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/okmart/query.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->okToHere();
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
+    public function okmartClose(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/okmart/close.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->okToHereCloseProd();
         $postData = [
             'XMLData' => $xml,
         ];
@@ -339,6 +389,12 @@ class IndogoController extends Controller
         return view('indogo.remit.point_transfer_check', ['url' => $url]);
     }
 
+    public function pointTransfer(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/point_transfer.php';
+        return view('indogo.remit.point_transfer', ['url' => $url]);
+    }
+
     public function pointTransferTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/point_transfer.php';
@@ -355,6 +411,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/ibon_barcode.php';
         return view('indogo.remit.ibon_barcode', ['url' => $url]);
+    }
+
+    public function remitFamiBarcode(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/fami_barcode.php';
+        return view('indogo.remit.fami_barcode', ['url' => $url]);
     }
 
     public function remitFamiBarcodeTest(Request $request) {
