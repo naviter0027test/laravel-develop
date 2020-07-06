@@ -261,6 +261,7 @@ Route::get("/indogo/remit/bank-list-test", "IndogoController@remitBankListTest")
 Route::get("/indogo/remit/member-recipients-test", "IndogoController@remitMemberRecipientsTest");
 Route::get("/indogo/remit/order-check", "IndogoController@remitOrderCheck");
 Route::get("/indogo/remit/order-check-test", "IndogoController@remitOrderCheckTest");
+Route::get("/indogo/remit/notify-record", "IndogoController@remitNotifyRecord");
 Route::get("/indogo/remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
 Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTest");
 Route::get("/indogo/ibon/query", "IndogoController@ibonQuery");

@@ -183,6 +183,12 @@ class IndogoController extends Controller
         return view('indogo.remit.order_check', ['url' => $url]);
     }
 
+    public function remitNotifyRecord(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/notification_record.php';
+        return view('indogo.remit.notification_record', ['url' => $url]);
+    }
+
     public function remitNotifyRecordTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/notification_record.php';
