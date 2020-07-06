@@ -1,3 +1,5 @@
 .env
 *.swp
 phpadmin
+storage
+vendor
