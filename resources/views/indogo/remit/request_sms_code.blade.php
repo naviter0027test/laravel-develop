@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>indogo remit notification read</title>
+        <title>indogo remit request sms</title>
         <meta charset='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
@@ -8,21 +8,13 @@
     </head>
     <body>
         <form action="{{ $url }}" method="post" enctype="multipart/form-data" >
-            <h3>indogo remit notification read</h3>
+            <h3>indogo remit request sms code</h3>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    token
+                    arc_no
                 </span>
-                <input type="text" name="token" class="col-xs-8" value="d817b457faa541af9feef769c1827bc7" />
-            </p>
-            <p class="col-xs-12">
-                <span class="col-xs-3">
-                    <label class="glyphicon glyphicon-pencil"></label>
-                    notification_record_id
-                </span>
-                <input type="text" name="notification_record_id[]" class="col-xs-4" />
-                <input type="text" name="notification_record_id[]" class="col-xs-4" />
+                <input type="text" name="arc_no" class="col-xs-8" value="" />
             </p>
             <button class="col-xs-2">submit</button>
         </form>

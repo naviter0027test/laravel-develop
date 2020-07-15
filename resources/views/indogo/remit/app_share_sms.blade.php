@@ -1,14 +1,14 @@
 <html>
     <head>
-        <title>indogo remit notification read</title>
+        <title>indogo remit app share sms</title>
         <meta charset='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
     </head>
     <body>
-        <form action="{{ $url }}" method="post" enctype="multipart/form-data" >
-            <h3>indogo remit notification read</h3>
+        <form action="{{ $url }}" method="post">
+            <h3>indogo remit app share sms</h3>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
@@ -19,11 +19,11 @@
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    notification_record_id
+                    phone
                 </span>
-                <input type="text" name="notification_record_id[]" class="col-xs-4" />
-                <input type="text" name="notification_record_id[]" class="col-xs-4" />
+                <input type="text" name="phone" class="col-xs-8" value="" />
             </p>
+
             <button class="col-xs-2">submit</button>
         </form>
     </body>

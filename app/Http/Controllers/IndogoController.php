@@ -69,6 +69,12 @@ class IndogoController extends Controller
         return view('indogo.remit.register', ['url' => $url]);
     }
 
+    public function remitRequestSmsCodeTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/request_sms_code.php';
+        return view('indogo.remit.request_sms_code', ['url' => $url]);
+    }
+
     public function remitVerifySmsCodeTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/verify_sms_code.php';
@@ -193,6 +199,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/notification_record.php';
         return view('indogo.remit.notification_record', ['url' => $url]);
+    }
+
+    public function remitNotifyRead(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/notification_read.php';
+        return view('indogo.remit.notification_read', ['url' => $url]);
     }
 
     public function remitNotifyReadTest(Request $request) {
@@ -509,6 +521,24 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/app_photos.php';
         return view('indogo.remit.app_photos', ['url' => $url]);
+    }
+
+    public function remitAppShareSmsTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/app_share_sms.php';
+        return view('indogo.remit.app_share_sms', ['url' => $url]);
+    }
+
+    public function remitAppDeclarationInfoTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/declaration_info.php';
+        return view('indogo.remit.app_declaration_info', ['url' => $url]);
+    }
+
+    public function remitNotificationTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/notification.php';
+        return view('indogo.remit.notification', ['url' => $url]);
     }
 }
 
