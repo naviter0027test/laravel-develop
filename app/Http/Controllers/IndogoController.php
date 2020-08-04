@@ -17,7 +17,7 @@ class IndogoController extends Controller
 
     public function remitCreateTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/create.php';
+        $url = 'https://dev.indogo.link/app/remit/create.php';
         return view('indogo.remit.create_test', ['url' => $url]);
     }
 
@@ -65,13 +65,19 @@ class IndogoController extends Controller
 
     public function remitRegisterTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/register.php';
+        $url = 'https://dev.indogo.link/app/remit/register.php';
         return view('indogo.remit.register', ['url' => $url]);
+    }
+
+    public function remitRequestSmsCode(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/request_sms_code.php';
+        return view('indogo.remit.request_sms_code', ['url' => $url]);
     }
 
     public function remitRequestSmsCodeTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/request_sms_code.php';
+        $url = 'https://dev.indogo.link/app/remit/request_sms_code.php';
         return view('indogo.remit.request_sms_code', ['url' => $url]);
     }
 
@@ -129,15 +135,21 @@ class IndogoController extends Controller
         return view('indogo.remit.check_mem_exists', ['url' => $url]);
     }
 
+    public function remitForgetSms(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/password_forget_sms.php';
+        return view('indogo.remit.password_forget_sms', ['url' => $url]);
+    }
+
     public function remitForgetSmsTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/password_forget_sms.php';
+        $url = 'https://dev.indogo.link/app/remit/password_forget_sms.php';
         return view('indogo.remit.password_forget_sms', ['url' => $url]);
     }
 
     public function remitPasswordUpdateTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/password_update.php';
+        $url = 'https://dev.indogo.link/app/remit/password_update.php';
         return view('indogo.remit.password_update', ['url' => $url]);
     }
 
@@ -187,6 +199,18 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/order_check.php';
         return view('indogo.remit.order_check', ['url' => $url]);
+    }
+
+    public function remitOrdersCheck(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/orders_check.php';
+        return view('indogo.remit.orders_check', ['url' => $url]);
+    }
+
+    public function remitOrdersCheckTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/orders_check.php';
+        return view('indogo.remit.orders_check', ['url' => $url]);
     }
 
     public function remitNotifyRecord(Request $request) {
@@ -449,9 +473,15 @@ class IndogoController extends Controller
         return view('indogo.remit.ok_barcode', ['url' => $url]);
     }
 
+    public function remitHilifeBarcode(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/hilife_barcode.php';
+        return view('indogo.remit.hilife_barcode', ['url' => $url]);
+    }
+
     public function remitHilifeBarcodeTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/hilife_barcode.php';
+        $url = 'https://dev.indogo.link/app/remit/hilife_barcode.php';
         return view('indogo.remit.hilife_barcode', ['url' => $url]);
     }
 
@@ -523,9 +553,15 @@ class IndogoController extends Controller
         return view('indogo.remit.app_photos', ['url' => $url]);
     }
 
+    public function remitAppShareSms(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/app_share_sms.php';
+        return view('indogo.remit.app_share_sms', ['url' => $url]);
+    }
+
     public function remitAppShareSmsTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/app_share_sms.php';
+        $url = 'https://dev.indogo.link/app/remit/app_share_sms.php';
         return view('indogo.remit.app_share_sms', ['url' => $url]);
     }
 
