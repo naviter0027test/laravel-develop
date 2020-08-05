@@ -105,6 +105,12 @@ class IndogoController extends Controller
         return view('indogo.remit.login', ['url' => $url]);
     }
 
+    public function remitAddRecipientV2(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/add_recipient_v2.php';
+        return view('indogo.remit.add_recipient_v2', ['url' => $url]);
+    }
+
     public function remitAddRecipientV2Test(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/add_recipient_v2.php';

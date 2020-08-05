@@ -249,6 +249,7 @@ Route::get("/indogo/remit/verify-sms-code-test", "IndogoController@remitVerifySm
 Route::get("/indogo/remit/family-test", "IndogoController@remitFamilyTest");
 Route::get("/indogo/remit/login", "IndogoController@remitLogin");
 Route::get("/indogo/remit/login-test", "IndogoController@remitLoginTest");
+Route::get("/indogo/remit/add-recipient-v2", "IndogoController@remitAddRecipientV2");
 Route::get("/indogo/remit/add-recipient-v2-test", "IndogoController@remitAddRecipientV2Test");
 Route::get("/indogo/remit/hide-recipient", "IndogoController@remitHideRecipient");
 Route::get("/indogo/remit/hide-recipient-test", "IndogoController@remitHideRecipientTest");
