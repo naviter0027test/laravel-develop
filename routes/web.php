@@ -297,4 +297,5 @@ Route::get("/indogo/remit/app-get-declaration-info-test", "IndogoController@remi
 Route::get("/indogo/remit/notification-test", "IndogoController@remitNotificationTest");
 
 Route::get("/skype/first", "SkypeController@first");
-Route::get("/skype/second", "SkypeController@second");
+Route::get("/skype/second2ndToJoyce", "SkypeController@second");
+Route::get("/skype/second2ndToLanker", "SkypeController@secondToLanker");

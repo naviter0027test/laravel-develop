@@ -15,4 +15,8 @@ class SkypeController extends Controller
     public function second(Request $request) {
         return view('skype.second');
     }
+
+    public function secondToLanker(Request $request) {
+        return view('skype.seclanker');
+    }
 }
