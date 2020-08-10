@@ -101,7 +101,7 @@ class IndogoController extends Controller
 
     public function remitLoginTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/login.php';
+        $url = 'https://dev.indogo.link/app/remit/login.php';
         return view('indogo.remit.login', ['url' => $url]);
     }
 
@@ -129,9 +129,15 @@ class IndogoController extends Controller
         return view('indogo.remit.hide_recipient', ['url' => $url]);
     }
 
+    public function remitPhotos(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/app_photos.php';
+        return view('indogo.remit.app_photos', ['url' => $url]);
+    }
+
     public function remitPhotosTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/app_photos.php';
+        $url = 'https://dev.indogo.link/app/remit/app_photos.php';
         return view('indogo.remit.app_photos', ['url' => $url]);
     }
 

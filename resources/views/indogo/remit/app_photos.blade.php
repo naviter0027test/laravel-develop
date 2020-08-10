@@ -16,6 +16,13 @@
                 </span>
                 <input type="text" name="token" class="col-xs-8" value="d817b457faa541af9feef769c1827bc7" />
             </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    img_type(png or jpg)
+                </span>
+                <input type="text" name="img_type" class="col-xs-8" value="" />
+            </p>
 
             <button class="col-xs-2">submit</button>
         </form>
