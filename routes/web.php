@@ -284,6 +284,7 @@ Route::get("/indogo/hilife/query-test", "IndogoController@hilifeQueryTest");
 Route::get("/indogo/hilife/close-test", "IndogoController@hilifeCloseTest");
 Route::get("/indogo/remit/point-history", "IndogoController@pointHistory");
 Route::get("/indogo/remit/point-history-test", "IndogoController@pointHistoryTest");
+Route::get("/indogo/remit/point-transfer-check", "IndogoController@pointTransferCheck");
 Route::get("/indogo/remit/point-transfer-check-test", "IndogoController@pointTransferCheckTest");
 Route::get("/indogo/remit/point-transfer", "IndogoController@pointTransfer");
 Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferTest");

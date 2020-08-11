@@ -437,9 +437,15 @@ class IndogoController extends Controller
         return view('indogo.remit.point_history', ['url' => $url]);
     }
 
+    public function pointTransferCheck(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/point_transfer_check.php';
+        return view('indogo.remit.point_transfer_check', ['url' => $url]);
+    }
+
     public function pointTransferCheckTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/point_transfer_check.php';
+        $url = 'https://dev.indogo.link/app/remit/point_transfer_check.php';
         return view('indogo.remit.point_transfer_check', ['url' => $url]);
     }
 
