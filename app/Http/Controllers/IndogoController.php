@@ -233,7 +233,7 @@ class IndogoController extends Controller
 
     public function remitNotifyRecordTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/notification_record.php';
+        $url = 'https://dev.indogo.link/app/remit/notification_record.php';
         return view('indogo.remit.notification_record', ['url' => $url]);
     }
 
@@ -245,7 +245,7 @@ class IndogoController extends Controller
 
     public function remitNotifyReadTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/notification_read.php';
+        $url = 'https://dev.indogo.link/app/remit/notification_read.php';
         return view('indogo.remit.notification_read', ['url' => $url]);
     }
 
