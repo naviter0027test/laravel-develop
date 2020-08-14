@@ -7,10 +7,6 @@
         <h1>Skype Test</h1>
         <span class="skype-button bubble" data-bot-id="angelobason"></span>
         <br />
-<!--
-        <span class="skype-button bubble" data-bot-id="km26v4x2z"></span>
-        <br />
--->
     </body>
     <script type="text/javascript" src="https://swc.cdn.skype.com/sdk/v1/sdk.min.js"></script>
 </html>

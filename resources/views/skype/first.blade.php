@@ -9,11 +9,9 @@
         <br />
         <a href="skype:angelobason?chat"><img width="100" src="https://upload.wikimedia.org/wikipedia/commons/0/05/Skype_t.png" />Chat To Joyce</a>
         <br />
-<!--
         <a href="/skype/second2ndToJoyce">Second To Joyce</a>
         <br />
         <a href="/skype/second2ndToLanker">Second To Lanker</a>
--->
     </body>
     <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
 <!--
