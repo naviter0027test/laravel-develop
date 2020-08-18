@@ -301,3 +301,8 @@ Route::get("/indogo/remit/notification-test", "IndogoController@remitNotificatio
 Route::get("/skype/first", "SkypeController@first");
 Route::get("/skype/second2ndToJoyce", "SkypeController@second");
 Route::get("/skype/second2ndToLanker", "SkypeController@secondToLanker");
+
+Route::get("/facebook/webhook", "FacebookController@webhook");
+Route::get("/facebook/test", "FacebookController@sendData");
+Route::get("/facebook/privacy", "FacebookController@privacy");
+Route::get("/facebook/messenger", "FacebookController@messenger");
