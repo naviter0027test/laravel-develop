@@ -29,7 +29,7 @@ class IndogoController extends Controller
 
     public function remitUpdateIdCardTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/update_id_card.php';
+        $url = 'https://dev.indogo.link/app/remit/update_id_card.php';
         return view('indogo.remit.update_id_card', ['url' => $url]);
     }
 
@@ -53,7 +53,7 @@ class IndogoController extends Controller
 
     public function remitUpdateArcTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link//app/remit/update_arc.php';
+        $url = 'https://dev.indogo.link//app/remit/update_arc.php';
         return view('indogo.remit.update_arc', ['url' => $url]);
     }
 

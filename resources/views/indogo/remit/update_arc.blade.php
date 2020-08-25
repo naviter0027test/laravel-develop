@@ -8,7 +8,7 @@
     </head>
     <body>
         <form action="{{ $url }}" method="post" enctype="multipart/form-data" >
-            <h3>indogo remit update id_card or self</h3>
+            <h3>indogo remit update arc or self</h3>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
