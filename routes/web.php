@@ -276,6 +276,7 @@ Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTe
 Route::get("/indogo/ibon/query", "IndogoController@ibonQuery");
 Route::get("/indogo/ibon/close", "IndogoController@ibonClose");
 Route::get("/indogo/ibon/query-test", "IndogoController@ibonQueryTest");
+Route::get("/indogo/fami/close", "IndogoController@famiClose");
 Route::get("/indogo/okmart/query", "IndogoController@okmartQuery");
 Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
 Route::get("/indogo/okmart/barcode-query-test", "IndogoController@okBarcodeQueryTest");

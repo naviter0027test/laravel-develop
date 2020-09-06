@@ -93,6 +93,19 @@ class XmlSampleRepository
         ';
     }
 
+    public function famiToHereCloseProd() {
+        return '<OLTP>
+                    <AP>
+                        <STATUS>S</STATUS>
+                        <ORDER_NO>20200906000004</ORDER_NO>
+                        <PIN_CODE>MRT200906XKXJB</PIN_CODE>
+                        <DESC></DESC>
+                        <STORE_DESC>system</STORE_DESC>
+                    </AP>
+            </OLTP>
+        ';
+    }
+
     public function okToHereProd() {
         return '<SENDDATA>
                     <MMK_ID>0700QC1</MMK_ID>

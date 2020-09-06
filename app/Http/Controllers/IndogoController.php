@@ -41,7 +41,7 @@ class IndogoController extends Controller
 
     public function checkTokenTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/check_token.php';
+        $url = 'https://dev.indogo.link/app/remit/check_token.php';
         return view('indogo.remit.check_token', ['url' => $url]);
     }
 
@@ -113,7 +113,7 @@ class IndogoController extends Controller
 
     public function remitAddRecipientV2Test(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/add_recipient_v2.php';
+        $url = 'https://dev.indogo.link/app/remit/add_recipient_v2.php';
         return view('indogo.remit.add_recipient_v2', ['url' => $url]);
     }
 
@@ -125,7 +125,7 @@ class IndogoController extends Controller
 
     public function remitHideRecipientTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/hide_recipient.php';
+        $url = 'https://dev.indogo.link/app/remit/hide_recipient.php';
         return view('indogo.remit.hide_recipient', ['url' => $url]);
     }
 
@@ -143,7 +143,7 @@ class IndogoController extends Controller
 
     public function remitCheckMemberExistsTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/check_mem_exists.php';
+        $url = 'https://dev.indogo.link/app/remit/check_mem_exists.php';
         return view('indogo.remit.check_mem_exists', ['url' => $url]);
     }
 
@@ -173,31 +173,31 @@ class IndogoController extends Controller
 
     public function remitDocGetTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/doc_get.php';
+        $url = 'https://dev.indogo.link/app/remit/doc_get.php';
         return view('indogo.remit.doc_get', ['url' => $url]);
     }
 
     public function remitPhoneTokenSetTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/phone_token_set.php';
+        $url = 'https://dev.indogo.link/app/remit/phone_token_set.php';
         return view('indogo.remit.phone_token_set', ['url' => $url]);
     }
 
     public function remitPhoneTokenDelTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/phone_token_del.php';
+        $url = 'https://dev.indogo.link/app/remit/phone_token_del.php';
         return view('indogo.remit.phone_token_del', ['url' => $url]);
     }
 
     public function remitBankListTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/bank_list.php';
+        $url = 'https://dev.indogo.link/app/remit/bank_list.php';
         return view('indogo.remit.bank_list', ['url' => $url]);
     }
 
     public function remitMemberRecipientsTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/member_recipients.php';
+        $url = 'https://dev.indogo.link/app/remit/member_recipients.php';
         return view('indogo.remit.member_recipients', ['url' => $url]);
     }
 
@@ -209,7 +209,7 @@ class IndogoController extends Controller
 
     public function remitOrderCheckTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/order_check.php';
+        $url = 'https://dev.indogo.link/app/remit/order_check.php';
         return view('indogo.remit.order_check', ['url' => $url]);
     }
 
@@ -221,7 +221,7 @@ class IndogoController extends Controller
 
     public function remitOrdersCheckTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/orders_check.php';
+        $url = 'https://dev.indogo.link/app/remit/orders_check.php';
         return view('indogo.remit.orders_check', ['url' => $url]);
     }
 
@@ -301,11 +301,36 @@ class IndogoController extends Controller
 
     public function ibonQueryTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/ibon/query.php';
+        $url = 'https://dev.indogo.link/ibon/query.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->ibonToHere();
         $postData = [
             'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
+    public function famiClose(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/fami/close.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->famiToHereCloseProd();
+        $postData = [
+            'd' => $xml,
         ];
 
         $ch = curl_init();
@@ -351,7 +376,7 @@ class IndogoController extends Controller
 
     public function okmartQueryTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/okmart/query.php';
+        $url = 'https://dev.indogo.link/okmart/query.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->okToHere();
         $postData = [
@@ -401,7 +426,7 @@ class IndogoController extends Controller
 
     public function hilifeQueryTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/hilife/query.php';
+        $url = 'https://dev.indogo.link/hilife/query.php';
         $xmlSampleRepository = new XmlSampleRepository();
         //$xml = $xmlSampleRepository->hilifeToHere();
         $postData = [
@@ -433,7 +458,7 @@ class IndogoController extends Controller
 
     public function pointHistoryTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/point_history.php';
+        $url = 'https://dev.indogo.link/app/remit/point_history.php';
         return view('indogo.remit.point_history', ['url' => $url]);
     }
 
@@ -457,7 +482,7 @@ class IndogoController extends Controller
 
     public function pointTransferTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/point_transfer.php';
+        $url = 'https://dev.indogo.link/app/remit/point_transfer.php';
         return view('indogo.remit.point_transfer', ['url' => $url]);
     }
 
@@ -469,7 +494,7 @@ class IndogoController extends Controller
 
     public function remitIbonBarcodeTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/ibon_barcode.php';
+        $url = 'https://dev.indogo.link/app/remit/ibon_barcode.php';
         return view('indogo.remit.ibon_barcode', ['url' => $url]);
     }
 
@@ -481,13 +506,13 @@ class IndogoController extends Controller
 
     public function remitFamiBarcodeTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/fami_barcode.php';
+        $url = 'https://dev.indogo.link/app/remit/fami_barcode.php';
         return view('indogo.remit.fami_barcode', ['url' => $url]);
     }
 
     public function remitOkBarcodeTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/ok_barcode.php';
+        $url = 'https://dev.indogo.link/app/remit/ok_barcode.php';
         return view('indogo.remit.ok_barcode', ['url' => $url]);
     }
 
@@ -511,13 +536,13 @@ class IndogoController extends Controller
 
     public function moneyTransferHistoryTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/money_transfer_history.php';
+        $url = 'https://dev.indogo.link/app/remit/money_transfer_history.php';
         return view('indogo.remit.money_transfer_history', ['url' => $url]);
     }
 
     public function ibonCloseTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/ibon/close.php';
+        $url = 'https://dev.indogo.link/ibon/close.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->ibonToHereClose();
         $postData = [
@@ -542,7 +567,7 @@ class IndogoController extends Controller
 
     public function okBarcodeQueryTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/okmart/barcode_query.php';
+        $url = 'https://dev.indogo.link/okmart/barcode_query.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->okBarcodeQueryToHere();
         $postData = [
@@ -585,13 +610,13 @@ class IndogoController extends Controller
 
     public function remitAppDeclarationInfoTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/declaration_info.php';
+        $url = 'https://dev.indogo.link/app/remit/declaration_info.php';
         return view('indogo.remit.app_declaration_info', ['url' => $url]);
     }
 
     public function remitNotificationTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/notification.php';
+        $url = 'https://dev.indogo.link/app/remit/notification.php';
         return view('indogo.remit.notification', ['url' => $url]);
     }
 }
