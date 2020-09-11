@@ -399,11 +399,17 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function okmartClosePage(Request $request) {
+        $params = $request->all();
+        $url = '/indogo/okmart/close';
+        return view('indogo.remit.ok_close', ['url' => $url]);
+    }
+
     public function okmartClose(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/okmart/close.php';
         $xmlSampleRepository = new XmlSampleRepository();
-        $xml = $xmlSampleRepository->okToHereCloseProd();
+        $xml = $xmlSampleRepository->okToHereCloseProd($params);
         $postData = [
             'XMLData' => $xml,
         ];
@@ -448,6 +454,12 @@ class IndogoController extends Controller
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
         return $response;
+    }
+
+    public function hilifeClose(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/hilife/close.php';
+        return view('indogo.remit.hilife_close', ['url' => $url]);
     }
 
     public function pointHistory(Request $request) {
@@ -513,6 +525,12 @@ class IndogoController extends Controller
     public function remitOkBarcodeTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/ok_barcode.php';
+        return view('indogo.remit.ok_barcode', ['url' => $url]);
+    }
+
+    public function remitOkBarcode(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/ok_barcode.php';
         return view('indogo.remit.ok_barcode', ['url' => $url]);
     }
 

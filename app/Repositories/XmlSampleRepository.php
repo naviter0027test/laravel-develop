@@ -165,4 +165,13 @@ class XmlSampleRepository
 <DATA_8></DATA_8>
 </CHECKDATA>';
     }
+
+    public function okToHereCloseProd($params) {
+        return '<CONFIRMDATA><MMK_ID>GFP</MMK_ID><TEN_CODE>0110</TEN_CODE><TRAN_NO>20090307339</TRAN_NO>
+            <STATUS_CODE>0000</STATUS_CODE>
+            <STATUS_DESC></STATUS_DESC><LISTDATA><DATA_1>'. $params['payment_info']. '</DATA_1><DATA_2>'. $params['money']. '</DATA_2>
+            <DATA_3>EVATEST0613</DATA_3><DATA_4>20200910</DATA_4><DATA_5>054138</DATA_5><DATA_6></DATA_6><DATA_7></DATA_7>
+            <DATA_8></DATA_8></LISTDATA></CONFIRMDATA>
+            ';
+    }
 }
