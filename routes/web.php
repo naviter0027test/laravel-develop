@@ -259,6 +259,7 @@ Route::get("/indogo/remit/app-photos-test", "IndogoController@remitPhotosTest");
 Route::get("/indogo/remit/check-member-test", "IndogoController@remitCheckMemberExistsTest");
 Route::get("/indogo/remit/forget-sms", "IndogoController@remitForgetSms");
 Route::get("/indogo/remit/forget-sms-test", "IndogoController@remitForgetSmsTest");
+Route::get("/indogo/remit/password-update", "IndogoController@remitPasswordUpdate");
 Route::get("/indogo/remit/password-update-test", "IndogoController@remitPasswordUpdateTest");
 Route::get("/indogo/remit/doc-get", "IndogoController@remitDocGet");
 Route::get("/indogo/remit/doc-get-test", "IndogoController@remitDocGetTest");

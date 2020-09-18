@@ -159,6 +159,12 @@ class IndogoController extends Controller
         return view('indogo.remit.password_forget_sms', ['url' => $url]);
     }
 
+    public function remitPasswordUpdate(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/password_update.php';
+        return view('indogo.remit.password_update', ['url' => $url]);
+    }
+
     public function remitPasswordUpdateTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/password_update.php';
