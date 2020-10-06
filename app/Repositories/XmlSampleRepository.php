@@ -174,4 +174,8 @@ class XmlSampleRepository
             <DATA_8></DATA_8></LISTDATA></CONFIRMDATA>
             ';
     }
+
+    public function hilifeCloseProd($params) {
+        return '<OLTP><HEADER><VER>1.0</VER><FROM>CS0HL11111</FROM><TERMINO>202010050000000000000000T0950000000000000100000000000000000000000000000000000000000000170578153024</TERMINO><TO>FETC001001</TO><BUSINESS>0020102</BUSINESS><DATE>20201005</DATE><TIME>153024</TIME><STATCODE>0000</STATCODE><STATDESC></STATDESC></HEADER><AP><TotalCount>1</TotalCount><TotalAmount>'. $params['AMOUNT']. '</TotalAmount><AP_Common></AP_Common><AP_PaymentMethod>PAY</AP_PaymentMethod><Detail><SequenceNo>0000</SequenceNo><OL_OI_NO>ME8</OL_OI_NO><Status>S</Status><Description></Description><OL_Code_1>'. $params['olCode1']. '</OL_Code_1><OL_Code_2>'. $params['olCode2']. '</OL_Code_2><OL_Code_3>'. $params['olCode3']. '</OL_Code_3></Detail></AP></OLTP>';
+    }
 }

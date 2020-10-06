@@ -462,10 +462,36 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function hilifeClosePage(Request $request) {
+        $url = '/indogo/hilife/close';
+        return view('indogo.remit.hilife_close', ['url' => $url]);
+    }
+
     public function hilifeClose(Request $request) {
         $params = $request->all();
+        $params['olCode1'] = $params['olCode1'] != '' ? $params['olCode1'] : '090731ME8';
+        $params['olCode2'] = $params['olCode2'] != '' ? $params['olCode2'] : '2020073100000400';
+        $params['olCode3'] = $params['olCode3'] != '' ? $params['olCode3'] : '073153000000250';
+        $params['AMOUNT'] = $params['AMOUNT'] != '' ? $params['AMOUNT'] : '250';
         $url = 'http://prod.indogo.link/hilife/close.php';
-        return view('indogo.remit.hilife_close', ['url' => $url]);
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->hilifeCloseProd($params);
+        $postData = $xml;
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
     }
 
     public function pointHistory(Request $request) {

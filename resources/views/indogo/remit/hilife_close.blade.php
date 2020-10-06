@@ -7,35 +7,29 @@
         <link href='/lib/bootstrap/dist/css/bootstrap-theme.min.css' rel='stylesheet' />
     </head>
     <body>
-        <form action="{{ $url }}" method="get">
+        <form action="{{ $url }}" method="post">
+            {{ csrf_field() }}
             <h3>indogo remit hilife close</h3>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    SHOP_ID
+                    olCode1
                 </span>
-                <input type="text" name="SHOP_ID" class="col-xs-8" value="" />
+                <input type="text" name="olCode1" class="col-xs-8" value="" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    TRANS_NO
+                    olCode2
                 </span>
-                <input type="text" name="TRANS_NO" class="col-xs-8" value="" />
+                <input type="text" name="olCode2" class="col-xs-8" value="" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    MMK_ID
+                    olCode3
                 </span>
-                <input type="text" name="MMK_ID" class="col-xs-8" value="" />
-            </p>
-            <p class="col-xs-12">
-                <span class="col-xs-3">
-                    <label class="glyphicon glyphicon-pencil"></label>
-                    ORDER_NO
-                </span>
-                <input type="text" name="ORDER_NO" class="col-xs-8" value="" />
+                <input type="text" name="olCode3" class="col-xs-8" value="" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
