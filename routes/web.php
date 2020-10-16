@@ -286,6 +286,8 @@ Route::get("/indogo/okmart/barcode-query", "IndogoController@okBarcodeQuery");
 Route::get("/indogo/okmart/close-page", "IndogoController@okmartClosePage");
 Route::get("/indogo/okmart/close", "IndogoController@okmartClose");
 Route::get("/indogo/hilife/query-test", "IndogoController@hilifeQueryTest");
+Route::get("/indogo/hilife/query", "IndogoController@hilifeQueryPage");
+Route::post("/indogo/hilife/query", "IndogoController@hilifeQuery");
 Route::get("/indogo/hilife/close", "IndogoController@hilifeClosePage");
 Route::post("/indogo/hilife/close", "IndogoController@hilifeClose");
 Route::get("/indogo/remit/point-history", "IndogoController@pointHistory");

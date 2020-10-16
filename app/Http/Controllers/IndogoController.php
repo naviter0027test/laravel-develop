@@ -462,6 +462,37 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function hilifeQueryPage(Request $request) {
+        $url = '/indogo/hilife/query';
+        return view('indogo.remit.hilife_query', ['url' => $url]);
+    }
+
+    public function hilifeQuery(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/hilife/query.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        //$xml = $xmlSampleRepository->hilifeToHere();
+        $postData = [
+            'SHOP_ID' => $params['shop_id'],
+            'TRANS_NO' => $params['trans_no'],
+            'ORDER_NO' => $params['order_no'],
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url. "?". http_build_query($postData));
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
     public function hilifeClosePage(Request $request) {
         $url = '/indogo/hilife/close';
         return view('indogo.remit.hilife_close', ['url' => $url]);
