@@ -254,8 +254,10 @@ Route::get("/indogo/remit/login-test", "IndogoController@remitLoginTest");
 Route::get("/indogo/remit/login-vi-test", "IndogoController@remitLoginViTest");
 Route::get("/indogo/remit/add-recipient-v2", "IndogoController@remitAddRecipientV2");
 Route::get("/indogo/remit/add-recipient-v2-test", "IndogoController@remitAddRecipientV2Test");
+Route::get("/indogo/remit/add-recipient-v2-prodtw", "IndogoController@remitAddRecipientV2ProdTw");
 Route::get("/indogo/remit/search-recipients-vi-test", "IndogoController@remitSearchRecipientsViTest");
 Route::get("/indogo/remit/add-recipient-v2-update-vi-test", "IndogoController@remitAddRecipientV2UpdateViTest");
+Route::get("/indogo/remit/get-province-district-vi-test", "IndogoController@remitGetProvinceDistrictViTest");
 Route::get("/indogo/remit/hide-recipient", "IndogoController@remitHideRecipient");
 Route::get("/indogo/remit/hide-recipient-test", "IndogoController@remitHideRecipientTest");
 Route::get("/indogo/remit/app-photos", "IndogoController@remitPhotos");
@@ -309,6 +311,10 @@ Route::get("/indogo/remit/app-share-sms", "IndogoController@remitAppShareSms");
 Route::get("/indogo/remit/app-share-sms-test", "IndogoController@remitAppShareSmsTest");
 Route::get("/indogo/remit/app-get-declaration-info-test", "IndogoController@remitAppDeclarationInfoTest");
 Route::get("/indogo/remit/notification-test", "IndogoController@remitNotificationTest");
+
+Route::get("/tami-v2/api/contact", "TamiV4Controller@contactV2");
+Route::get("/tami-v4/api/contact", "TamiV4Controller@contact");
+Route::get("/tami-v3/borrow/mail", "TamiV4Controller@mailBorrow");
 
 Route::get("/skype/first", "SkypeController@first");
 Route::get("/skype/second2ndToJoyce", "SkypeController@second");

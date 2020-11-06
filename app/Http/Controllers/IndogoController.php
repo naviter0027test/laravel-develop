@@ -129,6 +129,12 @@ class IndogoController extends Controller
         return view('indogo.remit.add_recipient_v2', ['url' => $url]);
     }
 
+    public function remitAddRecipientV2ProdTw(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.tw/app/remit/add_recipient_v2.php';
+        return view('indogo.remit.add_recipient_v2', ['url' => $url]);
+    }
+
     public function remitSearchRecipientsViTest(Request $request) {
         $params = $request->all();
         $url = 'http://govndev.indogo.link/app/remit/search_recipient.php';
@@ -139,6 +145,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://govndev.indogo.link/app/remit/add_recipient_v2_update.php';
         return view('indogo.remit.add_recipient_v3_vi', ['url' => $url]);
+    }
+
+    public function remitGetProvinceDistrictViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/get_province_district.php';
+        return view('indogo.remit.get_province_district', ['url' => $url]);
     }
 
     public function remitHideRecipient(Request $request) {
