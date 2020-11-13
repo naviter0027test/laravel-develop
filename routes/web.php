@@ -227,8 +227,10 @@ Route::get("/optoma/permission-by-models-alone", "OptomaController@permissionByM
 
 Route::get("/indogo/remit/create", "IndogoController@remitCreate");
 Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
+Route::get("/indogo/remit/create-vi", "IndogoController@remitCreateVi");
 Route::get("/indogo/remit/ibon-barcode", "IndogoController@remitIbonBarcode");
 Route::get("/indogo/remit/ibon-barcode-test", "IndogoController@remitIbonBarcodeTest");
+Route::get("/indogo/remit/ibon-barcode-vi", "IndogoController@remitIbonBarcodeVi");
 Route::get("/indogo/remit/fami-barcode", "IndogoController@remitFamiBarcode");
 Route::get("/indogo/remit/fami-barcode-test", "IndogoController@remitFamiBarcodeTest");
 Route::get("/indogo/remit/ok-barcode-test", "IndogoController@remitOkBarcodeTest");
@@ -241,6 +243,7 @@ Route::get("/indogo/remit/update/idcard-test", "IndogoController@remitUpdateIdCa
 Route::get("/indogo/remit/check/token", "IndogoController@checkToken");
 Route::get("/indogo/remit/check/token-test", "IndogoController@checkTokenTest");
 Route::get("/indogo/remit/check/token-vi-test", "IndogoController@checkTokenViTest");
+Route::get("/indogo/remit/check/token-vi", "IndogoController@checkTokenVi");
 Route::get("/indogo/remit/update/arc", "IndogoController@remitUpdateArc");
 Route::get("/indogo/remit/update/arc-test", "IndogoController@remitUpdateArcTest");
 Route::get("/indogo/remit/register", "IndogoController@remitRegister");

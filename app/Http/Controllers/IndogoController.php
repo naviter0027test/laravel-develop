@@ -21,6 +21,12 @@ class IndogoController extends Controller
         return view('indogo.remit.create_test', ['url' => $url]);
     }
 
+    public function remitCreateVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/create.php';
+        return view('indogo.remit.create_vi', ['url' => $url]);
+    }
+
     public function remitUpdateIdCard(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/update_id_card.php';
@@ -48,6 +54,12 @@ class IndogoController extends Controller
     public function checkTokenViTest(Request $request) {
         $params = $request->all();
         $url = 'http://govndev.indogo.link/app/remit/check_token.php';
+        return view('indogo.remit.check_token', ['url' => $url]);
+    }
+
+    public function checkTokenVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/check_token.php';
         return view('indogo.remit.check_token', ['url' => $url]);
     }
 
@@ -606,6 +618,12 @@ class IndogoController extends Controller
     public function remitIbonBarcodeTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/ibon_barcode.php';
+        return view('indogo.remit.ibon_barcode', ['url' => $url]);
+    }
+
+    public function remitIbonBarcodeVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/ibon_barcode.php';
         return view('indogo.remit.ibon_barcode', ['url' => $url]);
     }
 
