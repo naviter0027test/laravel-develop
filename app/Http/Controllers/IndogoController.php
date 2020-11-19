@@ -27,6 +27,12 @@ class IndogoController extends Controller
         return view('indogo.remit.create_vi', ['url' => $url]);
     }
 
+    public function remitCreateViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/create.php';
+        return view('indogo.remit.create_vi', ['url' => $url]);
+    }
+
     public function remitUpdateIdCard(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/update_id_card.php';
@@ -353,6 +359,37 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function ibonCloseViTestPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/ibon/close-vi-test';
+        return view('indogo.remit.ibon_close', ['url' => $url]);
+    }
+
+    public function ibonCloseViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/ibon/close.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->ibonToHereClose($params['txn_id'], $params['total']);
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
     public function ibonQueryTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/ibon/query.php';
@@ -624,6 +661,12 @@ class IndogoController extends Controller
     public function remitIbonBarcodeVi(Request $request) {
         $params = $request->all();
         $url = 'http://govnprod.indogo.link/app/remit/ibon_barcode.php';
+        return view('indogo.remit.ibon_barcode', ['url' => $url]);
+    }
+
+    public function remitIbonBarcodeViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/ibon_barcode.php';
         return view('indogo.remit.ibon_barcode', ['url' => $url]);
     }
 

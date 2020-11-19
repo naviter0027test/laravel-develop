@@ -70,7 +70,7 @@ class XmlSampleRepository
 </PAYMONEY>";
     }
 
-    public function ibonToHereClose() {
+    public function ibonToHereClose($txn_id = "0020200518000003", $total = "250") {
         return '
         <PAYMONEY>
             <SENDTIME>0</SENDTIME>
@@ -82,9 +82,9 @@ class XmlSampleRepository
             <BARCODE1>090513555</BARCODE1>
             <BARCODE2>0005135275523601</BARCODE2>
             <BARCODE3>2Y1900050000250</BARCODE3>
-            <AMOUNT>250</AMOUNT>
+            <AMOUNT>'. $total. '</AMOUNT>
             <PAYDATE>20200513160413</PAYDATE>
-            <USERDATA1>0020200518000003</USERDATA1>
+            <USERDATA1>'. $txn_id. '</USERDATA1>
             <USERDATA2/>
             <USERDATA3/>
             <USERDATA4/>

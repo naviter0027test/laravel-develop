@@ -228,9 +228,11 @@ Route::get("/optoma/permission-by-models-alone", "OptomaController@permissionByM
 Route::get("/indogo/remit/create", "IndogoController@remitCreate");
 Route::get("/indogo/remit/create-test", "IndogoController@remitCreateTest");
 Route::get("/indogo/remit/create-vi", "IndogoController@remitCreateVi");
+Route::get("/indogo/remit/create-vi-test", "IndogoController@remitCreateViTest");
 Route::get("/indogo/remit/ibon-barcode", "IndogoController@remitIbonBarcode");
 Route::get("/indogo/remit/ibon-barcode-test", "IndogoController@remitIbonBarcodeTest");
 Route::get("/indogo/remit/ibon-barcode-vi", "IndogoController@remitIbonBarcodeVi");
+Route::get("/indogo/remit/ibon-barcode-vi-test", "IndogoController@remitIbonBarcodeViTest");
 Route::get("/indogo/remit/fami-barcode", "IndogoController@remitFamiBarcode");
 Route::get("/indogo/remit/fami-barcode-test", "IndogoController@remitFamiBarcodeTest");
 Route::get("/indogo/remit/ok-barcode-test", "IndogoController@remitOkBarcodeTest");
@@ -287,6 +289,8 @@ Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTe
 Route::get("/indogo/ibon/query", "IndogoController@ibonQuery");
 Route::get("/indogo/ibon/close", "IndogoController@ibonClose");
 Route::get("/indogo/ibon/query-test", "IndogoController@ibonQueryTest");
+Route::get("/indogo/ibon/close-vi-test", "IndogoController@ibonCloseViTestPage");
+Route::post("/indogo/ibon/close-vi-test", "IndogoController@ibonCloseViTest");
 Route::get("/indogo/fami/close", "IndogoController@famiClose");
 Route::get("/indogo/okmart/query", "IndogoController@okmartQuery");
 Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
