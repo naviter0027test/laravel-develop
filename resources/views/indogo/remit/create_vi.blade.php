@@ -56,7 +56,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     recipient_id
                 </span>
-                <input type="text" name="recipient_id" class="col-xs-8" value="1" />
+                <input type="text" name="recipient_id" class="col-xs-8" value="9" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
@@ -78,6 +78,20 @@
                     pin_code_mode(1:ART, 2:MRT[越南], 3:ERT[菲律賓])
                 </span>
                 <input type="text" name="pin_code_mode" class="col-xs-8" value="2" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    recipient_type(1:銀行轉帳, 2:櫃台, 3:送到家)
+                </span>
+                <input type="text" name="recipient_type" class="col-xs-8" value="2" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    currency(VND:越南幣, USD:美金)
+                </span>
+                <input type="text" name="currency" class="col-xs-8" value="VND" />
             </p>
             <button class="col-xs-2">submit</button>
         </form>

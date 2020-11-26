@@ -93,6 +93,12 @@ class IndogoController extends Controller
         return view('indogo.remit.register', ['url' => $url]);
     }
 
+    public function remitRegisterVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/register.php';
+        return view('indogo.remit.register', ['url' => $url]);
+    }
+
     public function remitRequestSmsCode(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/request_sms_code.php';
@@ -126,6 +132,12 @@ class IndogoController extends Controller
     public function remitLoginTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/login.php';
+        return view('indogo.remit.login', ['url' => $url]);
+    }
+
+    public function remitLoginVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/login.php';
         return view('indogo.remit.login', ['url' => $url]);
     }
 
@@ -195,6 +207,12 @@ class IndogoController extends Controller
         return view('indogo.remit.app_photos', ['url' => $url]);
     }
 
+    public function remitPhotosVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/app_photos.php';
+        return view('indogo.remit.app_photos', ['url' => $url]);
+    }
+
     public function remitCheckMemberExistsTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/check_mem_exists.php';
@@ -237,6 +255,12 @@ class IndogoController extends Controller
         return view('indogo.remit.doc_get', ['url' => $url]);
     }
 
+    public function remitDocGetVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/doc_get.php';
+        return view('indogo.remit.doc_get', ['url' => $url]);
+    }
+
     public function remitPhoneTokenSetTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/phone_token_set.php';
@@ -261,6 +285,12 @@ class IndogoController extends Controller
         return view('indogo.remit.member_recipients', ['url' => $url]);
     }
 
+    public function remitMemberRecipientsViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/member_recipients.php';
+        return view('indogo.remit.member_recipients', ['url' => $url]);
+    }
+
     public function remitOrderCheck(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/order_check.php';
@@ -270,6 +300,12 @@ class IndogoController extends Controller
     public function remitOrderCheckTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/order_check.php';
+        return view('indogo.remit.order_check', ['url' => $url]);
+    }
+
+    public function remitOrderCheckVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/order_check.php';
         return view('indogo.remit.order_check', ['url' => $url]);
     }
 
@@ -368,6 +404,37 @@ class IndogoController extends Controller
     public function ibonCloseViTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/ibon/close.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->ibonToHereClose($params['txn_id'], $params['total']);
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
+    public function ibonCloseViPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/ibon/close-vi';
+        return view('indogo.remit.ibon_close', ['url' => $url]);
+    }
+
+    public function ibonCloseVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/ibon/close.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->ibonToHereClose($params['txn_id'], $params['total']);
         $postData = [

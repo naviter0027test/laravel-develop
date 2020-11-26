@@ -13,7 +13,7 @@
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    txn_id
+                    "00"+txn_id
                 </span>
                 <input type="text" name="txn_id" class="col-xs-8" value="" />
             </p>
