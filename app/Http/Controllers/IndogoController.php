@@ -507,6 +507,37 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function famiCloseViPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/fami/close-vi';
+        return view('indogo.remit.fami_close', ['url' => $url]);
+    }
+
+    public function famiCloseVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/fami/close.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->famiToHereCloseProd($params['txn_id'], $params['payment_info']);
+        $postData = [
+            'd' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
     public function okmartQuery(Request $request) {
         $params = $request->all();
         $url = 'https://prod.indogo.link/okmart/query.php';
@@ -746,6 +777,12 @@ class IndogoController extends Controller
     public function remitFamiBarcodeTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/fami_barcode.php';
+        return view('indogo.remit.fami_barcode', ['url' => $url]);
+    }
+
+    public function remitFamiBarcodeVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/fami_barcode.php';
         return view('indogo.remit.fami_barcode', ['url' => $url]);
     }
 

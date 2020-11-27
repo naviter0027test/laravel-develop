@@ -93,12 +93,12 @@ class XmlSampleRepository
         ';
     }
 
-    public function famiToHereCloseProd() {
+    public function famiToHereCloseProd($orderNo = '20200906000004', $pinCode = 'MRT200906XKXJB') {
         return '<OLTP>
                     <AP>
                         <STATUS>S</STATUS>
-                        <ORDER_NO>20200906000004</ORDER_NO>
-                        <PIN_CODE>MRT200906XKXJB</PIN_CODE>
+                        <ORDER_NO>'. $orderNo. '</ORDER_NO>
+                        <PIN_CODE>'. $pinCode. '</PIN_CODE>
                         <DESC></DESC>
                         <STORE_DESC>system</STORE_DESC>
                     </AP>
