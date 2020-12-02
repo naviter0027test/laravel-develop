@@ -606,6 +606,37 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function okmartBarcodeQueryViPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/okmart/barcode-query-vi';
+        return view('indogo.ok.barcode_query', ['url' => $url]);
+    }
+
+    public function okmartBarcodeQueryVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/okmart/barcode_query.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->okBarcodeQueryToHere($params['barcode1'], $params['barcode2'], $params['barcode3']);
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
     public function okmartClosePage(Request $request) {
         $params = $request->all();
         $url = '/indogo/okmart/close';
@@ -813,6 +844,12 @@ class IndogoController extends Controller
     public function remitOkBarcode(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/ok_barcode.php';
+        return view('indogo.remit.ok_barcode', ['url' => $url]);
+    }
+
+    public function remitOkBarcodeVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/ok_barcode.php';
         return view('indogo.remit.ok_barcode', ['url' => $url]);
     }
 

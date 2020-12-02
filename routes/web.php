@@ -238,6 +238,7 @@ Route::get("/indogo/remit/fami-barcode-test", "IndogoController@remitFamiBarcode
 Route::get("/indogo/remit/fami-barcode-vi", "IndogoController@remitFamiBarcodeVi");
 Route::get("/indogo/remit/ok-barcode-test", "IndogoController@remitOkBarcodeTest");
 Route::get("/indogo/remit/ok-barcode", "IndogoController@remitOkBarcode");
+Route::get("/indogo/remit/ok-barcode-vi", "IndogoController@remitOkBarcodeVi");
 Route::get("/indogo/remit/hilife-barcode", "IndogoController@remitHilifeBarcode");
 Route::get("/indogo/remit/hilife-barcode-test", "IndogoController@remitHilifeBarcodeTest");
 
@@ -308,6 +309,8 @@ Route::get("/indogo/fami/close-vi", "IndogoController@famiCloseViPage");
 Route::post("/indogo/fami/close-vi", "IndogoController@famiCloseVi");
 Route::get("/indogo/okmart/query", "IndogoController@okmartQuery");
 Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
+Route::get("/indogo/okmart/barcode-query-vi", "IndogoController@okmartBarcodeQueryViPage");
+Route::post("/indogo/okmart/barcode-query-vi", "IndogoController@okmartBarcodeQueryVi");
 Route::get("/indogo/okmart/barcode-query-test", "IndogoController@okBarcodeQueryTest");
 Route::get("/indogo/okmart/barcode-query", "IndogoController@okBarcodeQuery");
 Route::get("/indogo/okmart/close-page", "IndogoController@okmartClosePage");

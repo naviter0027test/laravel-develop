@@ -146,15 +146,15 @@ class XmlSampleRepository
             ';
     }
 
-    public function okBarcodeQueryToHere() {
+    public function okBarcodeQueryToHere($barcode1 = '20200521ART', $barcode2 = '2020052100000900', $barcode3 = '1412AX230000250') {
         return '<CHECKDATA>
             <MMK_ID>GF4</MMK_ID>
 <TEN_CODE>1234</TEN_CODE>
 <TRAN_NO>10110300001</TRAN_NO>
 <PAY_AMT>20</PAY_AMT>
-<BARCODE_1>20200521ART</BARCODE_1>
-<BARCODE_2>2020052100000900</BARCODE_2>
-<BARCODE_3>1412AX230000250</BARCODE_3>
+<BARCODE_1>'. $barcode1. '</BARCODE_1>
+<BARCODE_2>'. $barcode2. '</BARCODE_2>
+<BARCODE_3>'. $barcode3. '</BARCODE_3>
 <DATA_1>OKmart</DATA_1> 
 <DATA_2></DATA_2>
 <DATA_3></DATA_3>
