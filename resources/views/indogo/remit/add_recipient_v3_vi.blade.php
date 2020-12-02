@@ -77,6 +77,20 @@
                 </span>
                 <input type="text" name="address" class="col-xs-8" />
             </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    bank_code(recipient_type=1 則必填)
+                </span>
+                <input type="text" name="bank_code" class="col-xs-8" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    bank_acc(recipient_type=1 則必填)
+                </span>
+                <input type="text" name="bank_acc" class="col-xs-8" />
+            </p>
             <button class="col-xs-2">submit</button>
         </form>
     </body>
