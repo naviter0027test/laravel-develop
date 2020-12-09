@@ -732,11 +732,44 @@ class IndogoController extends Controller
 
     public function hilifeClose(Request $request) {
         $params = $request->all();
+        $params['shop_id'] = $params['shop_id'] != '' ? $params['shop_id'] : 'T095';
+        $params['trans_no'] = $params['trans_no'] != '' ? $params['trans_no'] : '05LA2231';
+        $params['order_no'] = $params['order_no'] != '' ? $params['order_no'] : '';
+        $params['AMOUNT'] = $params['AMOUNT'] != '' ? $params['AMOUNT'] : '300';
+
+        $url = 'http://prod.indogo.link/hilife/close.php';
+        $postData = [
+            'SHOP_ID' => $params['shop_id'],
+            'TRANS_NO' => $params['trans_no'],
+            'ORDER_NO' => $params['order_no'],
+            'AMOUNT' => $params['AMOUNT'],
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url. "?". http_build_query($postData));
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
+    public function hilifeBarcodeClosePage(Request $request) {
+        $url = '/indogo/hilife/barcode-close';
+        return view('indogo.remit.hilife_barcode_close', ['url' => $url]);
+    }
+
+    public function hilifeBarcodeClose(Request $request) {
+        $params = $request->all();
         $params['olCode1'] = $params['olCode1'] != '' ? $params['olCode1'] : '090731ME8';
         $params['olCode2'] = $params['olCode2'] != '' ? $params['olCode2'] : '2020073100000400';
         $params['olCode3'] = $params['olCode3'] != '' ? $params['olCode3'] : '073153000000250';
         $params['AMOUNT'] = $params['AMOUNT'] != '' ? $params['AMOUNT'] : '250';
-        $url = 'http://prod.indogo.link/hilife/close.php';
+        $url = 'http://prod.indogo.link/hilife/barcode_close.php';
         $xmlSampleRepository = new XmlSampleRepository();
         $xml = $xmlSampleRepository->hilifeCloseProd($params);
         $postData = $xml;
@@ -862,6 +895,12 @@ class IndogoController extends Controller
     public function remitHilifeBarcodeTest(Request $request) {
         $params = $request->all();
         $url = 'https://dev.indogo.link/app/remit/hilife_barcode.php';
+        return view('indogo.remit.hilife_barcode', ['url' => $url]);
+    }
+
+    public function remitHilifeBarcodeVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/hilife_barcode.php';
         return view('indogo.remit.hilife_barcode', ['url' => $url]);
     }
 

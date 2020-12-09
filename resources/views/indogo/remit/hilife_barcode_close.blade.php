@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>indogo remit hilife close</title>
+        <title>indogo remit hilife barcode close</title>
         <meta charset='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='/lib/bootstrap/dist/css/bootstrap.min.css' rel='stylesheet' />
@@ -9,27 +9,27 @@
     <body>
         <form action="{{ $url }}" method="post">
             {{ csrf_field() }}
-            <h3>indogo remit hilife close</h3>
+            <h3>indogo remit hilife barcode close</h3>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    shop_id
+                    olCode1
                 </span>
-                <input type="text" name="shop_id" class="col-xs-8" value="T095" />
+                <input type="text" name="olCode1" class="col-xs-8" value="" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    trans_no
+                    olCode2
                 </span>
-                <input type="text" name="trans_no" class="col-xs-8" value="05LA2231" />
+                <input type="text" name="olCode2" class="col-xs-8" value="" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
-                    order_no(payment_info)
+                    olCode3
                 </span>
-                <input type="text" name="order_no" class="col-xs-8" value="" />
+                <input type="text" name="olCode3" class="col-xs-8" value="" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
