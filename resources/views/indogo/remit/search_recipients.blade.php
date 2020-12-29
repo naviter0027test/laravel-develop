@@ -21,7 +21,14 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     recipient_name
                 </span>
-                <input type="text" name="recipient_name" class="col-xs-8" value="WIESYE SUHARTOMO SANTOSO" />
+                <input type="text" name="recipient_name[]" class="col-xs-8" value="WIESYE SUHARTOMO SANTOSO" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    recipient_name
+                </span>
+                <input type="text" name="recipient_name[]" class="col-xs-8" value="hello2" />
             </p>
             <button class="col-xs-2">submit</button>
         </form>

@@ -15,6 +15,11 @@
                     token
                 </span>
                 <input type="text" name="token" class="col-xs-8" value="d817b457faa541af9feef769c1827bc7" />
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    mode
+                </span>
+                <input type="text" name="mode" class="col-xs-8" value="json" />
             </p>
             <button class="col-xs-2">submit</button>
         </form>
