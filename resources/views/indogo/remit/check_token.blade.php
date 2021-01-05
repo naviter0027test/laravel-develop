@@ -14,7 +14,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     token
                 </span>
-                <input type="text" name="token" class="col-xs-8" value="d817b457faa541af9feef769c1827bc7" />
+                <input type="text" name="token" class="col-xs-8" value="7a2f96fd45de4b2bae295cdf4da5bd9c" />
             </p>
             <button class="col-xs-2">submit</button>
         </form>

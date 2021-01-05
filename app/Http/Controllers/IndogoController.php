@@ -309,6 +309,12 @@ class IndogoController extends Controller
         return view('indogo.remit.bank_list', ['url' => $url]);
     }
 
+    public function remitMemberRecipients(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/member_recipients.php';
+        return view('indogo.remit.member_recipients', ['url' => $url]);
+    }
+
     public function remitMemberRecipientsTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/member_recipients.php';

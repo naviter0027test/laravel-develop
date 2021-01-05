@@ -289,6 +289,7 @@ Route::get("/indogo/remit/doc-get-vi-test", "IndogoController@remitDocGetViTest"
 Route::get("/indogo/remit/phone-token-set-test", "IndogoController@remitPhoneTokenSetTest");
 Route::get("/indogo/remit/phone-token-del-test", "IndogoController@remitPhoneTokenDelTest");
 Route::get("/indogo/remit/bank-list-test", "IndogoController@remitBankListTest");
+Route::get("/indogo/remit/member-recipients", "IndogoController@remitMemberRecipients");
 Route::get("/indogo/remit/member-recipients-test", "IndogoController@remitMemberRecipientsTest");
 Route::get("/indogo/remit/member-recipients-vi-test", "IndogoController@remitMemberRecipientsViTest");
 Route::get("/indogo/remit/order-check", "IndogoController@remitOrderCheck");
