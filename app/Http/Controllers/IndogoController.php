@@ -81,6 +81,30 @@ class IndogoController extends Controller
         return view('indogo.remit.update_arc', ['url' => $url]);
     }
 
+    public function remitRegisterStep1Test(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/register_step_1.php';
+        return view('indogo.remit.register_step1', ['url' => $url]);
+    }
+
+    public function remitRegisterStep2Test(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/register_step_2.php';
+        return view('indogo.remit.register_step2', ['url' => $url]);
+    }
+
+    public function remitRegisterStep1(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/register_step_1.php';
+        return view('indogo.remit.register_step1', ['url' => $url]);
+    }
+
+    public function remitRegisterStep2(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/register_step_2.php';
+        return view('indogo.remit.register_step2', ['url' => $url]);
+    }
+
     public function remitRegister(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/register.php';
@@ -109,6 +133,12 @@ class IndogoController extends Controller
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/request_sms_code.php';
         return view('indogo.remit.request_sms_code', ['url' => $url]);
+    }
+
+    public function remitVerifySmsCode(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/verify_sms_code.php';
+        return view('indogo.remit.verify_sms_code', ['url' => $url]);
     }
 
     public function remitVerifySmsCodeTest(Request $request) {
@@ -406,11 +436,17 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function ibonClosePage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/ibon/close';
+        return view('indogo.remit.ibon_close', ['url' => $url]);
+    }
+
     public function ibonClose(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/ibon/close.php';
         $xmlSampleRepository = new XmlSampleRepository();
-        $xml = $xmlSampleRepository->ibonToHereCloseProd();
+        $xml = $xmlSampleRepository->ibonToHereClose($params['txn_id'], $params['total']);
         $postData = [
             'XMLData' => $xml,
         ];
@@ -518,11 +554,48 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function famiCloseTestPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/fami/close-test';
+        return view('indogo.remit.fami_close', ['url' => $url]);
+    }
+
+    public function famiCloseTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/fami/close.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->famiToHereCloseProd($params['txn_id'], $params['payment_info']);
+        $postData = [
+            'd' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
+    public function famiClosePage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/fami/close';
+        return view('indogo.remit.fami_close', ['url' => $url]);
+    }
+
     public function famiClose(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/fami/close.php';
         $xmlSampleRepository = new XmlSampleRepository();
-        $xml = $xmlSampleRepository->famiToHereCloseProd();
+        $xml = $xmlSampleRepository->famiToHereCloseProd($params['txn_id'], $params['payment_info']);
         $postData = [
             'd' => $xml,
         ];
@@ -934,11 +1007,17 @@ class IndogoController extends Controller
         return view('indogo.remit.money_transfer_history', ['url' => $url]);
     }
 
+    public function ibonCloseTestPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/ibon/close-test';
+        return view('indogo.remit.ibon_close', ['url' => $url]);
+    }
+
     public function ibonCloseTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/ibon/close.php';
         $xmlSampleRepository = new XmlSampleRepository();
-        $xml = $xmlSampleRepository->ibonToHereClose();
+        $xml = $xmlSampleRepository->ibonToHereClose($params['txn_id'], $params['total']);
         $postData = [
             'XMLData' => $xml,
         ];
