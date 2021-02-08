@@ -255,6 +255,10 @@ Route::get("/indogo/remit/register-step-1", "IndogoController@remitRegisterStep1
 Route::get("/indogo/remit/register-step-2", "IndogoController@remitRegisterStep2");
 Route::get("/indogo/remit/register-step-1-test", "IndogoController@remitRegisterStep1Test");
 Route::get("/indogo/remit/register-step-2-test", "IndogoController@remitRegisterStep2Test");
+Route::get("/indogo/remit/register-step-1-vi", "IndogoController@remitRegisterStep1Vi");
+Route::get("/indogo/remit/register-step-2-vi", "IndogoController@remitRegisterStep2Vi");
+Route::get("/indogo/remit/register-step-1-vi-test", "IndogoController@remitRegisterStep1ViTest");
+Route::get("/indogo/remit/register-step-2-vi-test", "IndogoController@remitRegisterStep2ViTest");
 Route::get("/indogo/remit/register", "IndogoController@remitRegister");
 Route::get("/indogo/remit/register-test", "IndogoController@remitRegisterTest");
 Route::get("/indogo/remit/register-vi", "IndogoController@remitRegisterVi");
@@ -262,6 +266,8 @@ Route::get("/indogo/remit/request-sms-code", "IndogoController@remitRequestSmsCo
 Route::get("/indogo/remit/request-sms-code-test", "IndogoController@remitRequestSmsCodeTest");
 Route::get("/indogo/remit/verify-sms-code", "IndogoController@remitVerifySmsCode");
 Route::get("/indogo/remit/verify-sms-code-test", "IndogoController@remitVerifySmsCodeTest");
+Route::get("/indogo/remit/verify-sms-code-vi", "IndogoController@remitVerifySmsCodeVi");
+Route::get("/indogo/remit/verify-sms-code-vi-test", "IndogoController@remitVerifySmsCodeViTest");
 Route::get("/indogo/remit/family-test", "IndogoController@remitFamilyTest");
 Route::get("/indogo/remit/login", "IndogoController@remitLogin");
 Route::get("/indogo/remit/login-test", "IndogoController@remitLoginTest");
@@ -271,6 +277,7 @@ Route::get("/indogo/remit/add-recipient-v2", "IndogoController@remitAddRecipient
 Route::get("/indogo/remit/add-recipient-v2-test", "IndogoController@remitAddRecipientV2Test");
 Route::get("/indogo/remit/add-recipient-v2-prodtw", "IndogoController@remitAddRecipientV2ProdTw");
 Route::get("/indogo/remit/add-recipient-v2-vi", "IndogoController@remitAddRecipientV2Vi");
+Route::get("/indogo/remit/add-recipient-v2-vi-test", "IndogoController@remitAddRecipientV2ViTest");
 Route::get("/indogo/remit/search-recipients-vi", "IndogoController@remitSearchRecipientsVi");
 Route::get("/indogo/remit/search-recipients-vi-test", "IndogoController@remitSearchRecipientsViTest");
 Route::get("/indogo/remit/add-recipient-v2-update-vi", "IndogoController@remitAddRecipientV2UpdateVi");
@@ -366,3 +373,4 @@ Route::get("/facebook/privacy", "FacebookController@privacy");
 Route::get("/facebook/messenger", "FacebookController@messenger");
 
 Route::get("/hrs/diary/index", "HrsController@diaryIndex");
+Route::get("/hrs/attendance/checkin", "HrsController@attendanceCheckIn");
