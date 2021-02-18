@@ -959,6 +959,12 @@ class IndogoController extends Controller
         return view('indogo.remit.point_transfer', ['url' => $url]);
     }
 
+    public function pointTransferViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/point_transfer.php';
+        return view('indogo.remit.point_transfer', ['url' => $url]);
+    }
+
     public function remitIbonBarcode(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/ibon_barcode.php';

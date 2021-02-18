@@ -350,6 +350,7 @@ Route::get("/indogo/remit/point-transfer-check", "IndogoController@pointTransfer
 Route::get("/indogo/remit/point-transfer-check-test", "IndogoController@pointTransferCheckTest");
 Route::get("/indogo/remit/point-transfer", "IndogoController@pointTransfer");
 Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferTest");
+Route::get("/indogo/remit/point-transfer-vi-test", "IndogoController@pointTransferViTest");
 Route::get("/indogo/remit/money-transfer-history", "IndogoController@moneyTransferHistory");
 Route::get("/indogo/remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
 
