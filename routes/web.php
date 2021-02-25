@@ -301,8 +301,11 @@ Route::get("/indogo/remit/doc-get-vi-test", "IndogoController@remitDocGetViTest"
 Route::get("/indogo/remit/phone-token-set-test", "IndogoController@remitPhoneTokenSetTest");
 Route::get("/indogo/remit/phone-token-del-test", "IndogoController@remitPhoneTokenDelTest");
 Route::get("/indogo/remit/bank-list-test", "IndogoController@remitBankListTest");
+Route::get("/indogo/remit/bank-list-vi", "IndogoController@remitBankListVi");
+Route::get("/indogo/remit/bank-list-vi-test", "IndogoController@remitBankListViTest");
 Route::get("/indogo/remit/member-recipients", "IndogoController@remitMemberRecipients");
 Route::get("/indogo/remit/member-recipients-test", "IndogoController@remitMemberRecipientsTest");
+Route::get("/indogo/remit/member-recipients-vi", "IndogoController@remitMemberRecipientsVi");
 Route::get("/indogo/remit/member-recipients-vi-test", "IndogoController@remitMemberRecipientsViTest");
 Route::get("/indogo/remit/order-check", "IndogoController@remitOrderCheck");
 Route::get("/indogo/remit/order-check-test", "IndogoController@remitOrderCheckTest");
@@ -353,6 +356,8 @@ Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferT
 Route::get("/indogo/remit/point-transfer-vi-test", "IndogoController@pointTransferViTest");
 Route::get("/indogo/remit/money-transfer-history", "IndogoController@moneyTransferHistory");
 Route::get("/indogo/remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
+Route::get("/indogo/remit/money-transfer-history-vi", "IndogoController@moneyTransferHistoryVi");
+Route::get("/indogo/remit/money-transfer-history-vi-test", "IndogoController@moneyTransferHistoryViTest");
 
 Route::get("/indogo/remit/app-photos", "IndogoController@remitAppPhotos");
 Route::get("/indogo/remit/app-share-sms", "IndogoController@remitAppShareSms");
@@ -375,3 +380,4 @@ Route::get("/facebook/messenger", "FacebookController@messenger");
 
 Route::get("/hrs/diary/index", "HrsController@diaryIndex");
 Route::get("/hrs/attendance/checkin", "HrsController@attendanceCheckIn");
+Route::get("/hrs/curl/https-test", "HrsController@curlHttpsTest");

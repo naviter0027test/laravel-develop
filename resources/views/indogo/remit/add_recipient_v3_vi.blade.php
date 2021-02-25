@@ -21,7 +21,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     recipient_type(1: 銀行轉帳, 2:櫃台, 3:送到家)
                 </span>
-                <input type="text" name="recipient_type" value="1" class="col-xs-8" />
+                <input type="text" name="recipient_type" value="2" class="col-xs-8" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
@@ -61,14 +61,14 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     province_id
                 </span>
-                <input type="text" name="province_id" value="AG" class="col-xs-8" />
+                <input type="text" name="province_id" value="1" class="col-xs-8" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
                     district_id
                 </span>
-                <input type="text" name="district_id" value="ANPHU" class="col-xs-8" />
+                <input type="text" name="district_id" value="2" class="col-xs-8" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">

@@ -381,6 +381,18 @@ class IndogoController extends Controller
         return view('indogo.remit.bank_list', ['url' => $url]);
     }
 
+    public function remitBankListVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/bank_list.php';
+        return view('indogo.remit.bank_list', ['url' => $url]);
+    }
+
+    public function remitBankListViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/bank_list.php';
+        return view('indogo.remit.bank_list', ['url' => $url]);
+    }
+
     public function remitMemberRecipients(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/member_recipients.php';
@@ -390,6 +402,12 @@ class IndogoController extends Controller
     public function remitMemberRecipientsTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/member_recipients.php';
+        return view('indogo.remit.member_recipients', ['url' => $url]);
+    }
+
+    public function remitMemberRecipientsVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/member_recipients.php';
         return view('indogo.remit.member_recipients', ['url' => $url]);
     }
 
@@ -1052,6 +1070,18 @@ class IndogoController extends Controller
     public function moneyTransferHistoryTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/money_transfer_history.php';
+        return view('indogo.remit.money_transfer_history', ['url' => $url]);
+    }
+
+    public function moneyTransferHistoryVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/money_transfer_history.php';
+        return view('indogo.remit.money_transfer_history', ['url' => $url]);
+    }
+
+    public function moneyTransferHistoryViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/money_transfer_history.php';
         return view('indogo.remit.money_transfer_history', ['url' => $url]);
     }
 
