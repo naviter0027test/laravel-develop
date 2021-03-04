@@ -234,13 +234,13 @@ class IndogoController extends Controller
     public function remitAddRecipientV2Vi(Request $request) {
         $params = $request->all();
         $url = 'http://govnprod.indogo.link/app/remit/add_recipient_v2.php';
-        return view('indogo.remit.add_recipient_v2', ['url' => $url]);
+        return view('indogo.remit.add_recipient_v2_vi', ['url' => $url]);
     }
 
     public function remitAddRecipientV2ViTest(Request $request) {
         $params = $request->all();
         $url = 'http://govndev.indogo.link/app/remit/add_recipient_v2.php';
-        return view('indogo.remit.add_recipient_v2', ['url' => $url]);
+        return view('indogo.remit.add_recipient_v2_vi', ['url' => $url]);
     }
 
     public function remitSearchRecipientsVi(Request $request) {

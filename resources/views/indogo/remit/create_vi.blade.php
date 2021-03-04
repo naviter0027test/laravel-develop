@@ -28,28 +28,28 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     kurs_lm_time
                 </span>
-                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2021/01/21 13:59:08" />
+                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2021/02/23 20:20:04" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
                     service_charge
                 </span>
-                <input type="text" name="service_charge" class="col-xs-8" value="200" />
+                <input type="text" name="service_charge" class="col-xs-8" value="180" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
                     total_payment
                 </span>
-                <input type="text" name="total_payment" class="col-xs-8" value="300" />
+                <input type="text" name="total_payment" class="col-xs-8" value="280" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
                     transfer_idr
                 </span>
-                <input type="text" name="transfer_idr" class="col-xs-8" value="80000" />
+                <input type="text" name="transfer_idr" class="col-xs-8" value="80200" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
