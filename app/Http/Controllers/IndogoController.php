@@ -527,6 +527,68 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function ibonQueryViPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/ibon/query-vi';
+        return view('indogo.ibon.query_vi', ['url' => $url]);
+    }
+
+    public function ibonQueryVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/ibon/query.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->ibonToHereProd($params['payment_info']);
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
+    public function ibonQueryViPageTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/ibon/query-vi-test';
+        return view('indogo.ibon.query_vi', ['url' => $url]);
+    }
+
+    public function ibonQueryViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/ibon/query.php';
+        $xmlSampleRepository = new XmlSampleRepository();
+        $xml = $xmlSampleRepository->ibonToHereProd($params['payment_info']);
+        $postData = [
+            'XMLData' => $xml,
+        ];
+
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($postData));
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 5);
+        curl_setopt($ch, CURLOPT_TIMEOUT, 5);
+        
+        $response = curl_exec($ch);
+        $curl_error = curl_error($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+        return $response;
+    }
+
     public function ibonCloseViTestPage(Request $request) {
         $params = $request->all();
         $url = 'http://laravel.axcell28.idv.tw/indogo/ibon/close-vi-test';
@@ -819,15 +881,21 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function hilifeQueryTestPage(Request $request) {
+        $params = $request->all();
+        $url = '/indogo/hilife/query-test';
+        return view('indogo.remit.hilife_query', ['url' => $url]);
+    }
+
     public function hilifeQueryTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/hilife/query.php';
         $xmlSampleRepository = new XmlSampleRepository();
         //$xml = $xmlSampleRepository->hilifeToHere();
         $postData = [
-            'SHOP_ID' => 'T095',
-            'TRANS_NO' => '05LA2231',
-            'ORDER_NO' => 'MRT200522QGJVF',
+            'SHOP_ID' => $params['shop_id'],
+            'TRANS_NO' => $params['trans_no'],
+            'ORDER_NO' => $params['order_no'],
         ];
 
         $ch = curl_init();

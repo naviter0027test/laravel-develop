@@ -7,8 +7,8 @@ use Config;
 
 class XmlSampleRepository
 {
-    public function ibonToHereProd() {
-        return '<SENDDATA>
+    public function ibonToHereProd($paymentInfo = 'ART200618GUHJW') {
+        return "<SENDDATA>
                 <BUSINESS>0700QC1</BUSINESS>
                     <STOREID>A00188</STOREID>
                     <SHOPID>52</SHOPID>
@@ -19,13 +19,13 @@ class XmlSampleRepository
                     <SUB1>551</SUB1>
                     <SUB2>538</SUB2>
                     <SUB3>539</SUB3>
-                    <KEY1>ART200618GUHJW</KEY1>
+                    <KEY1>$paymentInfo</KEY1>
                     <KEY2/>
                     <KEY3/>
                     <KEY4/>
                     <KEY5/>
                 </SENDDATA>
-            ';
+            ";
     }
 
     public function ibonToHere() {
