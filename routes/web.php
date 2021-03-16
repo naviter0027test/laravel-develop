@@ -339,7 +339,8 @@ Route::post("/indogo/fami/close-test", "IndogoController@famiCloseTest");
 Route::get("/indogo/fami/close-vi", "IndogoController@famiCloseViPage");
 Route::post("/indogo/fami/close-vi", "IndogoController@famiCloseVi");
 
-Route::get("/indogo/okmart/query", "IndogoController@okmartQuery");
+Route::get("/indogo/okmart/query", "IndogoController@okmartQueryPage");
+Route::post("/indogo/okmart/query", "IndogoController@okmartQuery");
 Route::get("/indogo/okmart/query-test", "IndogoController@okmartQueryTest");
 Route::get("/indogo/okmart/barcode-query-vi", "IndogoController@okmartBarcodeQueryViPage");
 Route::post("/indogo/okmart/barcode-query-vi", "IndogoController@okmartBarcodeQueryVi");

@@ -106,8 +106,8 @@ class XmlSampleRepository
         ';
     }
 
-    public function okToHereProd() {
-        return '<SENDDATA>
+    public function okToHereProd($payment_info = 'ART200630MYXGF') {
+        return "<SENDDATA>
                     <MMK_ID>0700QC1</MMK_ID>
                     <STOREID>A00188</STOREID>
                     <SHOPID>52</SHOPID>
@@ -120,10 +120,10 @@ class XmlSampleRepository
                     <SUB2>538</SUB2>
                     <SUB3>539</SUB3>
                     <LISTDATA>
-                        <DATA_1>ART200630MYXGF</DATA_1>
+                        <DATA_1>$payment_info</DATA_1>
                     </LISTDATA>
                 </SENDDATA>
-            ';
+            ";
     }
 
     public function okToHere() {

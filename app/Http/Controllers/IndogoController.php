@@ -769,11 +769,17 @@ class IndogoController extends Controller
         return $response;
     }
 
+    public function okmartQueryPage(Request $request) {
+        $params = $request->all();
+        $url = 'http://laravel.axcell28.idv.tw/indogo/okmart/query';
+        return view('indogo.remit.okmart_query', ['url' => $url]);
+    }
+
     public function okmartQuery(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/okmart/query.php';
         $xmlSampleRepository = new XmlSampleRepository();
-        $xml = $xmlSampleRepository->okToHereProd();
+        $xml = $xmlSampleRepository->okToHereProd($params['payment_info']);
         $postData = [
             'XMLData' => $xml,
         ];
