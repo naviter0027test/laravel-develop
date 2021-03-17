@@ -286,6 +286,8 @@ Route::get("/indogo/remit/get-province-district-vi", "IndogoController@remitGetP
 Route::get("/indogo/remit/get-province-district-vi-test", "IndogoController@remitGetProvinceDistrictViTest");
 Route::get("/indogo/remit/hide-recipient", "IndogoController@remitHideRecipient");
 Route::get("/indogo/remit/hide-recipient-test", "IndogoController@remitHideRecipientTest");
+Route::get("/indogo/remit/hide-recipient-vi", "IndogoController@remitHideRecipientVi");
+Route::get("/indogo/remit/hide-recipient-vi-test", "IndogoController@remitHideRecipientViTest");
 Route::get("/indogo/remit/app-photos", "IndogoController@remitPhotos");
 Route::get("/indogo/remit/app-photos-test", "IndogoController@remitPhotosTest");
 Route::get("/indogo/remit/app-photos-vi", "IndogoController@remitPhotosVi");

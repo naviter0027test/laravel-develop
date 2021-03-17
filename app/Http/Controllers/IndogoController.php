@@ -291,6 +291,18 @@ class IndogoController extends Controller
         return view('indogo.remit.hide_recipient', ['url' => $url]);
     }
 
+    public function remitHideRecipientVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/hide_recipient.php';
+        return view('indogo.remit.hide_recipient', ['url' => $url]);
+    }
+
+    public function remitHideRecipientViTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://govndev.indogo.link/app/remit/hide_recipient.php';
+        return view('indogo.remit.hide_recipient', ['url' => $url]);
+    }
+
     public function remitPhotos(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/app_photos.php';
