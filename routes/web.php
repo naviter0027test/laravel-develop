@@ -296,6 +296,7 @@ Route::get("/indogo/remit/forget-sms", "IndogoController@remitForgetSms");
 Route::get("/indogo/remit/forget-sms-test", "IndogoController@remitForgetSmsTest");
 Route::get("/indogo/remit/password-update", "IndogoController@remitPasswordUpdate");
 Route::get("/indogo/remit/password-update-test", "IndogoController@remitPasswordUpdateTest");
+Route::get("/indogo/remit/forget-sms-vi", "IndogoController@remitForgetSmsVi");
 Route::get("/indogo/remit/doc-get", "IndogoController@remitDocGet");
 Route::get("/indogo/remit/doc-get-test", "IndogoController@remitDocGetTest");
 Route::get("/indogo/remit/doc-get-vi", "IndogoController@remitDocGetVi");

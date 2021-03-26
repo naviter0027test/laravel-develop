@@ -294,7 +294,7 @@ class IndogoController extends Controller
     public function remitHideRecipientVi(Request $request) {
         $params = $request->all();
         $url = 'http://govnprod.indogo.link/app/remit/hide_recipient.php';
-        return view('indogo.remit.hide_recipient', ['url' => $url]);
+        return view('indogo.remit.hide_recipient_vi', ['url' => $url]);
     }
 
     public function remitHideRecipientViTest(Request $request) {
@@ -336,6 +336,12 @@ class IndogoController extends Controller
     public function remitForgetSmsTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/password_forget_sms.php';
+        return view('indogo.remit.password_forget_sms', ['url' => $url]);
+    }
+
+    public function remitForgetSmsVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/password_forget_sms.php';
         return view('indogo.remit.password_forget_sms', ['url' => $url]);
     }
 
