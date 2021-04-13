@@ -28,7 +28,7 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     kurs_lm_time
                 </span>
-                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2021/03/03 17:30:05" />
+                <input type="text" name="kurs_lm_time" class="col-xs-8" value="2021/03/30 23:49:41" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
@@ -49,14 +49,14 @@
                     <label class="glyphicon glyphicon-pencil"></label>
                     transfer_idr
                 </span>
-                <input type="text" name="transfer_idr" class="col-xs-8" value="80600" />
+                <input type="text" name="transfer_idr" class="col-xs-8" value="80200" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
                     recipient_id
                 </span>
-                <input type="text" name="recipient_id" class="col-xs-8" value="9" />
+                <input type="text" name="recipient_id" class="col-xs-8" value="3" />
             </p>
             <p class="col-xs-12">
                 <span class="col-xs-3">

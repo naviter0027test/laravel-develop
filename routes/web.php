@@ -278,8 +278,10 @@ Route::get("/indogo/remit/add-recipient-v2-test", "IndogoController@remitAddReci
 Route::get("/indogo/remit/add-recipient-v2-prodtw", "IndogoController@remitAddRecipientV2ProdTw");
 Route::get("/indogo/remit/add-recipient-v2-vi", "IndogoController@remitAddRecipientV2Vi");
 Route::get("/indogo/remit/add-recipient-v2-vi-test", "IndogoController@remitAddRecipientV2ViTest");
+Route::get("/indogo/remit/check-recipient-v2-vi", "IndogoController@remitCheckRecipientV2Vi");
 Route::get("/indogo/remit/search-recipients-vi", "IndogoController@remitSearchRecipientsVi");
 Route::get("/indogo/remit/search-recipients-vi-test", "IndogoController@remitSearchRecipientsViTest");
+Route::get("/indogo/remit/search-recipients-ids-vi", "IndogoController@remitSearchRecipientsIdsVi");
 Route::get("/indogo/remit/add-recipient-v2-update-vi", "IndogoController@remitAddRecipientV2UpdateVi");
 Route::get("/indogo/remit/add-recipient-v2-update-vi-test", "IndogoController@remitAddRecipientV2UpdateViTest");
 Route::get("/indogo/remit/get-province-district-vi", "IndogoController@remitGetProvinceDistrictVi");
