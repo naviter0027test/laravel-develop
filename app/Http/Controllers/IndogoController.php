@@ -384,7 +384,7 @@ class IndogoController extends Controller
     public function remitDocGetVi(Request $request) {
         $params = $request->all();
         $url = 'http://govnprod.indogo.link/app/remit/doc_get.php';
-        return view('indogo.remit.doc_get', ['url' => $url]);
+        return view('indogo.remit.doc_get_vi', ['url' => $url]);
     }
 
     public function remitDocGetViTest(Request $request) {
