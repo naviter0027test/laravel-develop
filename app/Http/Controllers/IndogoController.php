@@ -45,6 +45,12 @@ class IndogoController extends Controller
         return view('indogo.remit.update_id_card', ['url' => $url]);
     }
 
+    public function remitUpdateIdCardVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/update_id_card.php';
+        return view('indogo.remit.update_id_card', ['url' => $url]);
+    }
+
     public function checkToken(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/check_token.php';
@@ -78,6 +84,12 @@ class IndogoController extends Controller
     public function remitUpdateArcTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link//app/remit/update_arc.php';
+        return view('indogo.remit.update_arc', ['url' => $url]);
+    }
+
+    public function remitUpdateArcVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/update_arc.php';
         return view('indogo.remit.update_arc', ['url' => $url]);
     }
 
@@ -405,6 +417,18 @@ class IndogoController extends Controller
         return view('indogo.remit.phone_token_del', ['url' => $url]);
     }
 
+    public function remitPhoneTokenSetVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/phone_token_set.php';
+        return view('indogo.remit.phone_token_set', ['url' => $url]);
+    }
+
+    public function remitPhoneTokenDelVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/phone_token_del.php';
+        return view('indogo.remit.phone_token_del', ['url' => $url]);
+    }
+
     public function remitBankListTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/bank_list.php';
@@ -477,6 +501,12 @@ class IndogoController extends Controller
         return view('indogo.remit.orders_check', ['url' => $url]);
     }
 
+    public function remitOrdersCheckVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/orders_check.php';
+        return view('indogo.remit.orders_check', ['url' => $url]);
+    }
+
     public function remitNotifyRecord(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/notification_record.php';
@@ -498,6 +528,12 @@ class IndogoController extends Controller
     public function remitNotifyReadTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/notification_read.php';
+        return view('indogo.remit.notification_read', ['url' => $url]);
+    }
+
+    public function remitNotifyReadVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/notification_read.php';
         return view('indogo.remit.notification_read', ['url' => $url]);
     }
 
@@ -1069,6 +1105,12 @@ class IndogoController extends Controller
         return view('indogo.remit.point_transfer_check', ['url' => $url]);
     }
 
+    public function pointTransferCheckVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/point_transfer_check.php';
+        return view('indogo.remit.point_transfer_check', ['url' => $url]);
+    }
+
     public function pointTransfer(Request $request) {
         $params = $request->all();
         $url = 'http://prod.indogo.link/app/remit/point_transfer.php';
@@ -1078,6 +1120,12 @@ class IndogoController extends Controller
     public function pointTransferTest(Request $request) {
         $params = $request->all();
         $url = 'http://dev.indogo.link/app/remit/point_transfer.php';
+        return view('indogo.remit.point_transfer', ['url' => $url]);
+    }
+
+    public function pointTransferVi(Request $request) {
+        $params = $request->all();
+        $url = 'http://govnprod.indogo.link/app/remit/point_transfer.php';
         return view('indogo.remit.point_transfer', ['url' => $url]);
     }
 

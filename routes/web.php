@@ -245,12 +245,14 @@ Route::get("/indogo/remit/hilife-barcode-vi", "IndogoController@remitHilifeBarco
 
 Route::get("/indogo/remit/update/idcard", "IndogoController@remitUpdateIdCard");
 Route::get("/indogo/remit/update/idcard-test", "IndogoController@remitUpdateIdCardTest");
+Route::get("/indogo/remit/update/idcard-vi", "IndogoController@remitUpdateIdCardVi");
 Route::get("/indogo/remit/check/token", "IndogoController@checkToken");
 Route::get("/indogo/remit/check/token-test", "IndogoController@checkTokenTest");
 Route::get("/indogo/remit/check/token-vi-test", "IndogoController@checkTokenViTest");
 Route::get("/indogo/remit/check/token-vi", "IndogoController@checkTokenVi");
 Route::get("/indogo/remit/update/arc", "IndogoController@remitUpdateArc");
 Route::get("/indogo/remit/update/arc-test", "IndogoController@remitUpdateArcTest");
+Route::get("/indogo/remit/update/arc-vi", "IndogoController@remitUpdateArcVi");
 Route::get("/indogo/remit/register-step-1", "IndogoController@remitRegisterStep1");
 Route::get("/indogo/remit/register-step-2", "IndogoController@remitRegisterStep2");
 Route::get("/indogo/remit/register-step-1-test", "IndogoController@remitRegisterStep1Test");
@@ -305,6 +307,8 @@ Route::get("/indogo/remit/doc-get-vi", "IndogoController@remitDocGetVi");
 Route::get("/indogo/remit/doc-get-vi-test", "IndogoController@remitDocGetViTest");
 Route::get("/indogo/remit/phone-token-set-test", "IndogoController@remitPhoneTokenSetTest");
 Route::get("/indogo/remit/phone-token-del-test", "IndogoController@remitPhoneTokenDelTest");
+Route::get("/indogo/remit/phone-token-set-vi", "IndogoController@remitPhoneTokenSetVi");
+Route::get("/indogo/remit/phone-token-del-vi", "IndogoController@remitPhoneTokenDelVi");
 Route::get("/indogo/remit/bank-list-test", "IndogoController@remitBankListTest");
 Route::get("/indogo/remit/bank-list-vi", "IndogoController@remitBankListVi");
 Route::get("/indogo/remit/bank-list-vi-test", "IndogoController@remitBankListViTest");
@@ -317,10 +321,12 @@ Route::get("/indogo/remit/order-check-test", "IndogoController@remitOrderCheckTe
 Route::get("/indogo/remit/order-check-vi", "IndogoController@remitOrderCheckVi");
 Route::get("/indogo/remit/orders-check", "IndogoController@remitOrdersCheck");
 Route::get("/indogo/remit/orders-check-test", "IndogoController@remitOrdersCheckTest");
+Route::get("/indogo/remit/orders-check-vi", "IndogoController@remitOrdersCheckVi");
 Route::get("/indogo/remit/notify-record", "IndogoController@remitNotifyRecord");
 Route::get("/indogo/remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
 Route::get("/indogo/remit/notify-read", "IndogoController@remitNotifyRead");
 Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTest");
+Route::get("/indogo/remit/notify-read-vi", "IndogoController@remitNotifyReadVi");
 
 Route::get("/indogo/ibon/query", "IndogoController@ibonQuery");
 Route::get("/indogo/ibon/close", "IndogoController@ibonClosePage");
@@ -367,8 +373,10 @@ Route::get("/indogo/remit/point-history", "IndogoController@pointHistory");
 Route::get("/indogo/remit/point-history-test", "IndogoController@pointHistoryTest");
 Route::get("/indogo/remit/point-transfer-check", "IndogoController@pointTransferCheck");
 Route::get("/indogo/remit/point-transfer-check-test", "IndogoController@pointTransferCheckTest");
+Route::get("/indogo/remit/point-transfer-check-vi", "IndogoController@pointTransferCheckVi");
 Route::get("/indogo/remit/point-transfer", "IndogoController@pointTransfer");
 Route::get("/indogo/remit/point-transfer-test", "IndogoController@pointTransferTest");
+Route::get("/indogo/remit/point-transfer-vi", "IndogoController@pointTransferVi");
 Route::get("/indogo/remit/point-transfer-vi-test", "IndogoController@pointTransferViTest");
 Route::get("/indogo/remit/money-transfer-history", "IndogoController@moneyTransferHistory");
 Route::get("/indogo/remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
