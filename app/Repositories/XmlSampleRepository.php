@@ -28,8 +28,8 @@ class XmlSampleRepository
             ";
     }
 
-    public function ibonToHere() {
-        return '<SENDDATA>
+    public function ibonToHere($paymentInfo = 'ART200512MYNGM') {
+        return "<SENDDATA>
                 <BUSINESS>0700QC1</BUSINESS>
                     <STOREID>A00188</STOREID>
                     <SHOPID>52</SHOPID>
@@ -40,13 +40,13 @@ class XmlSampleRepository
                     <SUB1>551</SUB1>
                     <SUB2>538</SUB2>
                     <SUB3>539</SUB3>
-                    <KEY1>ART200512MYNGM</KEY1>
+                    <KEY1>$paymentInfo</KEY1>
                     <KEY2/>
                     <KEY3/>
                     <KEY4/>
                     <KEY5/>
                 </SENDDATA>
-            ';
+            ";
     }
 
     public function ibonToHereCloseProd() {
@@ -126,8 +126,8 @@ class XmlSampleRepository
             ";
     }
 
-    public function okToHere() {
-        return '<SENDDATA>
+    public function okToHere($payment_info = 'ART200511QZDAW') {
+        return "<SENDDATA>
                     <MMK_ID>0700QC1</MMK_ID>
                     <STOREID>A00188</STOREID>
                     <SHOPID>52</SHOPID>
@@ -140,10 +140,10 @@ class XmlSampleRepository
                     <SUB2>538</SUB2>
                     <SUB3>539</SUB3>
                     <LISTDATA>
-                        <DATA_1>ART200511QZDAW</DATA_1>
+                        <DATA_1>$payment_info</DATA_1>
                     </LISTDATA>
                 </SENDDATA>
-            ';
+            ";
     }
 
     public function okBarcodeQueryToHere($barcode1 = '20200521ART', $barcode2 = '2020052100000900', $barcode3 = '1412AX230000250') {
