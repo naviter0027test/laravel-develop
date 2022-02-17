@@ -1433,5 +1433,53 @@ class IndogoController extends Controller
         $url = 'http://govnprod.indogo.link/app/remit/share_member_check.php';
         return view('indogo.remit.share_member_check', ['url' => $url]);
     }
+
+    public function remitUpdatePhoneSmsTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/update_phone_sms.php';
+        return view('indogo.remit.update_phone_sms', ['url' => $url]);
+    }
+
+    public function remitUpdatePhoneSms(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/update_phone_sms.php';
+        return view('indogo.remit.update_phone_sms', ['url' => $url]);
+    }
+
+    public function remitUpdatePhoneTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/update_phone.php';
+        return view('indogo.remit.update_phone', ['url' => $url]);
+    }
+
+    public function remitUpdatePhone(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/update_phone.php';
+        return view('indogo.remit.update_phone', ['url' => $url]);
+    }
+
+    public function remitRelationshipsTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/relationships.php';
+        return view('indogo.remit.relationships', ['url' => $url]);
+    }
+
+    public function remitRelationships(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/relationships.php';
+        return view('indogo.remit.relationships', ['url' => $url]);
+    }
+
+    public function remitPurposesTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/purposes.php';
+        return view('indogo.remit.purposes', ['url' => $url]);
+    }
+
+    public function remitPurposes(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/purposes.php';
+        return view('indogo.remit.purposes', ['url' => $url]);
+    }
 }
 

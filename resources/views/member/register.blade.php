@@ -93,8 +93,10 @@
                         <label class="glyphicon glyphicon-flash"></label>
                         {{ trans('member.verifyMethod') }}
                     </span>
+<!--
                     <input type="radio" name="verifyMethod" value="sms" class="" />
                         {{ trans('member.smsVerify') }}
+-->
                     <input type="radio" name="verifyMethod" value="email" class="" />
                         {{ trans('member.emailVerify') }}
                 </p>

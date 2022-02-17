@@ -336,7 +336,6 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/password-update-test", "IndogoController@remitPasswordUpdateTest");
     Route::get("remit/forget-sms-vi", "IndogoController@remitForgetSmsVi");
     Route::get("remit/password-update-vi", "IndogoController@remitPasswordUpdateVi");
-     */
 
     Route::get("remit/login", "IndogoController@remitLogin");
     Route::get("remit/login-test", "IndogoController@remitLoginTest");
@@ -347,7 +346,6 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/check/token-vi-test", "IndogoController@checkTokenViTest");
     Route::get("remit/check/token-vi", "IndogoController@checkTokenVi");
 
-    /*
     Route::get("remit/doc-get", "IndogoController@remitDocGet");
     Route::get("remit/doc-get-test", "IndogoController@remitDocGetTest");
     Route::get("remit/doc-get-vi", "IndogoController@remitDocGetVi");
@@ -409,8 +407,16 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/app-share-sms-test", "IndogoController@remitAppShareSmsTest");
     Route::get("remit/app-share-sms-vi", "IndogoController@remitAppShareSmsVi");
     Route::get("remit/app-share-sms-vi-test", "IndogoController@remitAppShareSmsViTest");
-     */
     Route::get("remit/share-member-check-vi", "IndogoController@remitShareMemberCheckVi");
+     */
+    Route::get("remit/update-phone-sms-test", "IndogoController@remitUpdatePhoneSmsTest");
+    Route::get("remit/update-phone-sms", "IndogoController@remitUpdatePhoneSms");
+    Route::get("remit/update-phone-test", "IndogoController@remitUpdatePhoneTest");
+    Route::get("remit/update-phone", "IndogoController@remitUpdatePhone");
+    Route::get("remit/relationships-test", "IndogoController@remitRelationshipsTest");
+    Route::get("remit/relationships", "IndogoController@remitRelationships");
+    Route::get("remit/purposes-test", "IndogoController@remitPurposesTest");
+    Route::get("remit/purposes", "IndogoController@remitPurposes");
 });
 
 Route::get("/tami-v2/api/contact", "TamiV4Controller@contactV2");
