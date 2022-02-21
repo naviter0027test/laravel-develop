@@ -1460,25 +1460,25 @@ class IndogoController extends Controller
 
     public function remitRelationshipsTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/relationships.php';
+        $url = 'http://dev.indogo.link/app/remit/relationship.php';
         return view('indogo.remit.relationships', ['url' => $url]);
     }
 
     public function remitRelationships(Request $request) {
         $params = $request->all();
-        $url = 'http://prod.indogo.link/app/remit/relationships.php';
+        $url = 'http://prod.indogo.link/app/remit/relationship.php';
         return view('indogo.remit.relationships', ['url' => $url]);
     }
 
     public function remitPurposesTest(Request $request) {
         $params = $request->all();
-        $url = 'http://dev.indogo.link/app/remit/purposes.php';
+        $url = 'http://dev.indogo.link/app/remit/transfer_purpose.php';
         return view('indogo.remit.purposes', ['url' => $url]);
     }
 
     public function remitPurposes(Request $request) {
         $params = $request->all();
-        $url = 'http://prod.indogo.link/app/remit/purposes.php';
+        $url = 'http://prod.indogo.link/app/remit/transfer_purpose.php';
         return view('indogo.remit.purposes', ['url' => $url]);
     }
 }
