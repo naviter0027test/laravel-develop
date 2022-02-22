@@ -79,6 +79,13 @@
                 </span>
                 <input type="text" name="pin_code_mode" class="col-xs-8" value="1" />
             </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    purposes_id
+                </span>
+                <input type="text" name="purposes_id" class="col-xs-8" value="" />
+            </p>
             <button class="col-xs-2">submit</button>
         </form>
     </body>
