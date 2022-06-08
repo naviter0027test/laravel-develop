@@ -54,6 +54,20 @@
             <p class="col-xs-12">
                 <span class="col-xs-3">
                     <label class="glyphicon glyphicon-pencil"></label>
+                    arc_expire_date
+                </span>
+                <input type="date" name="arc_expire_date" class="col-xs-8" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    birthday
+                </span>
+                <input type="date" name="birthday" class="col-xs-8" />
+            </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
                     arc
                 </span>
                 <input type="file" name="arc" class="col-xs-8" />

@@ -31,6 +31,13 @@
                 </span>
                 <input type="text" name="barcode3" class="col-xs-8" value="" />
             </p>
+            <p class="col-xs-12">
+                <span class="col-xs-3">
+                    <label class="glyphicon glyphicon-pencil"></label>
+                    total
+                </span>
+                <input type="text" name="total" class="col-xs-8" value="" />
+            </p>
             <button class="col-xs-2">submit</button>
         </form>
     </body>

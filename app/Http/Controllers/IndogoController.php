@@ -195,6 +195,18 @@ class IndogoController extends Controller
         return view('indogo.remit.verify_sms_code', ['url' => $url]);
     }
 
+    public function remitUpdateVerifySmsCode(Request $request) {
+        $params = $request->all();
+        $url = 'http://prod.indogo.link/app/remit/update_verify_sms_code.php';
+        return view('indogo.remit.verify_sms_code', ['url' => $url]);
+    }
+
+    public function remitUpdateVerifySmsCodeTest(Request $request) {
+        $params = $request->all();
+        $url = 'http://dev.indogo.link/app/remit/update_verify_sms_code.php';
+        return view('indogo.remit.verify_sms_code', ['url' => $url]);
+    }
+
     public function remitVerifySmsCodeVi(Request $request) {
         $params = $request->all();
         $url = 'http://govnprod.indogo.link/app/remit/verify_sms_code.php';

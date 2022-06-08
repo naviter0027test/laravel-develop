@@ -146,12 +146,12 @@ class XmlSampleRepository
             ";
     }
 
-    public function okBarcodeQueryToHere($barcode1 = '20200521ART', $barcode2 = '2020052100000900', $barcode3 = '1412AX230000250') {
+    public function okBarcodeQueryToHere($barcode1 = '20200521ART', $barcode2 = '2020052100000900', $barcode3 = '1412AX230000250', $total = 20) {
         return '<CHECKDATA>
             <MMK_ID>GF4</MMK_ID>
 <TEN_CODE>1234</TEN_CODE>
 <TRAN_NO>10110300001</TRAN_NO>
-<PAY_AMT>20</PAY_AMT>
+<PAY_AMT>'. $total. '</PAY_AMT>
 <BARCODE_1>'. $barcode1. '</BARCODE_1>
 <BARCODE_2>'. $barcode2. '</BARCODE_2>
 <BARCODE_3>'. $barcode3. '</BARCODE_3>
@@ -173,6 +173,24 @@ class XmlSampleRepository
             <DATA_3>EVATEST0613</DATA_3><DATA_4>20200910</DATA_4><DATA_5>054138</DATA_5><DATA_6></DATA_6><DATA_7></DATA_7>
             <DATA_8></DATA_8></LISTDATA></CONFIRMDATA>
             ';
+    }
+
+    public function okToHereBarcodeCloseProd($code1, $code2, $code3, $total) {
+        return "<CONFIRMDATA>
+                <MMK_ID>GFP</MMK_ID>
+                <TEN_CODE>0110</TEN_CODE>
+                <TRAN_NO>20090307339</TRAN_NO>
+                <STATUS_CODE>0000</STATUS_CODE>
+                <STATUS_DESC></STATUS_DESC>
+                <BARCODE_1>$code1</BARCODE_1>
+                <BARCODE_2>$code2</BARCODE_2>
+                <BARCODE_3>$code3</BARCODE_3>
+                <DATA_1>OKmart</DATA_1>
+                <DATA_2>$total</DATA_2>
+                <DATA_3>EVATEST0613</DATA_3><DATA_4>20200910</DATA_4><DATA_5>054138</DATA_5><DATA_6></DATA_6><DATA_7></DATA_7>
+                <DATA_8></DATA_8>
+            </CONFIRMDATA>
+            ";
     }
 
     public function hilifeCloseProd($params) {

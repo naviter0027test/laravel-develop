@@ -242,8 +242,10 @@ Route::get("/indogo/remit/phone-token-set-test", "IndogoController@remitPhoneTok
 Route::get("/indogo/remit/phone-token-del-test", "IndogoController@remitPhoneTokenDelTest");
 Route::get("/indogo/remit/phone-token-set-vi", "IndogoController@remitPhoneTokenSetVi");
 Route::get("/indogo/remit/phone-token-del-vi", "IndogoController@remitPhoneTokenDelVi");
+ */
 Route::get("/indogo/remit/notify-record", "IndogoController@remitNotifyRecord");
 Route::get("/indogo/remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
+/*
 Route::get("/indogo/remit/notify-read", "IndogoController@remitNotifyRead");
 Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTest");
 Route::get("/indogo/remit/notify-read-vi", "IndogoController@remitNotifyReadVi");
@@ -320,7 +322,9 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/register-step-1-vi-test", "IndogoController@remitRegisterStep1ViTest");
     Route::get("remit/register-step-2-vi-test", "IndogoController@remitRegisterStep2ViTest");
     Route::get("remit/register", "IndogoController@remitRegister");
+     */
     Route::get("remit/register-test", "IndogoController@remitRegisterTest");
+    /*
     Route::get("remit/register-vi", "IndogoController@remitRegisterVi");
     Route::get("remit/request-sms-code", "IndogoController@remitRequestSmsCode");
     Route::get("remit/request-sms-code-test", "IndogoController@remitRequestSmsCodeTest");
@@ -332,6 +336,8 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/verify-sms-code-vi-test", "IndogoController@remitVerifySmsCodeViTest");
     Route::get("remit/forget-sms", "IndogoController@remitForgetSms");
     Route::get("remit/forget-sms-test", "IndogoController@remitForgetSmsTest");
+    Route::get("remit/update-verify-sms-code", "IndogoController@remitUpdateVerifySmsCode");
+    Route::get("remit/update-verify-sms-code-test", "IndogoController@remitUpdateVerifySmsCodeTest");
     Route::get("remit/password-update", "IndogoController@remitPasswordUpdate");
     Route::get("remit/password-update-test", "IndogoController@remitPasswordUpdateTest");
     Route::get("remit/forget-sms-vi", "IndogoController@remitForgetSmsVi");
@@ -389,7 +395,9 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/ok-barcode", "IndogoController@remitOkBarcode");
     Route::get("remit/ok-barcode-vi", "IndogoController@remitOkBarcodeVi");
     Route::get("remit/hilife-barcode", "IndogoController@remitHilifeBarcode");
+     */
     Route::get("remit/hilife-barcode-test", "IndogoController@remitHilifeBarcodeTest");
+    /*
     Route::get("remit/hilife-barcode-vi", "IndogoController@remitHilifeBarcodeVi");
     Route::get("remit/order-check", "IndogoController@remitOrderCheck");
     Route::get("remit/order-check-test", "IndogoController@remitOrderCheckTest");
@@ -397,8 +405,10 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/orders-check", "IndogoController@remitOrdersCheck");
     Route::get("remit/orders-check-test", "IndogoController@remitOrdersCheckTest");
     Route::get("remit/orders-check-vi", "IndogoController@remitOrdersCheckVi");
+     */
     Route::get("remit/money-transfer-history", "IndogoController@moneyTransferHistory");
     Route::get("remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
+    /*
     Route::get("remit/money-transfer-history-vi", "IndogoController@moneyTransferHistoryVi");
     Route::get("remit/money-transfer-history-vi-test", "IndogoController@moneyTransferHistoryViTest");
     Route::get("remit/get-province-district-vi", "IndogoController@remitGetProvinceDistrictVi");
@@ -435,3 +445,17 @@ Route::get("/facebook/messenger", "FacebookController@messenger");
 Route::get("/hrs/diary/index", "HrsController@diaryIndex");
 Route::get("/hrs/attendance/checkin", "HrsController@attendanceCheckIn");
 Route::get("/hrs/curl/https-test", "HrsController@curlHttpsTest");
+
+Route::group(['prefix' => 'combuy'], function() {
+    Route::get("/hilife/query", "ComBuyController@hilifeQueryPage");
+    Route::post("/hilife/query", "ComBuyController@hilifeQuery");
+    Route::get("/hilife/close", "ComBuyController@hilifeClosePage");
+    Route::post("/hilife/close", "ComBuyController@hilifeClose");
+    Route::get("/hilife/barcode-close", "ComBuyController@hilifeBarcodeClosePage");
+    Route::post("/hilife/barcode-close", "ComBuyController@hilifeBarcodeClose");
+
+    Route::get("/okmart/barcode-query", "ComBuyController@okmartBarcodeQueryPage");
+    Route::post("/okmart/barcode-query", "ComBuyController@okmartBarcodeQuery");
+    Route::get("/okmart/close-page", "ComBuyController@okmartClosePage");
+    Route::post("/okmart/close", "ComBuyController@okmartClose");
+});
