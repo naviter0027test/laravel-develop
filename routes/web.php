@@ -242,10 +242,6 @@ Route::get("/indogo/remit/phone-token-set-test", "IndogoController@remitPhoneTok
 Route::get("/indogo/remit/phone-token-del-test", "IndogoController@remitPhoneTokenDelTest");
 Route::get("/indogo/remit/phone-token-set-vi", "IndogoController@remitPhoneTokenSetVi");
 Route::get("/indogo/remit/phone-token-del-vi", "IndogoController@remitPhoneTokenDelVi");
- */
-Route::get("/indogo/remit/notify-record", "IndogoController@remitNotifyRecord");
-Route::get("/indogo/remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
-/*
 Route::get("/indogo/remit/notify-read", "IndogoController@remitNotifyRead");
 Route::get("/indogo/remit/notify-read-test", "IndogoController@remitNotifyReadTest");
 Route::get("/indogo/remit/notify-read-vi", "IndogoController@remitNotifyReadVi");
@@ -322,9 +318,7 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/register-step-1-vi-test", "IndogoController@remitRegisterStep1ViTest");
     Route::get("remit/register-step-2-vi-test", "IndogoController@remitRegisterStep2ViTest");
     Route::get("remit/register", "IndogoController@remitRegister");
-     */
     Route::get("remit/register-test", "IndogoController@remitRegisterTest");
-    /*
     Route::get("remit/register-vi", "IndogoController@remitRegisterVi");
     Route::get("remit/request-sms-code", "IndogoController@remitRequestSmsCode");
     Route::get("remit/request-sms-code-test", "IndogoController@remitRequestSmsCodeTest");
@@ -395,9 +389,7 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/ok-barcode", "IndogoController@remitOkBarcode");
     Route::get("remit/ok-barcode-vi", "IndogoController@remitOkBarcodeVi");
     Route::get("remit/hilife-barcode", "IndogoController@remitHilifeBarcode");
-     */
     Route::get("remit/hilife-barcode-test", "IndogoController@remitHilifeBarcodeTest");
-    /*
     Route::get("remit/hilife-barcode-vi", "IndogoController@remitHilifeBarcodeVi");
     Route::get("remit/order-check", "IndogoController@remitOrderCheck");
     Route::get("remit/order-check-test", "IndogoController@remitOrderCheckTest");
@@ -405,10 +397,8 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/orders-check", "IndogoController@remitOrdersCheck");
     Route::get("remit/orders-check-test", "IndogoController@remitOrdersCheckTest");
     Route::get("remit/orders-check-vi", "IndogoController@remitOrdersCheckVi");
-     */
     Route::get("remit/money-transfer-history", "IndogoController@moneyTransferHistory");
     Route::get("remit/money-transfer-history-test", "IndogoController@moneyTransferHistoryTest");
-    /*
     Route::get("remit/money-transfer-history-vi", "IndogoController@moneyTransferHistoryVi");
     Route::get("remit/money-transfer-history-vi-test", "IndogoController@moneyTransferHistoryViTest");
     Route::get("remit/get-province-district-vi", "IndogoController@remitGetProvinceDistrictVi");
@@ -418,7 +408,6 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/app-share-sms-vi", "IndogoController@remitAppShareSmsVi");
     Route::get("remit/app-share-sms-vi-test", "IndogoController@remitAppShareSmsViTest");
     Route::get("remit/share-member-check-vi", "IndogoController@remitShareMemberCheckVi");
-     */
     Route::get("remit/update-phone-sms-test", "IndogoController@remitUpdatePhoneSmsTest");
     Route::get("remit/update-phone-sms", "IndogoController@remitUpdatePhoneSms");
     Route::get("remit/update-phone-test", "IndogoController@remitUpdatePhoneTest");
@@ -427,8 +416,12 @@ Route::group(['prefix' => 'indogo'], function() {
     Route::get("remit/relationships", "IndogoController@remitRelationships");
     Route::get("remit/purposes-test", "IndogoController@remitPurposesTest");
     Route::get("remit/purposes", "IndogoController@remitPurposes");
+    Route::get("remit/notify-record", "IndogoController@remitNotifyRecord");
+    Route::get("remit/notify-record-test", "IndogoController@remitNotifyRecordTest");
+     */
 });
 
+/*
 Route::get("/tami-v2/api/contact", "TamiV4Controller@contactV2");
 Route::get("/tami-v4/api/contact", "TamiV4Controller@contact");
 Route::get("/tami-v3/borrow/mail", "TamiV4Controller@mailBorrow");
@@ -445,8 +438,10 @@ Route::get("/facebook/messenger", "FacebookController@messenger");
 Route::get("/hrs/diary/index", "HrsController@diaryIndex");
 Route::get("/hrs/attendance/checkin", "HrsController@attendanceCheckIn");
 Route::get("/hrs/curl/https-test", "HrsController@curlHttpsTest");
+ */
 
 Route::group(['prefix' => 'combuy'], function() {
+    Route::get("/", "ComBuyController@index");
     Route::get("/hilife/query", "ComBuyController@hilifeQueryPage");
     Route::post("/hilife/query", "ComBuyController@hilifeQuery");
     Route::get("/hilife/close", "ComBuyController@hilifeClosePage");

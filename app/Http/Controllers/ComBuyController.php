@@ -9,6 +9,10 @@ use App\Repositories\XmlSampleRepository;
 
 class ComBuyController extends Controller
 {
+    public function index(Request $request) {
+        return view('combuy.index');
+    }
+
     public function hilifeQueryPage(Request $request) {
         $params = $request->all();
         $url = '/combuy/hilife/query';
